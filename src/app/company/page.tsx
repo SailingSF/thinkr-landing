@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 interface TeamMember {
   name: string;
@@ -68,6 +69,7 @@ export default function CompanyPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   )
 }
