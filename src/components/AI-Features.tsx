@@ -1,6 +1,5 @@
 import { DollarSign, Users, PieChart, Search, BarChart, LineChart } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
 
 const features = [
   {
@@ -92,13 +91,13 @@ export default function AIFeatures() {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4">The easiest way to bring AI into your workflow.</h2>
+        <h2 className="text-4xl font-semibold text-center mb-4">The easiest way to bring AI into your workflow.</h2>
 
         {/* AI Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
             <div key={index} className="p-6 rounded-xl border bg-white">
-              <div className="w-10 h-10 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
@@ -116,7 +115,7 @@ export default function AIFeatures() {
 
         {/* AI Tools Section */}
         <div className="mb-20">
-          <h2 className="text-4xl font-bold mb-12">
+          <h2 className="text-4xl font-semibold mb-12">
             The latest AI features,
             <br />
             for your shopify store.
@@ -140,20 +139,6 @@ export default function AIFeatures() {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="bg-gray-700 text-white rounded-xl p-12 text-center">
-          <h3 className="text-2xl font-medium mb-6">
-            Forget manually updating inventory or optimizing marketing campaigns
-            <br />
-            thinkr executes these saving resources and time.
-          </h3>
-          <Link
-            href="/signup"
-            className="inline-flex items-center justify-center rounded-lg px-8 py-6 text-lg bg-[#8B5CF6] hover:bg-[#7C3AED] text-white transition-colors"
-          >
-            Sign Up
-          </Link>
-        </div>
       </div>
     </section>
   )

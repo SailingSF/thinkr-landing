@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react"
 const Header = () => {
   return (
     <div className="w-full px-4 pt-8 pb-4">
-      <header className="max-w-[1200px] mx-auto bg-header rounded-lg">
+      <header className="max-w-[1200px] mx-auto bg-gray-100 rounded-lg">
         <nav className="flex items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center space-x-2">
             <Image

@@ -157,7 +157,7 @@ export default function ContactForm({
               </div>
             </div>
 
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full text-white bg-primary hover:bg-primary-300">
               {buttonText || (simple ? 'Get Started' : 'Submit')}
             </Button>
           </form>
