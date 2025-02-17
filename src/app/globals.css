@@ -7,64 +7,64 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 84% 4.9%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 84% 4.9%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 4.9%;
+    --popover-foreground: 0 0% 0%;
 
     --primary: 255 100% 73%;
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 54%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 47.4% 11.2%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222 84% 4.9%;
+    --border: 0 0% 93%;
+    --input: 0 0% 93%;
+    --ring: 0 0% 0%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
     --primary: 255 100% 73%;
-    --primary-foreground: 222 47.4% 11.2%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 83%;
   }
 }
 
@@ -74,6 +74,80 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply font-medium text-nav-link text-black;
+  }
+
+  .nav-button {
+    @apply font-bold text-nav-link text-white bg-primary w-nav-button h-nav-button rounded;
+  }
+
+  .hero-text {
+    @apply font-medium text-hero text-center text-black;
+  }
+
+  .sub-hero-text {
+    @apply font-normal text-sub-hero text-center text-gray;
+  }
+
+  .section-title {
+    @apply font-medium text-section-title text-center text-black;
+  }
+
+  .section-subtitle {
+    @apply font-medium text-[25px] text-center text-gray;
+  }
+
+  .feature-box {
+    @apply rounded-[10px] w-feature-box h-feature-box;
+  }
+
+  .ai-feature-box {
+    @apply rounded-[10px] w-feature-box h-ai-feature-box;
+  }
+
+  .big-message-box {
+    @apply rounded-[15px] w-big-message h-big-message;
+  }
+
+  .big-message-text {
+    @apply font-normal text-[30px] text-center text-white;
+  }
+
+  .pricing-tier {
+    @apply border-2 border-[#ededed] rounded-[10px] w-pricing-tier h-pricing-tier;
+  }
+
+  .pricing-tier-title {
+    @apply font-normal text-[34px] text-black;
+  }
+
+  .pricing-tier-subtitle {
+    @apply font-normal text-[13px] text-primary;
+  }
+
+  .input-box {
+    @apply rounded w-input-box h-input-box bg-[#EBEBEB];
+  }
+
+  .input-title {
+    @apply font-medium text-[15px] text-black;
+  }
+
+  .input-text {
+    @apply font-normal text-base text-[#3e3e3e];
+  }
+
+  .footer-box {
+    @apply rounded-[20px] w-footer h-footer bg-black;
+  }
+
+  .footer-text {
+    @apply font-medium text-[15px] text-white;
   }
 }
 
