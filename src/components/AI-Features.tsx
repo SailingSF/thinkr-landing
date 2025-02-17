@@ -69,22 +69,22 @@ const tools = [
   {
     title: "Autopilot.",
     description: "Automated inventory and pricing management",
-    image: "",
+    image: "/features/autopilot.png",
   },
   {
     title: "Chat.",
     description: "AI-powered customer support",
-    image: "",
+    image: "/features/chat01.png",
   },
   {
     title: "Scheduler.",
     description: "Smart campaign and content scheduling",
-    image: "",
+    image: "/features/scheduler01.png",
   },
   {
     title: "Deep Search.",
     description: "Intelligent product and customer insights",
-    image: "",
+    image: "/features/deepsearch01.png",
   },
 ]
 
@@ -117,24 +117,24 @@ export default function AIFeatures() {
         {/* AI Tools Section */}
         <div className="mb-20">
           <h2 className="text-4xl font-bold mb-12">
-            The AI features you already love,
+            The latest AI features,
             <br />
-            for your store.
+            for your shopify store.
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {tools.map((tool, index) => (
               <div key={index} className="space-y-4">
-                <h3 className="text-2xl font-semibold">{tool.title}</h3>
-                <p className="text-gray-600">{tool.description}</p>
-                <div className="bg-gray-700 rounded-lg overflow-hidden">
+                <div className="bg-gray-800 rounded-lg p-6 aspect-square flex items-center justify-center">
                   <Image
                     src={tool.image || "/placeholder.svg"}
                     alt={tool.title}
                     width={300}
                     height={200}
-                    className="w-full"
+                    className="w-full h-auto"
                   />
                 </div>
+                <h3 className="text-2xl font-semibold">{tool.title}</h3>
+                <p className="text-gray-600">{tool.description}</p>
               </div>
             ))}
           </div>
