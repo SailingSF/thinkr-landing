@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ChevronDown } from "lucide-react"
 
 const Header = () => {
@@ -7,8 +8,13 @@ const Header = () => {
       <header className="max-w-[1200px] mx-auto bg-header rounded-lg">
         <nav className="flex items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-black"></div>
-            <span className="text-xl font-medium">thinkr</span>
+            <Image
+              src="/thinkr_black_leftlogo.png"
+              alt="Thinkr Logo"
+              width={112}
+              height={32}
+              className="w-28 h-8"
+            />
           </Link>
 
           <div className="flex items-center space-x-8">
