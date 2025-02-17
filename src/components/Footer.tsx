@@ -10,13 +10,13 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex space-x-4">
-          <Link href="#" className="hover:text-primary">
+          <Link href="/privacy" className="hover:text-primary">
             Privacy Policy
           </Link>
-          <Link href="#" className="hover:text-primary">
+          <Link href="/terms" className="hover:text-primary">
             Terms of Service
           </Link>
-          <Link href="#" className="hover:text-primary">
+          <Link href="/contact" className="hover:text-primary">
             Contact
           </Link>
         </div>
