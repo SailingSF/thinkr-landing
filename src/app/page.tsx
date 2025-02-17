@@ -6,6 +6,7 @@ import Features from "@/components/Features"
 import AIFeatures from "@/components/AI-Features"
 import Testimonials from "@/components/Testimonials"
 import CTA from "@/components/CTA"
+import Pricing from "@/components/Pricing"
 import ContactForm from "@/components/ContactForm"
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Features />
       <AIFeatures />
       <Testimonials />
+      <Pricing />
       <CTA />
       <ContactForm 
         simple={true}
