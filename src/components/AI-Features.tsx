@@ -1,0 +1,161 @@
+import { DollarSign, Users, PieChart, Search, BarChart, LineChart } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+
+const features = [
+  {
+    icon: <DollarSign className="w-6 h-6" />,
+    title: "Revenue Growth",
+    items: [
+      "Sales funnel optimization",
+      "Conversion rate improvements",
+      "Average order value increases",
+      "New market expansion opportunities",
+    ],
+  },
+  {
+    icon: <Users className="w-6 h-6" />,
+    title: "Customer Retention",
+    items: [
+      "Churn risk analysis",
+      "Loyalty program optimization",
+      "Customer feedback action items",
+      "Repeat purchase incentives",
+    ],
+  },
+  {
+    icon: <PieChart className="w-6 h-6" />,
+    title: "Pricing Optimization",
+    items: [
+      "Price elasticity analysis",
+      "Competitive pricing strategies",
+      "Bundle/discount optimization",
+      "Free shipping threshold",
+    ],
+  },
+  {
+    icon: <Search className="w-6 h-6" />,
+    title: "Content & SEO",
+    items: [
+      "High-converting product description recommendations",
+      "Search ranking optimization opportunities",
+      "Content gap analysis",
+      "Traffic-driving keyword suggestions",
+    ],
+  },
+  {
+    icon: <BarChart className="w-6 h-6" />,
+    title: "Marketing ROI",
+    items: [
+      "Ad spend optimization across channels",
+      "Campaign performance analysis",
+      "Audience targeting recommendations",
+      "Customer acquisition cost reduction",
+    ],
+  },
+  {
+    icon: <LineChart className="w-6 h-6" />,
+    title: "General Insights",
+    items: [
+      "Market trend analysis and opportunities",
+      "Competitive landscape monitoring",
+      "Business health indicators",
+      "Performance benchmarking against industry",
+    ],
+  },
+]
+
+const tools = [
+  {
+    title: "Autopilot.",
+    description: "Automated inventory and pricing management",
+    image: "",
+  },
+  {
+    title: "Chat.",
+    description: "AI-powered customer support",
+    image: "",
+  },
+  {
+    title: "Scheduler.",
+    description: "Smart campaign and content scheduling",
+    image: "",
+  },
+  {
+    title: "Deep Search.",
+    description: "Intelligent product and customer insights",
+    image: "",
+  },
+]
+
+export default function AIFeatures() {
+  return (
+    <section className="py-20 px-4">
+      <div className="container mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-4">The easiest way to bring AI into your workflow.</h2>
+
+        {/* AI Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {features.map((feature, index) => (
+            <div key={index} className="p-6 rounded-xl border bg-white">
+              <div className="w-10 h-10 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center mb-4">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+              <ul className="space-y-2 text-gray-600">
+                {feature.items.map((item, itemIndex) => (
+                  <li key={itemIndex} className="flex items-start">
+                    <span className="mr-2">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* AI Tools Section */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-bold mb-12">
+            The AI features you already love,
+            <br />
+            for your store.
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tools.map((tool, index) => (
+              <div key={index} className="space-y-4">
+                <h3 className="text-2xl font-semibold">{tool.title}</h3>
+                <p className="text-gray-600">{tool.description}</p>
+                <div className="bg-gray-700 rounded-lg overflow-hidden">
+                  <Image
+                    src={tool.image || "/placeholder.svg"}
+                    alt={tool.title}
+                    width={300}
+                    height={200}
+                    className="w-full"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="bg-gray-700 text-white rounded-xl p-12 text-center">
+          <h3 className="text-2xl font-medium mb-6">
+            Forget manually updating inventory or optimizing marketing campaigns
+            <br />
+            thinkr executes these saving resources and time.
+          </h3>
+          <Link
+            href="/signup"
+            className="inline-flex items-center justify-center rounded-lg px-8 py-6 text-lg bg-[#8B5CF6] hover:bg-[#7C3AED] text-white transition-colors"
+          >
+            Sign Up
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
+
