@@ -21,13 +21,13 @@ const Features = () => {
   return (
     <section id="features" className="py-20 bg-background-dark text-text-dark">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4">AI that goes beyond search and chat.</h2>
-        <p className="text-center text-gray-500 mb-12">Run multiple tasks and actions in seconds, across apps.</p>
+        <h2 className="text-4xl font-bold text-center mb-4">AI that goes beyond search and chat, for e-commerce.</h2>
+        <p className="text-center text-gray-500 mb-12">Run tasks and actions across your store.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="bg-[#1C1C1C] p-6 rounded-lg">
+            <div key={index} className="bg-gray-800 p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-gray-300">{feature.description}</p>
             </div>
           ))}
         </div>
