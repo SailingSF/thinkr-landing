@@ -1,6 +1,9 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 interface ContactFormProps {
   showCompanyLink?: boolean;
@@ -21,6 +24,38 @@ export default function ContactForm({
   description,
   buttonText
 }: ContactFormProps) {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    name: '',
+    email: '',
+    company: '',
+    jobTitle: '',
+    message: ''
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    const subject = encodeURIComponent('Contact Form Submission')
+    const body = encodeURIComponent(`
+${simple ? `Name: ${formData.name}` : `Name: ${formData.firstName} ${formData.lastName}`}
+Email: ${formData.email}
+${!simple ? `Company: ${formData.company}
+Job Title: ${formData.jobTitle}` : ''}
+Message: ${formData.message}
+    `)
+    
+    window.location.href = `mailto:edu@thinkr.pro?subject=${subject}&body=${body}`
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    })
+  }
+
   return (
     <div className={`container mx-auto px-4 ${simple ? 'py-8' : 'py-16'} ${fullWidth ? 'max-w-7xl' : 'max-w-6xl'}`}>
       <div className={`grid ${showContactInfo ? 'md:grid-cols-2' : 'md:grid-cols-1'} gap-12`}>
@@ -55,7 +90,7 @@ export default function ContactForm({
             </div>
           )}
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-4">
               {!simple && (
                 <div className="grid md:grid-cols-2 gap-4">
@@ -69,6 +104,8 @@ export default function ContactForm({
                       className="mt-1 block w-full rounded-md border border-input bg-background px-4 py-2"
                       placeholder="Jane"
                       required
+                      value={formData.firstName}
+                      onChange={handleChange}
                     />
                   </div>
                   <div>
@@ -81,6 +118,8 @@ export default function ContactForm({
                       className="mt-1 block w-full rounded-md border border-input bg-background px-4 py-2"
                       placeholder="Doe"
                       required
+                      value={formData.lastName}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -97,6 +136,8 @@ export default function ContactForm({
                     className="mt-1 block w-full rounded-md border border-input bg-background px-4 py-2"
                     placeholder="Jane Doe"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                   />
                 </div>
               )}
@@ -111,6 +152,8 @@ export default function ContactForm({
                   className="mt-1 block w-full rounded-md border border-input bg-background px-4 py-2"
                   placeholder={simple ? 'you@example.com' : 'you@company.com'}
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -126,6 +169,8 @@ export default function ContactForm({
                       className="mt-1 block w-full rounded-md border border-input bg-background px-4 py-2"
                       placeholder="Acme Inc."
                       required
+                      value={formData.company}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -138,6 +183,8 @@ export default function ContactForm({
                       id="jobTitle"
                       className="mt-1 block w-full rounded-md border border-input bg-background px-4 py-2"
                       placeholder="Product Manager"
+                      value={formData.jobTitle}
+                      onChange={handleChange}
                     />
                   </div>
                 </>
@@ -153,6 +200,8 @@ export default function ContactForm({
                   className="mt-1 block w-full rounded-md border border-input bg-background px-4 py-2"
                   placeholder={simple ? "I'm interested in learning more about thinkr..." : "Tell us about your needs and how we can help..."}
                   required
+                  value={formData.message}
+                  onChange={handleChange}
                 />
               </div>
             </div>
