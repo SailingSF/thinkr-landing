@@ -1,20 +1,17 @@
 import { Check } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 const tiers = [
   {
     name: "Free",
     price: "$0",
-    description: "Ideal for individual store owners getting started with AI automation.",
+    description: "Ideal for individual store owners.",
     features: [
       "2 Weekly AI Suggestions",
       "Basic Shopify Integration",
       "Email Support",
       "Basic Risk Assessment",
-      "1 Store Connection",
-      "Standard Analytics Dashboard",
-      "Limited Chat Access",
-      "Limited Deep Research Topics",
+      "Limited Chat/Deep Research Access",
     ],
     cta: "Try it free",
     ctaLink: "/signup",
@@ -22,37 +19,28 @@ const tiers = [
   {
     name: "Growth",
     price: "$50",
-    period: "user/month",
-    description: "Everything in Free, plus advanced features for growing businesses.",
+    description: "Everything Free+",
     popular: true,
     features: [
       "Daily AI Suggestions",
-      "Full Platform Integrations",
+      "Full Integrations",
       "Advanced Analytics",
-      "Priority Support",
       "Onboarding Session",
-      "Up to 3 Store Connections",
-      "Unlimited Chat Access",
-      "Unlimited Deep Research Topics",
+      "Unlimited Chat/Deep Research Access",
     ],
-    cta: "Upgrade now",
+    cta: "Upgrade",
     ctaLink: "/upgrade",
   },
   {
     name: "Autopilot",
     price: "Custom",
-    description: "Enterprise-grade AI automation for large-scale operations.",
+    description: "Everything Growth+",
     features: [
       "AI Autopilot Mode",
       "Custom Integrations",
       "Multi-Store Management",
       "Dedicated Success Manager",
-      "24/7 Priority Support",
-      "Unlimited Store Connections",
-      "Custom AI Model Training",
-      "Advanced Security Features",
-      "SLA Guarantee",
-      "Custom Analytics",
+      "Dedicated Success Manager",
     ],
     cta: "Contact us",
     ctaLink: "/contact",
@@ -61,11 +49,10 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <section className="py-20 px-4">
+    <section className="py-16 px-4">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Simple, transparent pricing.</h2>
-          <p className="text-xl text-gray-600">Start free and scale as your business grows.</p>
+        <div className="text-left mb-16">
+          <h2 className="text-6xl font-medium mb-4">Pricing.</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -73,24 +60,27 @@ export default function Pricing() {
             <div
               key={index}
               className={`relative rounded-2xl p-8 ${
-                tier.popular ? "border-2 border-[#8B5CF6] shadow-lg shadow-[#8B5CF6]/10" : "border"
+                tier.popular ? "border-2 border-primary shadow-lg shadow-gray-200/10" : "border"
               }`}
             >
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#8B5CF6] text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                     Most Popular
                   </span>
                 </div>
               )}
 
               <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                <h3 className="text-4xl font-medium mb-2">{tier.name}</h3>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold">{tier.price}</span>
-                  {tier.period && <span className="text-gray-600 ml-2">{tier.period}</span>}
+                  <span className="text-xl font-light text-primary-400">{tier.price}</span>
                 </div>
-                <p className="text-gray-600">{tier.description}</p>
+                <div className="mb-4">
+                    <Button variant="default" className="text-white px-6">
+                        {tier.cta}
+                    </Button>
+                </div>
               </div>
 
               <div className="space-y-4 mb-8">
@@ -101,23 +91,12 @@ export default function Pricing() {
                   </div>
                 ))}
               </div>
-
-              <Link
-                href={tier.ctaLink}
-                className={`block text-center py-3 px-6 rounded-lg transition-colors ${
-                  tier.popular
-                    ? "bg-[#8B5CF6] hover:bg-[#7C3AED] text-white"
-                    : "bg-gray-100 hover:bg-gray-200 text-gray-900"
-                }`}
-              >
-                {tier.cta}
-              </Link>
             </div>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-gray-600">All plans include a 14-day free trial. No credit card required.</p>
+          <p className="text-gray-600">All plans include a 14-day free trial.</p>
         </div>
       </div>
     </section>

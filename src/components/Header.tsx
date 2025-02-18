@@ -17,7 +17,7 @@ const Header = () => {
             />
           </Link>
 
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center justify-between space-x-4 sm:space-x-8 md:space-x-16 lg:space-x-32">
             <div className="flex items-center space-x-1 cursor-pointer">
               <span>Resources</span>
               <ChevronDown className="w-4 h-4" />
@@ -30,7 +30,7 @@ const Header = () => {
             </Link>
             <Link
               href="/signup"
-              className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white px-6 py-2 rounded-lg transition-colors"
+              className="bg-primary hover:bg-primary-200 text-white px-4 sm:px-6 py-2 rounded-md transition-colors whitespace-nowrap"
             >
               Sign Up
             </Link>

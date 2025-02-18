@@ -91,13 +91,13 @@ export default function AIFeatures() {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-semibold text-center mb-4">The easiest way to bring AI into your workflow.</h2>
+        <h2 className="text-6xl font-medium text-center mb-12">The easiest way to bring AI into your workflow.</h2>
 
         {/* AI Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
-            <div key={index} className="p-6 rounded-xl border bg-white">
-              <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mb-4">
+            <div key={index} className="p-6 bg-white">
+              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
@@ -114,8 +114,8 @@ export default function AIFeatures() {
         </div>
 
         {/* AI Tools Section */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-semibold mb-12">
+        <div className="py-2">
+          <h2 className="text-6xl font-medium mb-12">
             The latest AI features,
             <br />
             for your shopify store.
@@ -123,6 +123,8 @@ export default function AIFeatures() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {tools.map((tool, index) => (
               <div key={index} className="space-y-4">
+                <h3 className="text-2xl font-semibold">{tool.title}</h3>
+                <p className="text-gray-600">{tool.description}</p>
                 <div className="bg-gray-800 rounded-lg p-6 aspect-square flex items-center justify-center">
                   <Image
                     src={tool.image || "/placeholder.svg"}
@@ -132,8 +134,7 @@ export default function AIFeatures() {
                     className="w-full h-auto"
                   />
                 </div>
-                <h3 className="text-2xl font-semibold">{tool.title}</h3>
-                <p className="text-gray-600">{tool.description}</p>
+
               </div>
             ))}
           </div>
