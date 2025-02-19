@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col items-end space-y-4">
               <Link
-                href="/signup"
+                href="https://www.thinkrapp.com/"
                 className="bg-primary hover:bg-primary-300 text-white px-6 py-2 rounded-lg transition-colors mb-8"
               >
                 Sign Up

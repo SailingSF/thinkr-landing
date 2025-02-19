@@ -54,7 +54,7 @@ const Header = () => {
               Contact
             </Link>
             <Button className="bg-primary hover:bg-primary-300 text-white px-6 py-2 rounded-lg" asChild>
-              <Link href="/signup">
+              <Link href="https://www.thinkrapp.com/">
                 Sign Up
               </Link>
             </Button>
@@ -63,7 +63,7 @@ const Header = () => {
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center space-x-4">
             <Button className="bg-primary hover:bg-primary-300 text-white px-6 py-2 rounded-lg" asChild>
-              <Link href="/signup">
+              <Link href="https://www.thinkrapp.com/">
                 Sign Up
               </Link>
             </Button>
