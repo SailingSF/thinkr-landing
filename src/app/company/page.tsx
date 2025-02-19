@@ -9,6 +9,19 @@ interface TeamMember {
   image: string;
 }
 
+interface Section {
+  id: string;
+  title: string;
+  subtitle?: string;
+  content: string;
+}
+
+const companyMission: Section = {
+  id: "mission",
+  title: "Our Mission",
+  content: "thinkr wants to empower entrepreneurs to focus on their passion by automating e-commerce operations with intelligent AI agents that deliver insights, drive decisions, and do the heavy lifting—while keeping humans firmly in control."
+};
+
 const teamMembers: TeamMember[] = [
   {
     name: "Eduardo Samayoa",
@@ -19,7 +32,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Max Abouchar",
     title: "CoFounder and CTO",
-    description: "Max is an AI Builder and Product Leader applying the benefits of AI to enable humans to do what they're best at. With experience as a technical product manager leading product development in aerospace, data, and finance Max combines his technical experience in order to build things that people want.",
+    description: "As an AI Builder and Product Leader, Max applies the benefits of AI to enable humans to do what they're best at. With experience as a technical product manager leading product development in aerospace, data, and finance, Max combines his technical experience in order to build things that people want. After hacking and building AI agents, he identified a gap in current AI tools and agents to interact with and give the control back to humans.",
     image: "/team/max.png"
   }
 ];
@@ -29,7 +42,22 @@ export default function CompanyPage() {
     <>
       <Header />
       <main className="min-h-screen bg-white">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        {/* Mission Section */}
+        <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              {companyMission.title}
+            </h2>
+          </div>
+          <div className="mt-8 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 text-center leading-relaxed">
+              {companyMission.content}
+            </p>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Our Team
@@ -67,7 +95,7 @@ export default function CompanyPage() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </>
