@@ -2,15 +2,21 @@
 
 [![thinkr Logo](https://www.thinkr.pro/thinkr_black_leftlogo.png)](https://www.thinkr.pro)
 
-A landing page built to showcase and advertise thinkr—a solution designed to automate e-commerce and Shopify operations using advanced AI agents. This page highlights key features of thinkr, demonstrating how it empowers store owners to streamline daily processes and boost productivity.
+A landing page built to showcase and advertise thinkr—a solution designed to automate e-commerce and Shopify operations using advanced AI agents. This page highlights key features of thinkr, advertising how itempowers shopify store owners to streamline daily processes and boost productivity.
 
 ## About thinkr
 
-thinkr is dedicated to transforming the way you manage your online store. By leveraging AI agents, thinkr automates routine tasks such as inventory tracking, order processing, customer retention, and data analytics. The result is a seamless, efficient experience that allows you to focus on growing your business.
+thinkr is dedicated to transforming the way you manage your online store. By leveraging AI agents, thinkr automates routine tasks such as inventory tracking, order processing, customer retention, and data analytics. 
+
+### Mission
+
+> thinkr wants to empower entrepreneurs to focus on their passion by automating e-commerce operations with intelligent AI agents that deliver insights, drive decisions, and do the heavy lifting—while keeping humans firmly in control.
+
 
 ## Key Features
 
-- **Automated Inventory Management:** Track stock levels, receive low-stock alerts, and optimize reorder schedules.
+- **Automated Shopify Operations:** Automate routine tasks such as inventory tracking, order processing, customer retention, and data analytics.
+- **Inventory Management:** Track stock levels, receive low-stock alerts, and optimize reorder schedules.
 - **Order Processing & Updates:** Seamlessly manage and update orders across multiple channels.
 - **Actionable Insights:** Gain valuable analytics to monitor store performance and market trends.
 - **Customer Retention:** Utilize AI-driven recommendations to enhance customer engagement and loyalty.
@@ -19,9 +25,8 @@ thinkr is dedicated to transforming the way you manage your online store. By lev
 
 ## Built With
 
-- **Next.js** – A robust React framework enabling fast, scalable web applications.
-- **Tailwind CSS** – A utility-first CSS framework that accelerates UI development.
-- **Modern AI Technologies** – Bringing smart automation and actionable insights to your store.
+- **Next.js** 
+- **Tailwind CSS** 
 
 ## Getting Started
 
@@ -73,10 +78,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ## Deployment
 
 The thinkr landing page can be deployed using services like [Vercel](https://vercel.com). Simply connect your repository to Vercel and follow the provided deployment instructions for a seamless launch.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
