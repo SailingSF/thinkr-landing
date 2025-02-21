@@ -34,10 +34,10 @@ export default function Features() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="bg-secondary/50 rounded-xl p-6 flex flex-col">
-              <h3 className="font-semibold text-2xl mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm mb-6 flex-grow">{feature.description}</p>
-              <Button variant="outlineCustom" textColor="hsl(var(--primary))" className="w-fit hover:bg-secondary/80">
+            <div key={index} className="bg-gray-100 rounded-xl p-6 flex flex-col">
+              <h3 className="font-medium text-[25px] mb-3">{feature.title}</h3>
+              <p className="text-muted-foreground text-[15px] font-normal mb-6 flex-grow">{feature.description}</p>
+              <Button variant="outlineCustom" textColor="hsl(var(--primary))" className="w-fit hover:bg-secondary/80 bg-gray-100">
                 See Use Case
               </Button>
             </div>
