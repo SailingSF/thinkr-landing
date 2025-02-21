@@ -89,28 +89,30 @@ const tools = [
 
 export default function AIFeatures() {
   return (
-    <section className="py-20 px-4">
+    <section className="pt-20 pb-32 px-4">
       <div className="container mx-auto">
         <h2 className="text-[36px] md:text-[50px] font-medium text-center mb-12">The easiest way to bring AI into your workflow.</h2>
 
         {/* AI Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {features.map((feature, index) => (
-            <div key={index} className="p-6 bg-white">
-              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-4">
-                {feature.icon}
+        <div className="max-w-[1100px] mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-20">
+            {features.map((feature, index) => (
+              <div key={index} className="p-6 bg-white">
+                <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-[18px] md:text-[25px] font-medium mb-4">{feature.title}</h3>
+                <ul className="space-y-1.5 text-gray-600">
+                  {feature.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start text-[12px] md:text-[15px] font-normal">
+                      <span className="mr-2">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-              <ul className="space-y-2 text-gray-600">
-                {feature.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start">
-                    <span className="mr-2">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* AI Tools Section */}

@@ -29,7 +29,7 @@ export default function Features() {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium text-center mb-4">AI that goes beyond search and chat.</h2>
-          <p className="text-[20px] sm:text-[25px] font-medium text-center text-muted-foreground">Run multiple tasks and actions in seconds, across apps.</p>
+          <p className="text-[18px] sm:text-[25px] font-normal text-center text-muted-foreground">Run multiple tasks and actions in seconds, across apps.</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
