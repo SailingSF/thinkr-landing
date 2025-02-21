@@ -3,10 +3,10 @@ import Image from 'next/image';
 const HeroImage = () => {
   return (
     <section className="py-4 md:py-12 px-4 md:px-32">
-    <div className="relative w-full mx-auto mt-4">
-      <div className="relative w-full mx-auto mt-8">
+    <div className="relative w-full mx-auto">
+      <div className="relative w-full mx-auto">
         <div className="bg-[#F2F2F4] rounded-[24px] p-4 md:p-8">
-          <div className="relative w-full">
+          <div className="relative w-full -mt-4 md:-mt-6">
             <div className="relative w-full aspect-[16/9]">
               <Image
                 src="/hero_image_3.svg"
@@ -18,7 +18,7 @@ const HeroImage = () => {
             </div>
             
             {/* Feature indicators */}
-            <div className="grid grid-cols-4 gap-2 md:gap-8 mt-4 px-2 md:px-24">
+            <div className="grid grid-cols-4 gap-2 md:gap-8 -mt-4 md:-mt-8 px-2 md:px-24">
               <div className="text-center">
                 <div className="mb-2 md:mb-4 mx-auto flex items-center justify-center h-8 md:h-12">
                   <svg className="w-full h-full max-w-[32px] md:max-w-[60px]" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
