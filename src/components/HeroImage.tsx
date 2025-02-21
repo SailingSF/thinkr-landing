@@ -5,7 +5,7 @@ const HeroImage = () => {
     <section className="py-4 md:py-12 px-4 md:px-32">
     <div className="relative w-full mx-auto mt-4">
       <div className="relative w-full mx-auto mt-8">
-        <div className="bg-gray-50 rounded-2xl p-4 md:p-8">
+        <div className="bg-[#F2F2F4] rounded-[24px] p-4 md:p-8">
           <div className="relative w-full">
             <div className="relative w-full aspect-[16/9]">
               <Image
