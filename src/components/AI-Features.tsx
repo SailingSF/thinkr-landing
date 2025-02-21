@@ -91,7 +91,7 @@ export default function AIFeatures() {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        <h2 className="text-6xl font-medium text-center mb-12">The easiest way to bring AI into your workflow.</h2>
+        <h2 className="text-[36px] md:text-[50px] font-medium text-center mb-12">The easiest way to bring AI into your workflow.</h2>
 
         {/* AI Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
@@ -115,7 +115,7 @@ export default function AIFeatures() {
 
         {/* AI Tools Section */}
         <div className="py-2">
-          <h2 className="text-6xl font-medium mb-12">
+          <h2 className="text-[36px] md:text-[50px] font-medium mb-12">
             The latest AI features,
             <br />
             for your shopify store.
