@@ -44,6 +44,14 @@ const Header = () => {
                   >
                     LinkedIn
                   </a>
+                  <a 
+                    href="https://apps.shopify.com/thinkr" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Shopify App
+                  </a>
                 </div>
               )}
             </div>
@@ -101,6 +109,14 @@ const Header = () => {
                       className="block py-2 hover:text-gray-600"
                     >
                       LinkedIn
+                    </a>
+                    <a 
+                      href="https://apps.shopify.com/thinkr" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block py-2 hover:text-gray-600"
+                    >
+                      Shopify App
                     </a>
                   </div>
                 )}

@@ -26,6 +26,14 @@ const Footer = () => {
               >
                 Sign Up
               </Link>
+              <Link
+                href="https://apps.shopify.com/thinkr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-400 transition-colors mb-8"
+              >
+                Shopify App Store
+              </Link>
               <nav className="flex flex-col items-end space-y-2">
                 <Link href="/company" className="hover:text-gray-400 transition-colors">
                   Company
