@@ -14,9 +14,9 @@ const Hero = () => {
             asChild
             variant="default"
             size="sm"
-            className="bg-black hover:bg-[#8c74ff] text-white px-6 py-2.5 text-[11px] sm:text-[14px] font-medium rounded-lg transition-colors flex items-center justify-center"
+            className="bg-black hover:bg-primary-400 text-white px-6 py-2.5 text-[11px] sm:text-[14px] font-medium rounded-lg transition-colors flex items-center justify-center"
           >
-            <Link href="/get-started" className="flex items-center justify-center">
+            <Link href="https://www.thinkrapp.com/" className="flex items-center justify-center">
               Get Started
             </Link>
           </Button>
@@ -24,9 +24,9 @@ const Hero = () => {
             asChild
             variant="secondary"
             size="sm"
-            className="bg-gray-500 hover:bg-[#8c74ff] text-white px-6 py-2.5 text-[11px] sm:text-[14px] font-medium rounded-lg transition-colors flex items-center justify-center"
+            className="bg-gray-500 hover:bg-primary-400 text-white px-6 py-2.5 text-[11px] sm:text-[14px] font-medium rounded-lg transition-colors flex items-center justify-center"
           >
-            <Link href="/learn-more" className="flex items-center justify-center">
+            <Link href="https://www.linkedin.com/company/thinkr-pro/about/" className="flex items-center justify-center">
               Learn More
             </Link>
           </Button>
