@@ -14,7 +14,7 @@ const Hero = () => {
             asChild
             variant="default"
             size="sm"
-            className="bg-black hover:bg-gray-700 text-white px-4 py-3 font-medium text-[14px] rounded-lg transition-colors"
+            className="bg-black hover:bg-[#8c74ff] text-white px-4 py-3 font-medium text-[14px] rounded-lg transition-colors"
           >
             <Link href="/get-started">
               Get Started
@@ -24,7 +24,7 @@ const Hero = () => {
             asChild
             variant="secondary"
             size="sm"
-            className="bg-gray-500 hover:bg-gray-300 text-white px-4 py-3 font-medium text-[14px] rounded-lg transition-colors"
+            className="bg-gray-500 hover:bg-[#8c74ff] text-white px-4 py-3 font-medium text-[14px] rounded-lg transition-colors"
           >
             <Link href="/learn-more">
               Learn More
