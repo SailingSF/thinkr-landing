@@ -28,16 +28,16 @@ export default function Features() {
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-6xl font-medium mb-4">AI that goes beyond search and chat.</h2>
-          <p className="text-xl font-light text-muted-foreground">Run multiple tasks and actions in seconds, across apps.</p>
+          <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium text-center mb-4">AI that goes beyond search and chat.</h2>
+          <p className="text-[18px] sm:text-[25px] font-normal text-center text-muted-foreground">Run multiple tasks and actions in seconds, across apps.</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="bg-secondary/50 rounded-xl p-6 flex flex-col">
-              <h3 className="font-semibold text-2xl mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm mb-6 flex-grow">{feature.description}</p>
-              <Button variant="outlineCustom" textColor="hsl(var(--primary))" className="w-fit hover:bg-secondary/80">
+            <div key={index} className="bg-gray-100 rounded-xl p-6 flex flex-col">
+              <h3 className="font-medium text-[25px] mb-3">{feature.title}</h3>
+              <p className="text-muted-foreground text-[15px] font-normal mb-6 flex-grow">{feature.description}</p>
+              <Button variant="outlineCustom" textColor="hsl(var(--primary))" className="w-fit hover:bg-secondary/80 bg-gray-100">
                 See Use Case
               </Button>
             </div>
