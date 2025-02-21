@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 const Hero = () => {
   return (
-    <section className="pb-32 pt-16 text-center">
+    <section className="pb-2 pt-16 text-center">
       <div className="container mx-auto px-4">
         <h1 className="text-5xl sm:text-[100px] font-medium mb-6 max-w-[1000px] mx-auto leading-tight">
           Automate Everyday Shopify Operations
