@@ -25,8 +25,8 @@ const HeroImage = () => {
                     <path d="M26.8789 0C23.4529 0 20.6761 2.7768 20.6761 6.20283C20.6761 6.7342 20.7608 7.39584 20.887 7.88794L9.81906 15.6125C8.82868 14.9426 7.48681 14.4733 6.20283 14.4733C2.7768 14.4733 0 17.2501 0 20.6761C0 24.1021 2.7768 26.8789 6.20283 26.8789C7.50956 26.8789 8.79973 26.393 9.80045 25.7045L20.8911 33.4911C20.7547 34.0018 20.6761 34.5952 20.6761 35.1494C20.6761 38.5754 23.4529 41.3522 26.8789 41.3522C30.305 41.3522 33.0818 38.5754 33.0818 35.1494C33.0818 31.7233 30.305 28.9465 26.8789 28.9465C25.5722 28.9465 24.2986 29.418 23.2999 30.1086L12.1803 22.3281C12.3147 21.8174 12.4057 21.2302 12.4057 20.6761C12.4057 20.122 12.3271 19.5245 12.1906 19.0138L23.2833 11.2561C24.2737 11.9239 25.5949 12.4057 26.8789 12.4057C30.305 12.4057 33.0818 9.62886 33.0818 6.20283C33.0818 2.7768 30.305 0 26.8789 0Z" fill="#8D8A8B"/>
                   </svg>
                 </div>
-                <p className="text-[10px] md:text-sm text-gray-600 leading-tight">Connect your Shopify store,</p>
-                <p className="text-[10px] md:text-sm text-gray-300 leading-tight">other marketing apps and software</p>
+                <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Connect Shopify and integrate</p>
+                <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">all your business tools</p>
               </div>
               
               <div className="text-center">
@@ -37,8 +37,8 @@ const HeroImage = () => {
                     <circle cx="21" cy="21" r="4" stroke="#8D8A8B" strokeWidth="2"/>
                   </svg>
                 </div>
-                <p className="text-[10px] md:text-sm text-gray-600 leading-tight">Set goals</p>
-                <p className="text-[10px] md:text-sm text-gray-300 leading-tight">and have thinkr tell you how to achieve them</p>
+                <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Set clear goals and let thinkr</p>
+                <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">guide your path forward</p>
               </div>
               
               <div className="text-center">
@@ -48,8 +48,8 @@ const HeroImage = () => {
                     <path d="M36.2582 1.84944C35.7742 1.62708 35.2353 1.55224 34.709 1.63427H32.5573C30.9865 1.63427 29.4157 1.63427 27.845 1.84944C27.4577 1.84944 27.0704 1.84944 27.0919 2.32282C27.0919 3.50628 27.0919 4.68973 27.0919 5.87318V7.65912C27.0919 8.00339 26.9628 8.49829 27.3286 8.69195C27.703 8.84522 28.1094 8.90433 28.512 8.86408C30.6637 8.86408 32.8155 8.73498 35.0963 8.73498C35.4191 8.73498 35.8709 8.73498 36.1291 8.62739C36.7531 8.17553 36.4734 7.16422 36.4304 6.47566L36.3013 3.95814C36.3576 3.23837 36.3142 2.51427 36.1722 1.80641L36.2582 1.84944Z" stroke="#8D8A8B" strokeWidth="2.52378" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <p className="text-[10px] md:text-sm text-gray-600 leading-tight">Get recommendations</p>
-                <p className="text-[10px] md:text-sm text-gray-300 leading-tight">and personalized step by step plans on how to execute</p>
+                <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Get custom strategies with</p>
+                <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">detailed steps to implement</p>
               </div>
               
               <div className="text-center">
@@ -60,8 +60,8 @@ const HeroImage = () => {
                     <path d="M11.8551 23.0957L18.5089 16.2248C18.7402 15.986 19.1212 15.9799 19.36 16.2111L27.2045 23.8053C27.4415 24.0347 27.8189 24.0307 28.051 23.7963L40.1451 11.5791" stroke="#8D8A8B" strokeWidth="4.2134" strokeLinecap="round"/>
                   </svg>
                 </div>
-                <p className="text-[10px] md:text-sm text-gray-600 leading-tight">Save time and grow your business</p>
-                <p className="text-[10px] md:text-sm text-gray-300 leading-tight">with automations and planning from thinkr&apos;s AI</p>
+                <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Automate and grow with</p>
+                <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">thinkr&apos;s intelligent planning</p>
               </div>
             </div>
           </div>
