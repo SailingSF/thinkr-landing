@@ -85,7 +85,7 @@ export default function LearnMore() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-6xl font-medium text-gray-900 mb-6">
             Enhance Your Shopify Store with Thinkr
           </h1>
           <p className="text-xl text-gray-600 mb-12">
@@ -115,7 +115,7 @@ export default function LearnMore() {
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
+              <h3 className="text-2xl font-medium mb-4 text-gray-900">
                 {feature.title}
               </h3>
               <p className="text-gray-600">
