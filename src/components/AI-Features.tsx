@@ -81,8 +81,8 @@ const tools = [
     image: "/features/scheduler01.png",
   },
   {
-    title: "Deep Search.",
-    description: "Intelligent product and customer insights",
+    title: "Deep Analysis.",
+    description: "Research reports connected to the web",
     image: "/features/deepsearch01.png",
   },
 ]
@@ -124,10 +124,12 @@ export default function AIFeatures() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {tools.map((tool, index) => (
-              <div key={index} className="space-y-4">
-                <h3 className="text-2xl font-semibold">{tool.title}</h3>
-                <p className="text-gray-600">{tool.description}</p>
-                <div className="bg-gray-800 rounded-lg p-6 aspect-square flex items-center justify-center">
+              <div key={index} className="flex flex-col h-full">
+                <div className="space-y-2 mb-4">
+                  <h3 className="text-2xl font-semibold">{tool.title}</h3>
+                  <p className="text-gray-600 min-h-[48px]">{tool.description}</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-6 aspect-square flex items-center justify-center mt-auto">
                   <Image
                     src={tool.image || "/placeholder.svg"}
                     alt={tool.title}
@@ -136,7 +138,6 @@ export default function AIFeatures() {
                     className="w-full h-auto"
                   />
                 </div>
-
               </div>
             ))}
           </div>

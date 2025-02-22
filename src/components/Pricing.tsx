@@ -18,7 +18,7 @@ const tiers = [
   },
   {
     name: "Growth",
-    price: "$50",
+    price: "$50/month",
     description: "Everything Free+",
     popular: true,
     features: [

@@ -52,6 +52,12 @@ const Header = () => {
                   >
                     Shopify App
                   </a>
+                  <a 
+                    href="/learn-more"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Learn More
+                  </a>
                 </div>
               )}
             </div>
