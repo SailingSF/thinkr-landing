@@ -15,16 +15,16 @@ const features = [
     href: "/learn-more#update-orders"
   },
   {
-    title: "Store analysis.",
+    title: "Create Collections.",
     description:
-      "Get deep insights into your store's performance with AI-powered analytics, automated report tracking, and actionable recommendations for growth.",
-    href: "/learn-more#store-analysis"
+      "Use AI to automatically group and organize products into dynamic collections based on attributes, performance data, and seasonal trends.",
+    href: "/learn-more#create-collections"
   },
   {
-    title: "Create promotions.",
+    title: "Run promotions.",
     description:
       "Automatically generate and optimize promotional campaigns based on customer segments, purchase history, and market trends.",
-    href: "/learn-more#create-promotions"
+    href: "/learn-more#run-promotions"
   },
 ]
 
