@@ -97,7 +97,7 @@ export default function LearnMore() {
                 Install on Shopify
               </Button>
             </Link>
-            <Link href="https://thinkerapp.com" target="_blank">
+            <Link href="https://thinkrapp.com" target="_blank">
               <Button 
                 variant="outline" 
                 size="lg" 
