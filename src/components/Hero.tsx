@@ -6,9 +6,9 @@ const Hero = () => {
     <section className="pb-2 pt-8 sm:pt-16 text-center">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl sm:text-5xl lg:text-[100px] font-medium mb-6 max-w-[1000px] mx-auto leading-tight">
-          Your Shopify Store&apos;s AI Strategist
+          Automate Everyday Shopify Tasks
         </h1>
-        <p className="text-xl sm:text-2xl lg:text-[32px] text-gray-500 font-normal mb-8">One-click AI Agents saving time and resources.</p>
+        <p className="text-xl sm:text-2xl lg:text-[32px] text-gray-500 font-normal mb-8">Save time with <span className="text-primary">one-click AI Agents</span>.</p>
         <div className="flex justify-center items-center space-x-4">
           <Button
             asChild
