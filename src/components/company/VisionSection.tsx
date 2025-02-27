@@ -27,11 +27,11 @@ const VisionSection = ({
       
       <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-12 items-start">
         <div>
-          <div className="text-xl font-light text-gray-600 space-y-6">
+          <div className="text-[16px] sm:text-[20px] md:text-[25px] font-normal text-gray-600 space-y-6">
             <p>{description.paragraph1}</p>
             <p>{description.paragraph2}</p>
           </div>
-          <div className="mt-6 text-xl text-black">
+          <div className="mt-6 text-[16px] sm:text-[20px] md:text-[25px] font-medium text-black">
             <p>And we are just getting started...</p>
           </div>
         </div>
