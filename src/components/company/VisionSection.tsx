@@ -19,8 +19,8 @@ const VisionSection = ({
 }: VisionSectionProps) => {
   return (
     <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
+      <div className="mb-12">
+        <h2 className="text-[32px] sm:text-[45px] md:text-[60px] font-light text-gray-900 text-left">
           {title}
         </h2>
       </div>
