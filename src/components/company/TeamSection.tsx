@@ -21,14 +21,14 @@ interface TeamSectionProps {
 
 const TeamSection = ({ title, teamMembers }: TeamSectionProps) => {
   return (
-    <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
+    <section className="max-w-7xl mx-auto pt-8 pb-20 sm:pt-10 sm:pb-24 md:pt-12 md:pb-28 lg:pt-14 lg:pb-36 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
       <div className="text-left max-w-5xl">
         <h2 className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
           {title}
         </h2>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-2 max-w-5xl pr-0 sm:pr-12 md:pr-24 lg:pr-32">
+      <div className="mt-18 sm:mt-20 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-2 max-w-5xl pr-0 sm:pr-12 md:pr-24 lg:pr-32">
         {teamMembers.map((member) => (
           <div
             key={member.name}
@@ -82,6 +82,24 @@ const TeamSection = ({ title, teamMembers }: TeamSectionProps) => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-24 max-w-5xl">
+        <h2 className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl mb-6">
+          Careers
+        </h2>
+        <p className="text-[16px] sm:text-[20px] md:text-[25px] font-normal text-gray-600 mb-4">
+          We're a team of builders and visionaries creating software that operates at the edge of what's useful and possible. Our work has already improved businesses and we are growing daily.
+        </p>
+        <p className="text-[16px] sm:text-[20px] md:text-[25px] font-normal text-gray-600 mb-8">
+          If you want to join our journey, we'd love to hear from you.
+        </p>
+        <Link 
+          href="/contact" 
+          className="inline-block text-[16px] sm:text-[20px] md:text-[25px] font-medium text-black hover:text-gray-700 transition-colors"
+        >
+          Contact us
+        </Link>
       </div>
     </section>
   );

@@ -18,8 +18,8 @@ const VisionSection = ({
   imageAlt 
 }: VisionSectionProps) => {
   return (
-    <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-left">
-      <div className="mb-12">
+    <section className="max-w-7xl mx-auto py-20 sm:py-24 md:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 text-left">
+      <div className="mb-14 sm:mb-18">
         <h2 className="text-[32px] sm:text-[45px] md:text-[60px] font-light text-gray-900 text-left">
           {title}
         </h2>
