@@ -12,7 +12,7 @@ const HeroSection = ({ title }: HeroSectionProps) => {
           Freeing up business owners valuable<br className="hidden lg:inline" /> 
           time to focus on their passion.
         </h1>
-        <p className="text-xl sm:text-2xl lg:text-[28.8px] text-gray-500 font-normal mb-8 mt-6 max-w-[90%] lg:max-w-[95%] mx-auto">
+        <p className="text-[16px] sm:text-[20px] md:text-[25px] font-normal text-gray-600 mb-8 mt-6 max-w-[90%] lg:max-w-[95%] mx-auto">
           Empower e-commerce entrepreneurs with advanced AI agents that deliver insights, drive decisions, and do the heavy day-to-day lifting.
         </p>
       </div>
