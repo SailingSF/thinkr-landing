@@ -22,13 +22,13 @@ interface TeamSectionProps {
 const TeamSection = ({ title, teamMembers }: TeamSectionProps) => {
   return (
     <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
-      <div className="text-center">
+      <div className="text-left max-w-5xl">
         <h2 className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
           {title}
         </h2>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto">
+      <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-2 max-w-5xl pr-0 sm:pr-12 md:pr-24 lg:pr-32">
         {teamMembers.map((member) => (
           <div
             key={member.name}
