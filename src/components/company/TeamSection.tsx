@@ -89,10 +89,10 @@ const TeamSection = ({ title, teamMembers }: TeamSectionProps) => {
           Careers
         </h2>
         <p className="text-[16px] sm:text-[20px] md:text-[25px] font-normal text-gray-600 mb-4">
-          We're a team of builders and visionaries creating software that operates at the edge of what's useful and possible. Our work has already improved businesses and we are growing daily.
+          We&apos;re a team of builders and visionaries creating software that operates at the edge of what&apos;s useful and possible. Our work has already improved businesses and we are growing daily.
         </p>
         <p className="text-[16px] sm:text-[20px] md:text-[25px] font-normal text-gray-600 mb-8">
-          If you want to join our journey, we'd love to hear from you.
+          If you want to join our journey, we&apos;d love to hear from you.
         </p>
         <Link 
           href="/contact" 
