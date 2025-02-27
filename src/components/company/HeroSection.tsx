@@ -6,7 +6,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ title }: HeroSectionProps) => {
   return (
-    <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <section className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div className="text-center">
         <h1 className="text-4xl sm:text-5xl lg:text-[50px] font-medium text-center mb-4">
           {title}
