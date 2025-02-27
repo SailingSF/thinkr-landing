@@ -35,7 +35,7 @@ const usesCases = [
       "Automated low stock alerts with customizable thresholds",
       "Inventory valuation and cost tracking"
     ],
-    imagePath: "/images/inventory-diagram.svg" // You'll need to create these diagrams
+    imagePath: "/diagrams/inventory-diagram.svg" // You'll need to create these diagrams
   },
   {
     id: "update-orders",
