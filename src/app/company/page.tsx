@@ -48,7 +48,7 @@ export default function CompanyPage() {
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
         <HeroSection 
-          title="Freeing up business owners valuable time to focus on their passion."
+          title="Freeing up business owners' valuable time to focus on their passion."
           subtitle="Empower e-commerce entrepreneurs with advanced AI agents that deliver insights, drive decisions, and do the heavy day-to-day lifting."
         />
         
