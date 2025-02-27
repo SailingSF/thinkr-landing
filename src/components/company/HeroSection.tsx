@@ -8,7 +8,7 @@ const HeroSection = ({ title }: HeroSectionProps) => {
   return (
     <section className="max-w-7xl mx-auto py-14 sm:py-18 md:py-22 lg:py-28 px-4 sm:px-6 lg:px-8">
       <div className="text-center">
-        <h1 className="text-4xl sm:text-5xl lg:text-[50px] font-medium text-center mb-4">
+        <h1 className="text-[36px] sm:text-5xl lg:text-[50px] font-medium text-center mb-4">
           Freeing up business owners' valuable<br className="lg:hidden" />
           <br className="hidden lg:inline" /> 
           time to focus on their passion.
