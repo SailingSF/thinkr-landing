@@ -14,6 +14,9 @@ const HeroImage = () => {
                 fill
                 className="object-contain rounded-lg px-4 md:px-24"
                 priority
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 80vw"
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAEIgJfVfyiCwAAAABJRU5ErkJggg=="
               />
             </div>
             

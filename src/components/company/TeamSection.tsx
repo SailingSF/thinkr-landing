@@ -34,12 +34,16 @@ const TeamSection = ({ title, teamMembers }: TeamSectionProps) => {
             key={member.name}
             className="flex flex-col"
           >
-            <div className="relative w-full h-[400px] md:h-[450px] mb-6 rounded-lg overflow-hidden">
+            <div className="relative w-full aspect-[3/4] mb-6 rounded-lg overflow-hidden">
               <Image
                 src={member.image}
                 alt={member.name}
                 fill
                 className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 500px"
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
               />
             </div>
             <div>
