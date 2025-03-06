@@ -21,7 +21,7 @@ const HeroImage = () => {
             </div>
             
             {/* Feature indicators */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-4 -mt-2 md:-mt-4 lg:-mt-12 px-2 md:px-24 lg:px-32">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-4 -mt-0 md:-mt-8 lg:-mt-18 px-2 md:px-24 lg:px-32">
               <div className="text-center flex flex-col items-center">
                 <div className="mb-3 md:mb-4 flex items-center justify-center h-8 md:h-12">
                   <svg className="w-full h-full max-w-[32px] md:max-w-[60px]" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -43,7 +43,7 @@ const HeroImage = () => {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Set clear goals and let thinkr</p>
+                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Set clear goals and let <strong>thinkr</strong></p>
                   <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">guide your path forward</p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ const HeroImage = () => {
                 </div>
                 <div className="space-y-1">
                   <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Automate and grow with</p>
-                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">thinkr&apos;s intelligent planning</p>
+                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight"><strong>thinkr&apos;s</strong> intelligent planning</p>
                 </div>
               </div>
             </div>
