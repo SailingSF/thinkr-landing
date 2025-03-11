@@ -35,7 +35,7 @@ const usesCases = [
       "Automated low stock alerts with customizable thresholds",
       "Inventory valuation and cost tracking"
     ],
-    imagePath: "/diagrams/inventory-diagram.svg" // You'll need to create these diagrams
+    imagePath: "/diagrams/agent_inventory.png" 
   },
   {
     id: "update-orders",
@@ -48,7 +48,7 @@ const usesCases = [
       "Real-time shipping updates and tracking",
       "Bulk order processing capabilities"
     ],
-    imagePath: "/images/orders-diagram.svg"
+    imagePath: "/diagrams/agent_orders.png"
   },
   {
     id: "store-analysis",
@@ -61,7 +61,7 @@ const usesCases = [
       "Automated report generation and scheduling",
       "AI-powered growth recommendations"
     ],
-    imagePath: "/images/analytics-diagram.svg"
+    imagePath: "/diagrams/agent_analytics.png"
   },
   {
     id: "create-promotions",
@@ -74,7 +74,7 @@ const usesCases = [
       "Automated A/B testing",
       "ROI analysis and optimization"
     ],
-    imagePath: "/images/promotions-diagram.svg"
+    imagePath: "/diagrams/agent_promotions.png"
   }
 ];
 
