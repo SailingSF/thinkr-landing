@@ -1,5 +1,6 @@
 import { DollarSign, Users, PieChart, Search, BarChart, LineChart } from "lucide-react"
 import Image from "next/image"
+import Timeline from "./Timeline"
 
 const features = [
   {
@@ -114,6 +115,9 @@ export default function AIFeatures() {
             ))}
           </div>
         </div>
+
+        {/* Timeline Section */}
+        <Timeline />
 
         {/* AI Tools Section */}
         <div className="py-2">
