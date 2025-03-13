@@ -38,7 +38,7 @@ const Testimonials = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-lg relative">
+            <div key={index} className="bg-white p-8 rounded-xl shadow-lg relative scale-90 md:scale-100">
               <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
                   <img
@@ -48,7 +48,7 @@ const Testimonials = () => {
                   />
                 </div>
               </div>
-              <div className="mt-16">
+              <div className="mt-12">
                 <p className="text-gray-600 mb-6 text-center">
                   {testimonial.quote}
                 </p>
