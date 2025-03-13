@@ -31,13 +31,12 @@ const StarRating = () => (
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" className="pt-4 pb-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          We Care About Our<br />
-          Customers Experience Too
+        <h2 className="text-4xl lg:text-[50px] font-medium tracking-tight text-center text-black animate-fade-in motion-reduce:animate-none mb-24">
+          What Our Customers Are Saying
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white p-8 rounded-xl shadow-lg relative">
               <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
