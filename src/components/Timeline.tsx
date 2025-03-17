@@ -27,7 +27,7 @@ export default function Timeline() {
               {/* Timeline label */}
               <div className="mb-4">
                 <div className="inline-flex px-4 py-1.5 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm font-medium">
-                  TODAY
+                  DAY 1
                 </div>
               </div>
 
@@ -38,19 +38,19 @@ export default function Timeline() {
               
               {/* Card content */}
               <div className="bg-white p-8 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] w-full mt-8">
-                <h3 className="text-2xl font-medium mb-6">Get started.</h3>
+                <h3 className="text-2xl font-medium mb-6">Get started. No excuses.</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Connect your Shopify store in five minutes</span>
+                    <span className="text-gray-600 text-lg">Connect your Shopify store with our App in seconds</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Set up your first AI agent in two minutes</span>
+                    <span className="text-gray-600 text-lg">Deploy your first AI agent in TWO MINUTES</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Create your first automation in one click</span>
+                    <span className="text-gray-600 text-lg">Launch powerful automation with ONE CLICK - instantly</span>
                   </li>
                 </ul>
               </div>
@@ -74,19 +74,19 @@ export default function Timeline() {
 
               {/* Card content */}
               <div className="bg-white p-8 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] w-full mt-8">
-                <h3 className="text-2xl font-medium mb-6">Get comfortable.</h3>
+                <h3 className="text-2xl font-medium mb-6">Get comfortable. Get ahead.</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Connect to marketing, inventory, and 200+ apps</span>
+                    <span className="text-gray-600 text-lg">Take control with connections to marketing, inventory, and 200+ apps</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Set up approval workflows and controls</span>
+                    <span className="text-gray-600 text-lg">Establish ironclad approval workflows and controls - maintain full authority</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Deploy AI-powered campaigns to customers</span>
+                    <span className="text-gray-600 text-lg">Unleash AI-powered campaigns that crush customer acquisition goals</span>
                   </li>
                 </ul>
               </div>
@@ -99,7 +99,7 @@ export default function Timeline() {
               {/* Timeline label */}
               <div className="mb-4">
                 <div className="inline-flex px-4 py-1.5 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm font-medium">
-                  DAY 30
+                  DAY 20
                 </div>
               </div>
 
@@ -114,15 +114,15 @@ export default function Timeline() {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">100% of operations decisions backed by data</span>
+                    <span className="text-gray-600 text-lg">100% of operations decisions backed by hard data - no more guesswork</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Management tasks 8.5x more efficient</span>
+                    <span className="text-gray-600 text-lg">Management tasks 8.5× more efficient - reclaim your time NOW</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Store revenue grows 25% faster</span>
+                    <span className="text-gray-600 text-lg">Store revenue grows 25% faster - watch your competition fall behind</span>
                   </li>
                 </ul>
               </div>
