@@ -7,13 +7,13 @@ const testimonials = [
   },
   {
     name: "Tomas Campbell",
-    role: "Service Technician",
+    role: "Marketing Ads Manager",
     quote: "With thinkr, I've cut my operational time in half. Their AI spots opportunities I'd miss and implements solutions automatically. Now I can focus on strategy instead of tedious admin tasks.",
     image: "/testimonial/testimonialpic2.png"
   },
   {
     name: "Robert Ocampo",
-    role: "Aquatic biologist",
+    role: "Shopify Store Owner",
     quote: "thinkr transformed my Shopify store overnight. The AI identifies revenue opportunities I never saw coming and guides me through implementation. It's the teammate I didn't know I needed.",
     image: "/testimonial/testimonialpic3.png"
   }
