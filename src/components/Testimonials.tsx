@@ -3,19 +3,19 @@ const testimonials = [
     name: "Karla Lynn",
     role: "Shopify Store Owner",
     quote: "There are many variations passages of Lorem ipsum available, but the majority have suffered alteration in some form, by injected or randomised words which don't look even slightly believable if you are going to use.",
-    image: "/testimonials/karla.jpg"
+    image: "/testimonial/testimonialpic1.png"
   },
   {
     name: "Tomas Campbell",
     role: "Service Technician",
     quote: "There are many variations passages of Lorem ipsum available, but the majority have suffered alteration in some form, by injected or randomised words which don't look even slightly believable if you are going to use.",
-    image: "/testimonials/tomas.jpg"
+    image: "/testimonial/testimonialpic2.png"
   },
   {
     name: "Robert Ocampo",
     role: "Aquatic biologist",
     quote: "There are many variations passages of Lorem ipsum available, but the majority have suffered alteration in some form, by injected or randomised words which don't look even slightly believable if you are going to use.",
-    image: "/testimonials/robert.jpg"
+    image: "/testimonial/testimonialpic3.png"
   }
 ]
 
