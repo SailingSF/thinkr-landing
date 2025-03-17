@@ -2,19 +2,19 @@ const testimonials = [
   {
     name: "Karla Lynn",
     role: "Shopify Store Owner",
-    quote: "There are many variations passages of Lorem ipsum available, but the majority have suffered alteration in some form, by injected or randomised words which don't look even slightly believable if you are going to use.",
+    quote: "thinkr delivers actionable e-commerce insights straight to my inbox. It's like having a brilliant operations manager working 24/7, boosting my sales while giving me back time to focus on growth.",
     image: "/testimonial/testimonialpic1.png"
   },
   {
     name: "Tomas Campbell",
     role: "Service Technician",
-    quote: "There are many variations passages of Lorem ipsum available, but the majority have suffered alteration in some form, by injected or randomised words which don't look even slightly believable if you are going to use.",
+    quote: "With thinkr, I've cut my operational time in half. Their AI spots opportunities I'd miss and implements solutions automatically. Now I can focus on strategy instead of tedious admin tasks.",
     image: "/testimonial/testimonialpic2.png"
   },
   {
     name: "Robert Ocampo",
     role: "Aquatic biologist",
-    quote: "There are many variations passages of Lorem ipsum available, but the majority have suffered alteration in some form, by injected or randomised words which don't look even slightly believable if you are going to use.",
+    quote: "thinkr transformed my Shopify store overnight. The AI identifies revenue opportunities I never saw coming and guides me through implementation. It's the teammate I didn't know I needed.",
     image: "/testimonial/testimonialpic3.png"
   }
 ]
