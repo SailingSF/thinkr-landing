@@ -29,7 +29,7 @@ module.exports = {
         gray: {
           DEFAULT: "#898989",
           50: "#F7F7F7",
-          100: "#EBEBEB",
+          100: "#F2F2F2",
           200: "#D6D6D6",
           300: "#C2C2C2",
           400: "#ADADAD",
@@ -100,6 +100,13 @@ module.exports = {
         "pricing-tier": "392px",
         "input-box": "449px",
         footer: "1362px",
+      },
+      maxWidth: {
+        "feature-box": "299px",
+        "big-message": "1253px",
+        "pricing-tier": "392px",
+        "input-box": "449px",
+        "footer": "1362px",
       },
       height: {
         "nav-container": "67px",

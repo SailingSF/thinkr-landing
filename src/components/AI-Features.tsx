@@ -25,40 +25,42 @@ const tools = [
 
 export default function AIFeatures() {
   return (
-    <section className="pt-20 pb-32 px-4">
+    <section className="pt-12 sm:pt-16 md:pt-20 pb-16 sm:pb-24 md:pb-32 px-4">
       <div className="container mx-auto">
         {/* AI Tools Section */}
         <div className="py-2">
-          <h2 className="text-[36px] md:text-[50px] font-medium mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-[36px] lg:text-[50px] font-medium mb-8 sm:mb-12">
             The latest AI features,
             <br />
             for your shopify store.
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
             {tools.map((tool, index) => (
-              <div key={index} className="flex flex-col h-full">
-                <div className="space-y-2 mb-4">
-                  <h3 className="text-2xl font-semibold">{tool.title}</h3>
-                  <p className="text-gray-600 min-h-[48px]">{tool.description}</p>
+              <div key={index} className="flex flex-col">
+                {/* Fixed height text container */}
+                <div className="min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] mb-6">
+                  <h3 className="text-xl sm:text-2xl font-semibold">{tool.title}</h3>
+                  <p className="text-gray-600 text-sm sm:text-base mt-2">{tool.description}</p>
                 </div>
-                <div className="bg-gray-800 rounded-lg p-6 aspect-square flex items-center justify-center mt-auto">
-                  <Image
-                    src={tool.image || "/placeholder.svg"}
-                    alt={tool.title}
-                    width={300}
-                    height={200}
-                    className='w-full h-auto'
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    loading="lazy"
-                    placeholder="blur"
-                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-                  />
+                
+                {/* Image container */}
+                <div className="bg-gray-800 rounded-lg p-4 flex items-center justify-center mx-auto w-full max-w-[280px]">
+                  <div className="w-full h-[185px] sm:h-[210px] flex items-center justify-center">
+                    <Image
+                      src={tool.image || "/placeholder.svg"}
+                      alt={tool.title}
+                      width={210}
+                      height={210}
+                      className="w-auto h-auto max-w-full max-h-full object-contain"
+                      {...(index < 2 ? { priority: true } : { loading: 'lazy' })}
+                      quality={90}
+                    />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   )
