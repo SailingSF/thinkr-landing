@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const testimonials = [
   {
     name: "Karla Lynn",
@@ -41,9 +43,11 @@ const Testimonials = () => {
             <div key={index} className="bg-white p-8 rounded-xl shadow-lg relative scale-90 md:scale-100">
               <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={96}
+                    height={96}
                     className="w-full h-full object-cover"
                   />
                 </div>
