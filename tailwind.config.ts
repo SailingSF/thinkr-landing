@@ -101,6 +101,13 @@ module.exports = {
         "input-box": "449px",
         footer: "1362px",
       },
+      maxWidth: {
+        "feature-box": "299px",
+        "big-message": "1253px",
+        "pricing-tier": "392px",
+        "input-box": "449px",
+        "footer": "1362px",
+      },
       height: {
         "nav-container": "67px",
         "nav-button": "41px",
