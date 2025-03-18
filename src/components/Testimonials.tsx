@@ -33,16 +33,16 @@ const StarRating = () => (
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="pt-4 pb-20 bg-white">
+    <section id="testimonials" className="pt-4 pb-16 sm:pb-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl lg:text-[50px] font-medium tracking-tight text-center text-black animate-fade-in motion-reduce:animate-none mb-24">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-medium tracking-tight text-center text-black animate-fade-in motion-reduce:animate-none mb-16 sm:mb-24">
           What Our Customers Are Saying
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-lg relative scale-90 md:scale-100">
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <div key={index} className="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative mt-16">
+              <div className="absolute -top-14 sm:-top-12 left-1/2 transform -translate-x-1/2">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -52,13 +52,13 @@ const Testimonials = () => {
                   />
                 </div>
               </div>
-              <div className="mt-12">
-                <p className="text-gray-600 mb-6 text-center">
+              <div className="mt-8 sm:mt-12">
+                <p className="text-gray-600 mb-4 sm:mb-6 text-center text-sm sm:text-base">
                   {testimonial.quote}
                 </p>
                 <div className="text-center">
-                  <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                  <p className="text-gray-500 text-sm mb-2">{testimonial.role}</p>
+                  <h4 className="font-semibold text-base sm:text-lg">{testimonial.name}</h4>
+                  <p className="text-gray-500 text-xs sm:text-sm mb-2">{testimonial.role}</p>
                   <div className="flex justify-center">
                     <StarRating />
                   </div>

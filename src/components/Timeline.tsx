@@ -3,53 +3,65 @@ import Link from "next/link"
 export default function Timeline() {
   return (
     <div className="w-full max-w-[1400px] mx-auto px-4 pb-8 md:pb-14">
-      <div className="text-center mb-16 md:mb-24">
-        <h2 className="text-[36px] md:text-[50px] font-medium mb-4">
+      <div className="text-center mb-10 sm:mb-16 md:mb-24">
+        <h2 className="text-3xl sm:text-4xl md:text-[50px] font-medium mb-4">
           Here&apos;s what you can get done with thinkr in just 30 days.
         </h2>
-        <Link href="/signup" className="inline-block">
-          <div className="text-primary hover:text-primary/80 transition-colors text-lg font-medium">
+        <Link href="https://www.thinkrapp.com/" className="inline-block">
+          <div className="text-primary hover:text-primary/80 transition-colors text-base sm:text-lg font-medium">
             Get started for free →
           </div>
         </Link>
       </div>
 
       <div className="relative">
-        {/* Single connecting line - only visible on desktop */}
-        <div className="hidden md:block absolute top-[45px] left-[16%] right-[16%] h-[1px] bg-gray-200" />
-
         {/* Timeline items */}
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {/* Today */}
-          <div className="relative">
-            <div className="flex flex-col items-center">
-              {/* Timeline label */}
-              <div className="mb-4">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm font-medium">
-                  DAY 1
-                </div>
+          {/* Desktop Timeline connecting lines - only between dots */}
+          <div className="hidden md:block absolute top-[42px] left-[calc(16.667%+42px)] right-[calc(50%-21px)] h-[2px] bg-gray-200 z-0" />
+          <div className="hidden md:block absolute top-[42px] left-[calc(50%+21px)] right-[calc(16.667%+42px)] h-[2px] bg-gray-200 z-0" />
+          
+          {/* Day 1 */}
+          <div className="relative md:block flex items-start">
+            {/* Mobile timeline dot and line for Day 1 */}
+            <div className="md:hidden flex flex-col items-center mr-4 flex-shrink-0">
+              <div className="w-5 h-5 rounded-full bg-white border-2 border-primary flex items-center justify-center relative z-10 mt-[30px]">
+                <div className="w-2 h-2 rounded-full bg-primary"></div>
               </div>
-
-              {/* Timeline dot - only visible on desktop */}
-              <div className="hidden md:block absolute top-[45px] left-[50%] -translate-x-[5px]">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#8B5CF6] relative z-10" />
+              <div className="w-[2px] h-[calc(100%-60px)] bg-gray-200 my-2"></div>
+            </div>
+            
+            <div className="flex flex-col md:items-center">
+              {/* Timeline dot and label container */}
+              <div className="flex flex-col md:items-center relative z-10">
+                {/* Timeline label */}
+                <div className="mb-4">
+                  <div className="inline-flex px-4 py-1.5 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm font-medium">
+                    DAY 1
+                  </div>
+                </div>
+                
+                {/* Desktop Timeline dot */}
+                <div className="hidden md:flex w-5 h-5 rounded-full bg-white border-2 border-primary items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
               </div>
               
               {/* Card content */}
-              <div className="bg-white p-8 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] w-full mt-8">
-                <h3 className="text-2xl font-medium mb-6">Get started. No excuses.</h3>
-                <ul className="space-y-4">
+              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] w-full mt-4 md:mt-8">
+                <h3 className="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Get started. No excuses.</h3>
+                <ul className="space-y-3 sm:space-y-4">
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Connect your Shopify store with our App in seconds</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Connect your Shopify store with our App in seconds</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Deploy your first AI agent in TWO MINUTES</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Deploy your first AI agent in TWO MINUTES</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Launch powerful automation with ONE CLICK - instantly</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Launch powerful automation with ONE CLICK - instantly</span>
                   </li>
                 </ul>
               </div>
@@ -57,71 +69,93 @@ export default function Timeline() {
           </div>
 
           {/* Day 5 */}
-          <div className="relative">
-            <div className="flex flex-col items-center">
-              {/* Timeline label */}
-              <div className="mb-4">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm font-medium">
-                  DAY 5
+          <div className="relative md:block flex items-start">
+            {/* Mobile timeline dot and line for Day 5 */}
+            <div className="md:hidden flex flex-col items-center mr-4 flex-shrink-0">
+              <div className="w-5 h-5 rounded-full bg-white border-2 border-primary flex items-center justify-center relative z-10 mt-[30px]">
+                <div className="w-2 h-2 rounded-full bg-primary"></div>
+              </div>
+              <div className="w-[2px] h-[calc(100%-60px)] bg-gray-200 my-2"></div>
+            </div>
+            
+            <div className="flex flex-col md:items-center">
+              {/* Timeline dot and label container */}
+              <div className="flex flex-col md:items-center relative z-10">
+                {/* Timeline label */}
+                <div className="mb-4">
+                  <div className="inline-flex px-4 py-1.5 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm font-medium">
+                    DAY 5
+                  </div>
+                </div>
+                
+                {/* Desktop Timeline dot */}
+                <div className="hidden md:flex w-5 h-5 rounded-full bg-white border-2 border-primary items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
                 </div>
               </div>
 
-              {/* Timeline dot - only visible on desktop */}
-              <div className="hidden md:block absolute top-[45px] left-[50%] -translate-x-[5px]">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#8B5CF6] relative z-10" />
-              </div>
-
               {/* Card content */}
-              <div className="bg-white p-8 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] w-full mt-8">
-                <h3 className="text-2xl font-medium mb-6">Get comfortable. Get ahead.</h3>
-                <ul className="space-y-4">
+              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] w-full mt-4 md:mt-8">
+                <h3 className="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Get comfortable. Get ahead.</h3>
+                <ul className="space-y-3 sm:space-y-4">
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Take control with connections to marketing, inventory, and 200+ apps</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Take control with connections to marketing, inventory, and 200+ apps</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Establish ironclad approval workflows and controls - maintain full authority</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Establish ironclad approval workflows and controls - maintain full authority</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Unleash AI-powered campaigns that crush customer acquisition goals</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Unleash AI-powered campaigns that crush customer acquisition goals</span>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Day 30 */}
-          <div className="relative">
-            <div className="flex flex-col items-center">
-              {/* Timeline label */}
-              <div className="mb-4">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm font-medium">
-                  DAY 20
+          {/* Day 20 */}
+          <div className="relative md:block flex items-start">
+            {/* Mobile timeline dot and line for Day 20 */}
+            <div className="md:hidden flex flex-col items-center mr-4 flex-shrink-0">
+              <div className="w-5 h-5 rounded-full bg-white border-2 border-primary flex items-center justify-center relative z-10 mt-[30px]">
+                <div className="w-2 h-2 rounded-full bg-primary"></div>
+              </div>
+              {/* No line after the last dot */}
+            </div>
+            
+            <div className="flex flex-col md:items-center">
+              {/* Timeline dot and label container */}
+              <div className="flex flex-col md:items-center relative z-10">
+                {/* Timeline label */}
+                <div className="mb-4">
+                  <div className="inline-flex px-4 py-1.5 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm font-medium">
+                    DAY 20
+                  </div>
+                </div>
+                
+                {/* Desktop Timeline dot */}
+                <div className="hidden md:flex w-5 h-5 rounded-full bg-white border-2 border-primary items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
                 </div>
               </div>
 
-              {/* Timeline dot - only visible on desktop */}
-              <div className="hidden md:block absolute top-[45px] left-[50%] -translate-x-[5px]">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#8B5CF6] relative z-10" />
-              </div>
-
               {/* Card content */}
-              <div className="bg-white p-8 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] w-full mt-8">
-                <h3 className="text-2xl font-medium mb-6">Ask why you didn&apos;t switch years ago.</h3>
-                <ul className="space-y-4">
+              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] w-full mt-4 md:mt-8">
+                <h3 className="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Ask why you didn&apos;t switch years ago.</h3>
+                <ul className="space-y-3 sm:space-y-4">
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">100% of operations decisions backed by hard data - no more guesswork</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">100% of operations decisions backed by hard data - no more guesswork</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Management tasks 8.5× more efficient - reclaim your time NOW</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Management tasks 8.5× more efficient - reclaim your time NOW</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary mr-3 text-lg">✓</span>
-                    <span className="text-gray-600 text-lg">Store revenue grows 25% faster - watch your competition fall behind</span>
+                    <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Store revenue grows 25% faster - watch your competition fall behind</span>
                   </li>
                 </ul>
               </div>
