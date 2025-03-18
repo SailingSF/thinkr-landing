@@ -91,6 +91,15 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      maxWidth: {
+        "nav-container": "857px",
+        "hero-image": "1253px",
+        "feature-box": "299px",
+        "big-message": "1253px",
+        "pricing-tier": "392px",
+        "input-box": "449px",
+        "footer": "1362px",
+      },
       width: {
         "nav-container": "857px",
         "nav-button": "107px",
@@ -99,7 +108,7 @@ module.exports = {
         "big-message": "1253px",
         "pricing-tier": "392px",
         "input-box": "449px",
-        footer: "1362px",
+        "footer": "1362px",
       },
       height: {
         "nav-container": "67px",
@@ -110,7 +119,7 @@ module.exports = {
         "big-message": "293px",
         "pricing-tier": "496px",
         "input-box": "53px",
-        footer: "450px",
+        "footer": "450px",
       },
     },
   },
