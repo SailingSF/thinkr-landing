@@ -5,6 +5,8 @@ import Footer from "@/components/Footer"
 import Features from "@/components/Features"
 import AIFeatures from "@/components/AI-Features"
 import Pricing from "@/components/Pricing"
+import Timeline from "@/components/Timeline"
+import Testimonials from "@/components/Testimonials"
 import SimpleContactForm from "@/components/SimpleContactForm"
 
 export default function Home() {
@@ -14,7 +16,9 @@ export default function Home() {
       <Hero />
       <HeroImage />
       <Features />
+      <Timeline />
       <AIFeatures />
+      <Testimonials />
       <Pricing />
       <SimpleContactForm />
       <Footer />

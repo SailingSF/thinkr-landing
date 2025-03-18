@@ -1,6 +1,5 @@
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Testimonials from "@/components/Testimonials"
 
 const tiers = [
   {
@@ -51,7 +50,6 @@ const tiers = [
 export default function Pricing() {
   return (
     <>
-      <Testimonials />
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-left mb-16">

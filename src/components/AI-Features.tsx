@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Timeline from "./Timeline"
 
 const tools = [
   {
@@ -28,11 +27,6 @@ export default function AIFeatures() {
   return (
     <section className="pt-20 pb-32 px-4">
       <div className="container mx-auto">
-        <h2 className="text-[36px] md:text-[50px] font-medium text-center mb-12">The easiest way to bring AI into your workflow.</h2>
-
-        {/* Timeline Section */}
-        <Timeline />
-
         {/* AI Tools Section */}
         <div className="py-2">
           <h2 className="text-[36px] md:text-[50px] font-medium mb-12">

@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export default function Timeline() {
   return (
-    <div className="w-full max-w-[1400px] mx-auto px-4 pb-24 md:pb-32">
+    <div className="w-full max-w-[1400px] mx-auto px-4 pb-8 md:pb-14">
       <div className="text-center mb-16 md:mb-24">
         <h2 className="text-[36px] md:text-[50px] font-medium mb-4">
           Here&apos;s what you can get done with thinkr in just 30 days.
