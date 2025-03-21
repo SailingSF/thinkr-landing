@@ -70,7 +70,7 @@ const Header = () => {
               )}
             </div>
             <Link href="/company" className="hover:text-gray-600">
-              Company
+              About
             </Link>
             <Link href="/contact" className="hover:text-gray-600">
               Contact
@@ -145,7 +145,7 @@ const Header = () => {
                 )}
               </div>
               <Link href="/company" className="block py-3 hover:text-gray-600 text-base">
-                Company
+                About
               </Link>
               <Link href="/contact" className="block py-3 hover:text-gray-600 text-base">
                 Contact

@@ -1,6 +1,18 @@
+"use client"
+
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const HeroImage = () => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the image
+    const img = new window.Image();
+    img.src = '/hero_image_3.svg';
+    img.onload = () => setIsImageLoaded(true);
+  }, []);
+
   return (
     <section className="py-4 md:py-12 px-4 md:px-32">
     <div className="relative w-full mx-auto">
@@ -8,16 +20,26 @@ const HeroImage = () => {
         <div className="bg-gray-100 rounded-[24px] p-4 pb-8 md:p-8 md:pb-16">
           <div className="relative w-full -mt-4 md:-mt-6">
             <div className="relative w-full aspect-[16/9]">
-              <Image
-                src="/hero_image_3.svg"
-                alt="Application interface showing multiple screens including a playbook, chat interface, and customer support"
-                fill
-                className="object-contain rounded-lg px-4 md:px-24"
-                priority
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 80vw"
-                placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAEIgJfVfyiCwAAAABJRU5ErkJggg=="
-              />
+              {isImageLoaded ? (
+                <Image
+                  src="/hero_image_3.svg"
+                  alt="Application interface showing multiple screens including a playbook, chat interface, and customer support"
+                  fill
+                  className="object-contain rounded-lg px-4 md:px-24"
+                  priority
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 80vw"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAEIgJfVfyiCwAAAABJRU5ErkJggg=="
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  onLoad={() => setIsImageLoaded(true)}
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                  <div className="w-full h-full bg-gray-200 animate-pulse rounded-lg"></div>
+                </div>
+              )}
             </div>
             
             {/* Feature indicators */}
