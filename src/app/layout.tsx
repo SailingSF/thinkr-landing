@@ -4,8 +4,13 @@ import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
+import OptimizeLoadingMetrics from "@/components/OptimizeLoadingMetrics"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap', // Optimize font loading
+  fallback: ['system-ui', 'sans-serif'], // Provide fallback fonts
+})
 
 // Get GTM ID from environment variable
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KSLVDRZF'
@@ -21,6 +26,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.thinkrapp.com/",
     siteName: "thinkr",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "thinkr - Automate Everyday Shopify Operations"
+      }
+    ]
   },
   robots: {
     index: true,
@@ -30,9 +43,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "thinkr - Automate Everyday Shopify Operations",
     description: "thinkr is an AI agent for ecommerce that puts Shopify operations on autopilot. Save time with one-click automations for your store.",
+    images: ["/og-image.jpg"]
   },
   alternates: {
     canonical: "https://www.thinkrapp.com/",
+  },
+  verification: {
+    google: "google-site-verification-code",
+  },
+  icons: {
+    icon: ["/favicon.ico"],
+    apple: ["/apple-touch-icon.png"],
   },
 }
 
@@ -57,6 +78,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.thinkrapp.com" />
       </head>
       <body className={inter.className}>
+        {/* Performance optimization components */}
+        <OptimizeLoadingMetrics />
+        
         {/* Google Tag Manager - Body Section (noscript) */}
         <noscript dangerouslySetInnerHTML={{ __html: `
           <iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}"

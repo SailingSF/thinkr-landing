@@ -1,5 +1,6 @@
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const tiers = [
   {
@@ -78,9 +79,14 @@ export default function Pricing() {
                     <span className="text-xl font-light text-primary-400">{tier.price}</span>
                   </div>
                   <div className="mb-4">
-                      <Button variant="default" className="text-white px-6">
-                          {tier.cta}
+                    <Link href={tier.ctaLink}>
+                      <Button 
+                        variant="default" 
+                        className="text-white px-6 bg-primary hover:bg-primary/90 focus:ring-primary/70"
+                      >
+                        {tier.cta}
                       </Button>
+                    </Link>
                   </div>
                 </div>
 

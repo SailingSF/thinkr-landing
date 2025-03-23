@@ -9,13 +9,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        outlineCustom: "border border-primary bg-background",
+        default: "bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-600",
+        destructive: "bg-red-700 text-white hover:bg-red-800 focus:ring-red-500",
+        outline: "border-2 border-gray-600 bg-white text-gray-800 hover:bg-gray-100 hover:text-gray-900",
+        secondary: "bg-gray-800 text-white hover:bg-gray-900 focus:ring-gray-700",
+        ghost: "hover:bg-gray-200 text-gray-900 hover:text-black",
+        link: "text-blue-700 underline-offset-4 hover:underline focus:ring-blue-500",
+        outlineCustom: "border-2 border-primary-600 bg-white text-primary-700 hover:bg-primary-50",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -41,15 +41,19 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, textColor, style, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    
+    const extraProps = asChild ? {} : { role: "button" as const }
+    
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         style={{ 
           ...style, 
-          color: textColor,
-          borderColor: variant === 'outlineCustom' ? textColor : undefined 
+          color: textColor ? textColor : undefined,
+          borderColor: variant === 'outlineCustom' ? (textColor || 'hsl(var(--primary-600))') : undefined 
         }}
+        {...extraProps}
         {...props}
       />
     )
