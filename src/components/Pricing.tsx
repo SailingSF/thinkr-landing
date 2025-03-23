@@ -80,7 +80,10 @@ export default function Pricing() {
                   </div>
                   <div className="mb-4">
                     <Link href={tier.ctaLink}>
-                      <Button variant="default" className="text-white px-6">
+                      <Button 
+                        variant="default" 
+                        className="text-white px-6 bg-primary hover:bg-primary/90 focus:ring-primary/70"
+                      >
                         {tier.cta}
                       </Button>
                     </Link>
