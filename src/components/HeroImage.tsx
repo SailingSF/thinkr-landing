@@ -9,7 +9,7 @@ const HeroImage = () => {
   useEffect(() => {
     // Preload the image
     const img = new window.Image();
-    img.src = '/hero_image_3.svg';
+    img.src = '/hero_image.webp';
     img.onload = () => setIsImageLoaded(true);
   }, []);
 
@@ -22,7 +22,7 @@ const HeroImage = () => {
               <div className="relative w-full aspect-[3/2] md:aspect-[16/9]">
                 {isImageLoaded ? (
                   <Image
-                    src="/hero_image_3.svg"
+                    src="/hero_image.webp"
                     alt="Application interface showing multiple screens including a playbook, chat interface, and customer support"
                     fill
                     className="object-contain rounded-lg px-2 md:px-16"

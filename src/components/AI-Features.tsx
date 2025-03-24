@@ -4,22 +4,22 @@ const tools = [
   {
     title: "Autopilot.",
     description: "Automate everyday tasks",
-    image: "/features/autopilot_feature.png",
+    image: "/features/autopilot_feature.webp",
   },
   {
     title: "Chat.",
     description: "AI-powered customer support",
-    image: "/features/chat_feature.png",
+    image: "/features/chat_feature.webp",
   },
   {
     title: "Scheduler.",
     description: "Smart campaign and content scheduling",
-    image: "/features/scheduler_feature.png",
+    image: "/features/scheduler_feature.webp",
   },
   {
     title: "Deep Analysis.",
     description: "Research reports connected to the web",
-    image: "/features/deep_search_feature.png",
+    image: "/features/deep_search_feature.webp",
   },
 ]
 
