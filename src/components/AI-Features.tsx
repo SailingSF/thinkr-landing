@@ -28,8 +28,8 @@ export default function AIFeatures() {
     <section className="pt-16 md:pt-32 pb-24 md:pb-48">
       <div className="w-full container mx-auto px-4">
         <div className="mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium mb-4">
-            The latest AI features, for your shopify store.
+          <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium mb-4 text-center">
+            The latest AI features, for your Shopify store.
           </h2>
         </div>
 
@@ -38,7 +38,7 @@ export default function AIFeatures() {
             <div key={index} className="group flex flex-col">
               <div className="mb-6">
                 <h3 className="text-2xl font-medium mb-3">{tool.title}</h3>
-                <p className="text-muted-foreground text-base">{tool.description}</p>
+                <p className="text-muted-foreground text-lg">{tool.description}</p>
               </div>
               <div className="relative h-[250px] md:h-0 md:pb-[61.3%] w-full overflow-hidden rounded-lg">
                 <Image

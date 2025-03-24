@@ -38,8 +38,8 @@ export default function Home() {
       <Header />
       <Hero />
       <HeroImage />
-      <Features />
       <Timeline />
+      <Features />
       <AIFeatures />
       <Testimonials />
       <Pricing />

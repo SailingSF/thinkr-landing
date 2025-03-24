@@ -37,9 +37,9 @@ export default function Features() {
   return (
     <section className="py-4 md:py-12">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium text-center mb-4">AI that goes beyond search and chat.</h2>
-          <p className="text-[18px] sm:text-[25px] font-normal text-center text-muted-foreground">Run multiple automations in seconds, across apps.</p>
+        <div className="mb-16">
+          <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium mb-4">AI that goes beyond search and chat.</h2>
+          <p className="text-[18px] sm:text-[25px] font-normal text-muted-foreground">Run multiple automations in seconds, across apps.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -55,7 +55,7 @@ export default function Features() {
                 />
               </div>
               <h3 className="text-2xl font-medium mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground text-base mb-6">{feature.description}</p>
+              <p className="text-muted-foreground text-lg mb-6">{feature.description}</p>
               <Link href={feature.href}>
                 <Button variant="outlineCustom" textColor="hsl(var(--primary))" className="w-fit hover:bg-secondary/80">
                   See Use Case
