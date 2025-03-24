@@ -40,8 +40,9 @@ const Testimonials = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative mt-16">
-              <div className="absolute -top-14 sm:-top-12 left-1/2 transform -translate-x-1/2">
+            <div key={index} className="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative mt-6 sm:mt-16">
+              {/* Mobile layout - hide the absolute positioned image */}
+              <div className="absolute -top-14 sm:-top-12 left-1/2 transform -translate-x-1/2 hidden sm:block">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
                   <Image
                     src={testimonial.image}
@@ -52,13 +53,38 @@ const Testimonials = () => {
                   />
                 </div>
               </div>
-              <div className="mt-8 sm:mt-12">
+              <div className="mt-0 sm:mt-12">
                 <p className="text-gray-600 mb-4 sm:mb-6 text-center text-sm sm:text-base">
                   {testimonial.quote}
                 </p>
-                <div className="text-center">
-                  <h4 className="font-semibold text-base sm:text-lg">{testimonial.name}</h4>
-                  <p className="text-gray-500 text-xs sm:text-sm mb-2">{testimonial.role}</p>
+                <div className="flex flex-col sm:block">
+                  {/* Mobile layout - flexbox with image next to name */}
+                  <div className="flex items-center justify-center mb-2 sm:hidden">
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-lg mr-3 flex-shrink-0">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex items-center">
+                      <h4 className="font-semibold text-base">{testimonial.name}</h4>
+                    </div>
+                  </div>
+                  
+                  {/* Mobile layout - role on a separate line */}
+                  <div className="text-center sm:hidden mb-2">
+                    <p className="text-gray-500 text-xs">{testimonial.role}</p>
+                  </div>
+                  
+                  {/* Desktop layout - centered name and role */}
+                  <div className="hidden sm:block text-center">
+                    <h4 className="font-semibold text-base sm:text-lg">{testimonial.name}</h4>
+                    <p className="text-gray-500 text-xs sm:text-sm mb-2">{testimonial.role}</p>
+                  </div>
+                  
                   <div className="flex justify-center">
                     <StarRating />
                   </div>
