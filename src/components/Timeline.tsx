@@ -4,9 +4,9 @@ export default function Timeline() {
   return (
     <div className="w-full container mx-auto px-4 pb-8 md:pb-14">
       <div className="text-center mb-10 sm:mb-16 md:mb-24">
-        <h2 className="text-3xl sm:text-4xl md:text-[50px] font-medium mb-4">
-          Here's what you can get done with thinkr<br />
-          in just 30 days.
+        <h2 className="text-[1.6rem] sm:text-4xl md:text-[50px] font-medium mb-4">
+          <span className="block">What you can get done in thinkr</span>
+          <span className="block">in just 30 days.</span>
         </h2>
         <Link href="https://www.thinkrapp.com/" className="inline-block">
           <div className="text-primary hover:text-primary/80 transition-colors text-base sm:text-lg font-medium">
