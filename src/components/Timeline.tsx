@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Timeline() {
   return (
-    <div className="w-full max-w-[1400px] mx-auto px-4 pb-8 md:pb-14">
+    <div className="w-full container mx-auto px-4 pb-8 md:pb-14">
       <div className="text-center mb-10 sm:mb-16 md:mb-24">
         <h2 className="text-3xl sm:text-4xl md:text-[50px] font-medium mb-4">
           Here's what you can get done with thinkr<br />
