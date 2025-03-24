@@ -18,9 +18,6 @@ export default function Timeline() {
       <div className="relative">
         {/* Timeline items */}
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {/* Desktop Timeline connecting lines - only between dots */}
-          <div className="hidden md:block absolute top-[42px] left-[calc(16.667%+42px)] right-[calc(50%-21px)] h-[2px] bg-gray-200 z-0" />
-          <div className="hidden md:block absolute top-[42px] left-[calc(50%+21px)] right-[calc(16.667%+42px)] h-[2px] bg-gray-200 z-0" />
           
           {/* Day 1 */}
           <div className="relative md:block flex items-start">
@@ -101,7 +98,7 @@ export default function Timeline() {
                 <ul className="space-y-3 sm:space-y-4">
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
-                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Access personalized AI suggestions tailored to your store's unique data</span>
+                    <span className="text-gray-600 text-sm sm:text-base md:text-lg">Access personalized AI suggestions tailored to your store&apos;s unique data</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3 text-base sm:text-lg flex-shrink-0">✓</span>
