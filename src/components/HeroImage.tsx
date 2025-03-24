@@ -51,8 +51,8 @@ const HeroImage = () => {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Connect Shopify and integrate</p>
-                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">all your business tools</p>
+                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Connect your shopify store</p>
+                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">and other applications</p>
                 </div>
               </div>
               
@@ -66,7 +66,7 @@ const HeroImage = () => {
                 </div>
                 <div className="space-y-1">
                   <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Set clear goals and let <strong>thinkr</strong></p>
-                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">guide your path forward</p>
+                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">scale your store</p>
                 </div>
               </div>
               
@@ -78,8 +78,8 @@ const HeroImage = () => {
                   </svg>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Get custom strategies with</p>
-                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">detailed steps to implement</p>
+                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">Approve personalized strategies</p>
+                  <p className="text-[14px] font-normal text-[#8d8a8b] leading-tight">to grow your business</p>
                 </div>
               </div>
               
