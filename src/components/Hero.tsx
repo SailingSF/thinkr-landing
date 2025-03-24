@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="pb-4 pt-6 sm:pt-8 md:pt-12 lg:pt-16 text-center">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[100px] font-medium mb-4 sm:mb-6 max-w-[1000px] mx-auto leading-[1.15] sm:leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[45px] xl:text-[52px] 2xl:text-[75px] font-medium mb-4 sm:mb-6 max-w-[1000px] mx-auto leading-[1.15] sm:leading-tight">
           Automate Everyday Shopify Tasks in One-Click
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl lg:text-[32px] text-gray-500 font-normal mb-6 sm:mb-8 max-w-[800px] mx-auto">
