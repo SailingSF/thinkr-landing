@@ -24,6 +24,8 @@ declare global {
  * 1. Reporting LCP (Largest Contentful Paint) for monitoring
  * 2. Implementing font optimization techniques
  * 3. Preventing layout shifts by adding key dimensions upfront
+ * 4. Preloading critical images
+ * 5. Using fetchpriority for critical resources
  */
 export default function OptimizeLoadingMetrics() {
   useEffect(() => {
@@ -77,6 +79,19 @@ export default function OptimizeLoadingMetrics() {
         document.head.appendChild(link)
       }
     })
+    
+    // Preload critical hero image
+    const preloadHeroImage = () => {
+      const link = document.createElement('link')
+      link.rel = 'preload'
+      link.as = 'image'
+      link.href = '/hero_image.webp'
+      link.type = 'image/webp'
+      link.fetchPriority = 'high'
+      document.head.appendChild(link)
+    }
+    
+    preloadHeroImage()
     
     // Clean up
     return () => {
