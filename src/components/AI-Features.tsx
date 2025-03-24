@@ -25,8 +25,8 @@ const tools = [
 
 export default function AIFeatures() {
   return (
-    <section className="pt-16 md:pt-32 pb-24 md:pb-48 px-4 md:px-32">
-      <div className="w-full mx-auto">
+    <section className="pt-16 md:pt-32 pb-24 md:pb-48">
+      <div className="w-full container mx-auto px-4">
         <div className="mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium mb-4">
             The latest AI features, for your shopify store.

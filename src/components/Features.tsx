@@ -35,17 +35,17 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="pt-16 md:pt-32 pb-24 md:pb-48 px-4 md:px-32">
-      <div className="w-full mx-auto">
+    <section className="py-4 md:py-12">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium text-center mb-4">AI that goes beyond search and chat.</h2>
           <p className="text-[18px] sm:text-[25px] font-normal text-center text-muted-foreground">Run multiple automations in seconds, across apps.</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="group">
-              <div className="relative h-[200px] sm:h-[250px] w-full overflow-hidden rounded-lg mb-6">
+              <div className="relative h-[300px] sm:h-[400px] lg:h-[450px] w-full overflow-hidden rounded-lg mb-6">
                 <Image
                   src={feature.image}
                   alt={feature.title}
