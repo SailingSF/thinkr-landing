@@ -10,6 +10,11 @@ import Testimonials from "@/components/Testimonials"
 import SimpleContactForm from "@/components/SimpleContactForm"
 import Script from "next/script"
 
+// Opt into partial prerendering for better performance
+export const runtime = 'edge';
+export const preferredRegion = 'auto';
+export const dynamic = 'force-static';
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">

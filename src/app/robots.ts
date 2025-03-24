@@ -4,8 +4,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
-      disallow: ['/admin', '/api/'],
+      allow: ['/'],
+      disallow: ['/api/', '/admin/'],
     },
     sitemap: 'https://www.thinkrapp.com/sitemap.xml',
   }

@@ -3,6 +3,7 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 import OptimizeLoadingMetrics from "@/components/OptimizeLoadingMetrics"
 
@@ -88,6 +89,7 @@ export default function RootLayout({
         `}} />
         {children}
         <Analytics />
+        <SpeedInsights />
         {/* Google Tag Manager - Script Section moved here for better performance */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
