@@ -3,7 +3,7 @@ import Image from "next/image"
 const tools = [
   {
     title: "Autopilot.",
-    description: "Automated inventory and pricing management",
+    description: "Automate everyday tasks",
     image: "/features/autopilot_feature.png",
   },
   {
@@ -35,7 +35,7 @@ export default function AIFeatures() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {tools.map((tool, index) => (
-            <div key={index} className="group flex flex-col">
+            <div key={index} className="group flex flex-col h-full justify-between">
               <div className="mb-6">
                 <h3 className="text-2xl font-medium mb-3">{tool.title}</h3>
                 <p className="text-muted-foreground text-lg">{tool.description}</p>

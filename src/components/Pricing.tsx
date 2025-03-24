@@ -54,7 +54,7 @@ export default function Pricing() {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-left mb-16">
-            <h2 className="text-6xl font-medium mb-4">Pricing.</h2>
+            <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium mb-4">Pricing.</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">

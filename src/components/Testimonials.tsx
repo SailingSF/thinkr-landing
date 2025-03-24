@@ -36,7 +36,7 @@ const Testimonials = () => {
     <section id="testimonials" className="pt-4 pb-16 sm:pb-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-medium tracking-tight text-center text-black animate-fade-in motion-reduce:animate-none mb-16 sm:mb-24">
-          What Our Customers Are Saying
+          Every store grows when using thinkr
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
           {testimonials.map((testimonial, index) => (
