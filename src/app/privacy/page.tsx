@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700">
             If you have any questions about this Privacy Policy, please contact us at:
             <br />
-            Email: privacy@thinkr.pro
+            Email: support@thinkr.pro
           </p>
         </section>
 
