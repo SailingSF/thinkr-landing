@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "./AnimatedBackground";
 import HeroSection from "./HeroSection";
@@ -55,8 +54,6 @@ export default function Campaign() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <Header />
-      
       <main className="flex-grow relative">
         <AnimatedBackground />
         <div className="container mx-auto px-4 py-16 md:py-24">
