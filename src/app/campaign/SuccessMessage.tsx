@@ -14,9 +14,9 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({ email, onClose }) => {
         <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center">
           <Check className="w-8 h-8 text-green-500" />
         </div>
-        <h3 className="text-xl font-medium">You're on the list!</h3>
+        <h3 className="text-xl font-medium">You&apos;re on the list!</h3>
         <p className="text-muted-foreground">
-          Thank you for joining. We've sent a confirmation to <span className="font-medium text-foreground">{email}</span>
+          Thank you for joining. We&apos;ve sent a confirmation to <span className="font-medium text-foreground">{email}</span>
         </p>
         <button 
           onClick={onClose}
