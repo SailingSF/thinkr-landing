@@ -6,42 +6,60 @@ const tiers = [
   {
     name: "Free",
     price: "$0",
-    description: "Ideal for individual store owners.",
+    description: "Starting out your business",
     features: [
-      "2 Weekly AI Suggestions",
-      "Basic Shopify Integration",
-      "Email Support",
-      "Basic Risk Assessment",
-      "Limited Chat/Deep Research Access",
+      "3 Weekly suggestions",
+      "2 Integrations (Shopify + 1)",
+      "5 Chats per Day",
+      "2 Automation per week",
+      "2 Accounts per store",
+      "Default Goal Setting"
     ],
     cta: "Install",
     ctaLink: "https://apps.shopify.com/thinkr",
   },
   {
     name: "Growth",
-    price: "$30/month",
-    description: "Everything Free+",
+    price: "$39/per Account",
+    description: "Growing Businesses",
     popular: true,
     features: [
-      "Daily AI Suggestions",
-      "Full Integrations",
-      "Advanced Analytics",
-      "Onboarding Session",
-      "High Chat/Deep Research Limits",
+      "10 AI Suggestions per Week",
+      "Integrations (Shopify + 2)",
+      "100 Chats per day",
+      "50 Automations a month",
+      "4 Accounts per store",
+      "Default Goal Setting"
     ],
     cta: "Upgrade",
     ctaLink: "https://apps.shopify.com/thinkr",
   },
   {
-    name: "Autopilot",
-    price: "$800/month",
-    description: "Everything Growth+",
+    name: "Pro",
+    price: "$339/per Account",
+    description: "Scaling operations",
     features: [
-      "AI Autopilot Mode",
-      "Custom Integrations",
-      "Multi-Store Management",
-      "Dedicated Success Manager",
-      "Unlimited Chat/Deep Research Access",
+      "Unlimited AI Suggestions",
+      "15 Integrations",
+      "Unlimited Chats",
+      "Unlimited Automations",
+      "8 Accounts per store",
+      "Custom Goal Settings"
+    ],
+    cta: "Contact us",
+    ctaLink: "/contact",
+  },
+  {
+    name: "Autopilot",
+    price: "$1500/month",
+    description: "Everything Autopilot+",
+    features: [
+      "Complete operations manager AI Agent",
+      "Custom AI Model Training",
+      "Priority API Access",
+      "Enterprise SLA",
+      "24/7 Premium Support",
+      "Custom Feature Development",
     ],
     cta: "Contact us",
     ctaLink: "/contact",
@@ -57,7 +75,7 @@ export default function Pricing() {
             <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium mb-4">Pricing.</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {tiers.map((tier, index) => (
               <div
                 key={index}
@@ -100,10 +118,6 @@ export default function Pricing() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <p className="text-gray-600">All plans include a 14-day free trial.</p>
           </div>
         </div>
       </section>
