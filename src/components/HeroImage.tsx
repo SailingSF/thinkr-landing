@@ -11,7 +11,7 @@ const HeroImage = () => {
             <div className="relative w-full -mt-2 md:-mt-4">
               <div className="relative w-full aspect-[3/2] md:aspect-[16/9]">
                 <Image
-                  src="/hero_image.webp"
+                  src="/hero_image_3.svg"
                   alt="Application interface showing multiple screens including a playbook, chat interface, and customer support"
                   fill
                   className="object-contain rounded-lg px-2 md:px-16"
