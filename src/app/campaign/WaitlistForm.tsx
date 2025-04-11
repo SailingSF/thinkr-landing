@@ -30,7 +30,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ onSuccess }) => {
     try {
       // First check if email already exists
       const { data: existingEmail } = await supabase
-        .from('emails')
+        .from('10automations')
         .select('*')
         .eq('email', email.trim())
         .single();
@@ -43,7 +43,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ onSuccess }) => {
 
       // Insert the email and shopify URL into the Supabase table
       const { error } = await supabase
-        .from('emails')
+        .from('10automations')
         .insert({ 
           email: email.trim(),
           shopify_url: shopifyUrl.trim() || null
@@ -51,10 +51,22 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ onSuccess }) => {
       
       if (error) {
         console.error('Error submitting email:', error);
-        toast.error('Failed to join waitlist. Please try again.');
+        toast.error('Failed to submit. Please try again.');
         setIsSubmitting(false);
         return;
       }
+
+      // Call the edge function to send the automations
+      const { error: sendError, data } = await supabase.functions.invoke('send-automations', {
+        body: { email }
+      });
+      
+      if (sendError) {
+        console.error('Error response from send-automations:', sendError);
+        throw new Error(sendError.message || 'Failed to send automations');
+      }
+      
+      console.log('Automations email sent successfully:', data);
       
       // Success
       toast.success('Successfully joined the waitlist!');
@@ -97,7 +109,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ onSuccess }) => {
             <div className="w-5 h-5 border-t-2 border-white rounded-full animate-spin" />
           ) : (
             <div className="flex items-center gap-2">
-              <span>Join Waitlist</span>
+              <span>Get 10 Automations Now</span>
               <ArrowRight className="w-5 h-5" />
             </div>
           )}

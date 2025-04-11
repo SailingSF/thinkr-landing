@@ -16,7 +16,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({ email, onClose }) => {
         </div>
         <h3 className="text-xl font-medium">You&apos;re on the list!</h3>
         <p className="text-muted-foreground">
-          Thank you for joining. We&apos;ve sent a confirmation to <span className="font-medium text-foreground">{email}</span>
+          We&apos;ve sent Eduardo&apos;s 10 powerful Shopify automations to <span className="font-medium text-foreground">{email}</span>
         </p>
         <button 
           onClick={onClose}
