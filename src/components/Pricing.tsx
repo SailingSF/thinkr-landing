@@ -12,7 +12,7 @@ const tiers = [
     description: "Starting out your business",
     features: [
       "3 Weekly suggestions",
-      "2 Integrations",
+      "0 Integrations",
       "5 Chats per Day",
       "2 Automation per week",
       "2 Accounts per store",
@@ -23,7 +23,7 @@ const tiers = [
   },
   {
     name: "Growth",
-    monthlyPrice: "$39",
+    monthlyPrice: "$25",
     description: "Growing Businesses",
     popular: true,
     features: [
@@ -32,7 +32,7 @@ const tiers = [
       "100 Chat Query per day",
       "50 Automations a month",
       "4 Accounts per store",
-      "Default Goal Setting"
+      "5 Deep Research topics per monthq"
     ],
     cta: "Upgrade",
     ctaLink: "https://apps.shopify.com/thinkr",
@@ -49,8 +49,8 @@ const tiers = [
       "8 Accounts per store",
       "Custom Goal Settings"
     ],
-    cta: "Contact us",
-    ctaLink: "/contact",
+    cta: "Upgrade",
+    ctaLink: "https://apps.shopify.com/thinkr",
   },
   {
     name: "Autopilot",
