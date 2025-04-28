@@ -38,8 +38,6 @@ export default function Features() {
     <section className="py-4 md:py-12">
       <div className="container mx-auto px-4">
         <div className="mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-[50px] font-medium mb-4">AI that goes beyond search and chat.</h2>
-          <p className="text-[18px] sm:text-[25px] font-normal text-muted-foreground">Run multiple automations in seconds, across apps.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
