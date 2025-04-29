@@ -1,7 +1,7 @@
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
 import HeroImage from "@/components/HeroImage"
-import LogoCarousel from '@/components/LogoCarousel'
+import CombinedProof from '@/components/CombinedProof'
 import Footer from "@/components/Footer"
 import Features from "@/components/Features"
 import AIFeatures from "@/components/AI-Features"
@@ -44,7 +44,7 @@ export default function Home() {
       <Header />
       <Hero />
       <HeroImage />
-      <LogoCarousel />
+      <CombinedProof />
       <Timeline />
       <Features />
       <AIFeatures />
