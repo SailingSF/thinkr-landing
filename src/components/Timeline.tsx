@@ -1,31 +1,40 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from 'lucide-react'
 
 export default function Timeline() {
   return (
-    <div className="w-full container mx-auto px-4 pb-8 md:pb-14">
-      <div className="text-center mb-10 sm:mb-16 md:mb-24">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-tight">
-          <span className="block">All In One Chat</span>
-          <span className="block text-gray-600 text-2xl sm:text-3xl md:text-4xl mt-1">Connect to 300+ integrations and understand your store universe.</span>
-        </h2>
-        <Link href="https://www.thinkrapp.com/" className="inline-block mt-8">
-          <div className="text-primary hover:text-primary/80 transition-colors text-base sm:text-lg font-medium">
-            Try it now →
-          </div>
-        </Link>
-      </div>
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="w-full container mx-auto px-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 mb-4 leading-tight">
+            All-In-One Chat
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+            Connect to <span className="font-medium text-primary">300+ integrations</span> and understand your store universe.
+          </p>
+          <Button asChild variant="outline" size="lg" className="mt-8 group">
+            <Link href="https://www.thinkrapp.com/">
+              Try it now
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
 
-      <div className="max-w-5xl mx-auto flex justify-center mt-8 md:mt-12">
-        <Image 
-          src="/thinkr chat.png"
-          alt="Thinkr chat interface showing connected apps and a chat input field"
-          width={1000}
-          height={250}
-          className="rounded-lg shadow-lg w-full h-auto"
-          priority
-        />
+        <div className="max-w-5xl mx-auto flex justify-center mt-8 [perspective:1000px]">
+          <div className="transition-transform duration-500 ease-out hover:rotate-x-[-2deg] hover:rotate-y-[3deg]">
+            <Image 
+              src="/thinkr chat.png"
+              alt="Thinkr chat interface showing connected apps and a chat input field"
+              width={1000}
+              height={250}
+              className="rounded-lg shadow-2xl w-full h-auto border border-gray-200"
+              priority
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 } 
