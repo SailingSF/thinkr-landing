@@ -69,6 +69,9 @@ const Header = () => {
                 </div>
               )}
             </div>
+            <Link href="/all-in-one-chat" className="hover:text-gray-600">
+              Chat
+            </Link>
             <Link href="/company" className="hover:text-gray-600">
               About
             </Link>
@@ -144,6 +147,9 @@ const Header = () => {
                   </div>
                 )}
               </div>
+              <Link href="/all-in-one-chat" className="block py-3 hover:text-gray-600 text-base">
+                Chat
+              </Link>
               <Link href="/company" className="block py-3 hover:text-gray-600 text-base">
                 About
               </Link>
