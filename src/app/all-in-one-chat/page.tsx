@@ -59,6 +59,24 @@ export default function AllInOneChatPage() {
              </div>
           </div>
 
+          {/* Revenue-First Agencies Section */}
+          <div className="max-w-4xl mx-auto text-center mt-16 md:mt-20 lg:mt-24">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-4">
+              The Only AI Built for Revenue-First Agencies.
+            </h2>
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+              <div className="w-full md:w-1/2 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg h-48 flex items-center justify-center">
+                <span className="text-gray-400">Image Placeholder</span>
+              </div>
+              <ul className="w-full md:w-1/2 list-disc list-inside text-gray-600 text-base sm:text-lg space-y-2">
+                <li><span className="font-medium text-gray-800">One source of truth:</span> No more bouncing between dashboards.</li>
+                <li><span className="font-medium text-gray-800">Agent-powered intelligence:</span> Thinkr spots risks and opportunities automatically.</li>
+                <li><span className="font-medium text-gray-800">Chat-driven insights:</span> Just ask — and act instantly.</li>
+                <li><span className="font-medium text-gray-800">Designed for real outcomes:</span> Revenue, retention, profitability.</li>
+              </ul>
+            </div>
+          </div>
+
           {/* Integrations Section */}
           <div className="max-w-6xl mx-auto mt-16 md:mt-20 lg:mt-24">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-center mb-10 md:mb-16">
