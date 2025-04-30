@@ -35,45 +35,79 @@ export default function AllInOneChatPage() {
             />
           </div>
 
-          <div className="max-w-4xl mx-auto text-center mt-12 md:mt-16 lg:mt-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-4">
-              How It Works
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg md:text-xl mb-8">
-              thinkr seamlessly integrates with your essential e-commerce tools. Simply connect your accounts, and our AI-powered chat becomes your central hub for insights, analysis, and control. Ask questions, get summaries, identify trends, and even trigger actions across your connected apps – all from one intuitive interface.
-            </p>
-            <h3 className="text-xl sm:text-2xl font-medium mb-3 mt-8">Key Benefits:</h3>
-            <ul className="list-disc list-inside text-gray-600 text-base sm:text-lg text-left max-w-2xl mx-auto space-y-2">
-              <li><span className="font-medium text-gray-800">Centralized Insights:</span> Stop juggling tabs. Get a holistic view of your business performance.</li>
-              <li><span className="font-medium text-gray-800">AI-Powered Analysis:</span> Leverage AI to understand complex data and receive actionable recommendations.</li>
-              <li><span className="font-medium text-gray-800">Effortless Integration:</span> Connect to hundreds of apps with just a few clicks.</li>
-              <li><span className="font-medium text-gray-800">Streamlined Workflow:</span> Ask questions and get answers without digging through multiple dashboards.</li>
-              <li><span className="font-medium text-gray-800">Proactive Monitoring:</span> Let Thinkr keep an eye on your key metrics and alert you to important changes.</li>
-            </ul>
-             <div className="mt-10">
-               <Button variant="link" asChild>
-                 <Link href="https://www.thinkrapp.com/">
-                   Explore the thinkr chat →
-                 </Link>
-               </Button>
-             </div>
-          </div>
-
           {/* Revenue-First Agencies Section */}
-          <div className="max-w-4xl mx-auto text-center mt-16 md:mt-20 lg:mt-24">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-4">
+          <div className="max-w-6xl mx-auto mt-24 md:mt-32 px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
               The Only AI Built for Revenue-First Agencies.
             </h2>
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-              <div className="w-full md:w-1/2 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg h-48 flex items-center justify-center">
-                <span className="text-gray-400">Image Placeholder</span>
+            
+            <div className="flex flex-col lg:flex-row items-center gap-12">
+              <div className="w-full lg:w-1/2 aspect-video flex items-center justify-center">
+                <div className="text-center text-gray-300">
+                  <span className="block mb-2">Image Coming Soon</span>
+                  <span className="text-xs">Placeholder for agency dashboard visualization</span>
+                </div>
               </div>
-              <ul className="w-full md:w-1/2 list-disc list-inside text-gray-600 text-base sm:text-lg space-y-2">
-                <li><span className="font-medium text-gray-800">One source of truth:</span> No more bouncing between dashboards.</li>
-                <li><span className="font-medium text-gray-800">Agent-powered intelligence:</span> Thinkr spots risks and opportunities automatically.</li>
-                <li><span className="font-medium text-gray-800">Chat-driven insights:</span> Just ask — and act instantly.</li>
-                <li><span className="font-medium text-gray-800">Designed for real outcomes:</span> Revenue, retention, profitability.</li>
-              </ul>
+
+              <div className="w-full lg:w-1/2 space-y-8">
+                <div className="grid gap-6">
+                  <div className="group">
+                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">One source of truth</h3>
+                        <p className="text-gray-600 mt-1">No more bouncing between dashboards.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-purple-600 transition-colors">Agent-powered intelligence</h3>
+                        <p className="text-gray-600 mt-1">Thinkr spots risks and opportunities automatically.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-50 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-green-600 transition-colors">Chat-driven insights</h3>
+                        <p className="text-gray-600 mt-1">Just ask — and act instantly.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-orange-600 transition-colors">Designed for real outcomes</h3>
+                        <p className="text-gray-600 mt-1">Revenue, retention, profitability.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
