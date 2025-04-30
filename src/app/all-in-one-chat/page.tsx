@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ArrowRight } from 'lucide-react';
 
 export default function AllInOneChatPage() {
   return (
@@ -17,11 +18,14 @@ export default function AllInOneChatPage() {
             <p className="text-gray-600 text-lg sm:text-xl md:text-2xl mt-2 mb-8 sm:mb-12">
               Connect Shopify, Facebook Ads, Klaviyo, Google Analytics, Gorgias, and 300+ other integrations to chat directly with your entire store universe using AI.
             </p>
-            <Button asChild size="lg">
-              <Link href="https://www.thinkrapp.com/">
-                Get Started Now 
-              </Link>
-            </Button>
+            <div className="flex justify-center">
+              <Button asChild size="lg" className="w-full sm:w-auto group">
+                <Link href="https://www.thinkr-app.com/">
+                  Get Started Now
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="max-w-5xl mx-auto flex justify-center mt-12 md:mt-16 lg:mt-20">
@@ -30,26 +34,33 @@ export default function AllInOneChatPage() {
               alt="Thinkr chat interface showing connected apps like Shopify, Klaviyo, Facebook Ads, and a chat input field"
               width={1000}
               height={250}
-              className="rounded-lg shadow-xl w-full h-auto border border-gray-200"
+              className="w-full h-auto"
               priority
             />
           </div>
 
           {/* Revenue-First Agencies Section */}
           <div className="max-w-6xl mx-auto mt-24 md:mt-32 px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-center mb-4">
               AI Chat built for Driving Revenue
             </h2>
+            <p className="text-gray-600 text-lg sm:text-xl text-center max-w-3xl mx-auto mb-10 md:mb-16">
+              Transform your store data into actionable insights with AI that understands your business goals
+            </p>
             
-            <div className="flex flex-col lg:flex-row items-center gap-12">
-              <div className="w-full lg:w-1/2 aspect-video flex items-center justify-center">
-                <div className="text-center text-gray-300">
-                  <span className="block mb-2">Image Coming Soon</span>
-                  <span className="text-xs">Placeholder for agency dashboard visualization</span>
-                </div>
+            <div className="flex flex-col lg:flex-row items-start gap-12">
+              <div className="w-full lg:w-1/2 flex items-center justify-center rounded-lg">
+                <Image 
+                  src="/thinkr-chat-black.png"
+                  alt="Thinkr chat interface showing AI-powered revenue insights"
+                  width={1000}
+                  height={600}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
               </div>
 
-              <div className="w-full lg:w-1/2 space-y-8">
+              <div className="w-full lg:w-1/2">
                 <div className="grid gap-6">
                   <div className="group">
                     <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
@@ -59,8 +70,8 @@ export default function AllInOneChatPage() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">One source of truth</h3>
-                        <p className="text-gray-600 mt-1">No more bouncing between dashboards.</p>
+                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors mb-1">One source of truth</h3>
+                        <p className="text-gray-600 text-base">No more bouncing between dashboards.</p>
                       </div>
                     </div>
                   </div>
@@ -73,8 +84,8 @@ export default function AllInOneChatPage() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-purple-600 transition-colors">Agent-powered intelligence</h3>
-                        <p className="text-gray-600 mt-1">Thinkr spots risks and opportunities automatically.</p>
+                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-purple-600 transition-colors mb-1">Agent-powered intelligence</h3>
+                        <p className="text-gray-600 text-base">thinkr spots risks and opportunities automatically.</p>
                       </div>
                     </div>
                   </div>
@@ -87,8 +98,8 @@ export default function AllInOneChatPage() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-green-600 transition-colors">Chat-driven insights</h3>
-                        <p className="text-gray-600 mt-1">Just ask — and act instantly.</p>
+                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-green-600 transition-colors mb-1">Chat-driven insights</h3>
+                        <p className="text-gray-600 text-base">Just ask — and act instantly.</p>
                       </div>
                     </div>
                   </div>
@@ -101,8 +112,8 @@ export default function AllInOneChatPage() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-orange-600 transition-colors">Designed for real outcomes</h3>
-                        <p className="text-gray-600 mt-1">Revenue, retention, profitability.</p>
+                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-orange-600 transition-colors mb-1">Designed for real outcomes</h3>
+                        <p className="text-gray-600 text-base">Revenue, retention, profitability.</p>
                       </div>
                     </div>
                   </div>
@@ -172,7 +183,7 @@ export default function AllInOneChatPage() {
                  <h4 className="text-lg font-medium mb-2">More on the way</h4>
                  <p className="text-gray-600 text-sm">Connect to your entire e-commerce stack.</p>
                  <Button variant="outline" size="sm" className="mt-4" asChild>
-                   <Link href="#contact">
+                   <Link href="/contact">
                      Request an integration
                    </Link>
                  </Button>

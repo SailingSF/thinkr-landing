@@ -33,10 +33,10 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-between space-x-4 sm:space-x-8 md:space-x-16 lg:space-x-32">
+          <div className="hidden md:flex items-center justify-center flex-1 space-x-4 sm:space-x-8 md:space-x-16 lg:space-x-32 mx-8">
             <div className="relative">
               <div 
-                className="flex items-center space-x-1 cursor-pointer"
+                className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors"
                 onClick={() => setIsResourcesOpen(!isResourcesOpen)}
               >
                 <span>Resources</span>
@@ -48,7 +48,7 @@ const Header = () => {
                     href="https://www.linkedin.com/company/thinkr-pro/about/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -56,28 +56,31 @@ const Header = () => {
                     href="https://apps.shopify.com/thinkr" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                   >
                     Shopify App
                   </a>
                   <a 
                     href="/learn-more"
-                    className="block px-4 py-2 hover:bg-gray-100"
+                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                   >
                     Learn More
                   </a>
                 </div>
               )}
             </div>
-            <Link href="/all-in-one-chat" className="hover:text-gray-600">
+            <Link href="/all-in-one-chat" className="hover:text-gray-600 transition-colors">
               Chat
             </Link>
-            <Link href="/company" className="hover:text-gray-600">
+            <Link href="/company" className="hover:text-gray-600 transition-colors">
               About
             </Link>
-            <Link href="/contact" className="hover:text-gray-600">
+            <Link href="/contact" className="hover:text-gray-600 transition-colors">
               Contact
             </Link>
+          </div>
+
+          <div className="hidden md:block">
             <Button className="bg-primary hover:bg-primary-300 text-white px-5 sm:px-6 py-2 rounded-lg" asChild>
               <Link href="https://www.thinkrapp.com/">
                 Sign Up
@@ -94,7 +97,7 @@ const Header = () => {
             </Button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 hover:bg-gray-200 rounded-md touch-manipulation"
+              className="p-2 hover:bg-gray-200 rounded-md touch-manipulation transition-colors"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -113,7 +116,7 @@ const Header = () => {
               <div>
                 <button
                   onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                  className="flex items-center justify-between w-full py-3 touch-manipulation"
+                  className="flex items-center justify-between w-full py-3 touch-manipulation transition-colors hover:text-gray-600"
                   aria-expanded={isResourcesOpen}
                   aria-label="Toggle resources menu"
                 >
@@ -126,7 +129,7 @@ const Header = () => {
                       href="https://www.linkedin.com/company/thinkr-pro/about/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="block py-3 hover:text-gray-600"
+                      className="block py-3 hover:text-gray-600 transition-colors"
                     >
                       LinkedIn
                     </a>
@@ -134,26 +137,26 @@ const Header = () => {
                       href="https://apps.shopify.com/thinkr" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="block py-3 hover:text-gray-600"
+                      className="block py-3 hover:text-gray-600 transition-colors"
                     >
                       Shopify App
                     </a>
                     <a 
                       href="/learn-more"
-                      className="block py-3 hover:text-gray-600"
+                      className="block py-3 hover:text-gray-600 transition-colors"
                     >
                       Learn More
                     </a>
                   </div>
                 )}
               </div>
-              <Link href="/all-in-one-chat" className="block py-3 hover:text-gray-600 text-base">
+              <Link href="/all-in-one-chat" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 Chat
               </Link>
-              <Link href="/company" className="block py-3 hover:text-gray-600 text-base">
+              <Link href="/company" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 About
               </Link>
-              <Link href="/contact" className="block py-3 hover:text-gray-600 text-base">
+              <Link href="/contact" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 Contact
               </Link>
             </div>
