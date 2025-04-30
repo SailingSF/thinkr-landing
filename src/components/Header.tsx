@@ -33,54 +33,52 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-            <div className="flex items-center justify-center space-x-6 lg:space-x-12">
-              <div className="relative">
-                <div 
-                  className="flex items-center space-x-1 cursor-pointer hover:text-gray-600"
-                  onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                >
-                  <span>Resources</span>
-                  <ChevronDown className="w-4 h-4" />
-                </div>
-                {isResourcesOpen && (
-                  <div className="absolute top-full mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
-                    <a 
-                      href="https://www.linkedin.com/company/thinkr-pro/about/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      LinkedIn
-                    </a>
-                    <a 
-                      href="https://apps.shopify.com/thinkr" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Shopify App
-                    </a>
-                    <a 
-                      href="/learn-more"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      Learn More
-                    </a>
-                  </div>
-                )}
+          <div className="hidden md:flex items-center justify-between space-x-4 sm:space-x-8 md:space-x-16 lg:space-x-32">
+            <div className="relative">
+              <div 
+                className="flex items-center space-x-1 cursor-pointer"
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+              >
+                <span>Resources</span>
+                <ChevronDown className="w-4 h-4" />
               </div>
-              <Link href="/all-in-one-chat" className="hover:text-gray-600">
-                Chat
-              </Link>
-              <Link href="/company" className="hover:text-gray-600">
-                About
-              </Link>
-              <Link href="/contact" className="hover:text-gray-600">
-                Contact
-              </Link>
+              {isResourcesOpen && (
+                <div className="absolute top-full mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+                  <a 
+                    href="https://www.linkedin.com/company/thinkr-pro/about/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    LinkedIn
+                  </a>
+                  <a 
+                    href="https://apps.shopify.com/thinkr" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Shopify App
+                  </a>
+                  <a 
+                    href="/learn-more"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              )}
             </div>
-            <Button className="bg-primary hover:bg-primary-300 text-white px-5 sm:px-6 py-2 rounded-lg ml-4 lg:ml-8" asChild>
+            <Link href="/all-in-one-chat" className="hover:text-gray-600">
+              Chat
+            </Link>
+            <Link href="/company" className="hover:text-gray-600">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-gray-600">
+              Contact
+            </Link>
+            <Button className="bg-primary hover:bg-primary-300 text-white px-5 sm:px-6 py-2 rounded-lg" asChild>
               <Link href="https://www.thinkrapp.com/">
                 Sign Up
               </Link>
