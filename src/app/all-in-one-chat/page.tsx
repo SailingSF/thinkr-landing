@@ -37,8 +37,8 @@ export default function AllInOneChatPage() {
 
           {/* Revenue-First Agencies Section */}
           <div className="max-w-6xl mx-auto mt-24 md:mt-32 px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
-              The Only AI Built for Revenue-First Agencies.
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">
+              AI Chat built for Driving Revenue
             </h2>
             
             <div className="flex flex-col lg:flex-row items-center gap-12">
