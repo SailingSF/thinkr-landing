@@ -5,7 +5,9 @@ const Hero = () => {
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 text-center">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 mx-auto leading-tight max-w-4xl">
+        <h1 
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 mx-auto leading-tight max-w-4xl"
+        >
           One Platform. Every Answer.<br />Grow at Lightspeed.
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-2xl sm:max-w-3xl mx-auto">

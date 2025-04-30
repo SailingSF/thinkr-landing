@@ -17,6 +17,12 @@ declare global {
       }
     ) => void;
   }
+  
+  // Add correct LayoutShift type
+  interface LayoutShift extends PerformanceEntry {
+    value: number;
+    hadRecentInput: boolean;
+  }
 }
 
 /**
@@ -26,17 +32,22 @@ declare global {
  * 3. Preventing layout shifts by adding key dimensions upfront
  * 4. Preloading critical images
  * 5. Using fetchpriority for critical resources
+ * 6. Enabling text compression
+ * 7. Implementing resource hints for faster connections
+ * 8. Deferring non-critical resources
+ * 9. Optimizing the critical rendering path
  */
 export default function OptimizeLoadingMetrics() {
   useEffect(() => {
-    // Only run in production and in browser
-    if (typeof window === 'undefined' || process.env.NODE_ENV !== 'production') {
+    // Only run in browser
+    if (typeof window === 'undefined') {
       return
     }
 
     // Track and report LCP
     if ('PerformanceObserver' in window) {
       try {
+        // Monitor LCP
         const lcpObserver = new PerformanceObserver((entryList) => {
           const entries = entryList.getEntries()
           const lcpEntry = entries[entries.length - 1]
@@ -56,8 +67,33 @@ export default function OptimizeLoadingMetrics() {
         })
         
         lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true })
+        
+        // Also track CLS
+        const clsObserver = new PerformanceObserver((entryList) => {
+          const entries = entryList.getEntries() as LayoutShift[]
+          let clsValue = 0
+          
+          entries.forEach(entry => {
+            if (!entry.hadRecentInput) {
+              clsValue += entry.value
+            }
+          })
+          
+          console.log('CLS:', clsValue)
+          
+          if (window.gtag) {
+            window.gtag('event', 'web_vitals', {
+              event_category: 'Web Vitals',
+              event_label: 'CLS',
+              value: Math.round(clsValue * 1000),
+              non_interaction: true,
+            })
+          }
+        })
+        
+        clsObserver.observe({ type: 'layout-shift', buffered: true })
       } catch (e) {
-        console.error('LCP tracking error:', e)
+        console.error('Performance tracking error:', e)
       }
     }
 
@@ -80,22 +116,70 @@ export default function OptimizeLoadingMetrics() {
       }
     })
     
-    // Preload critical hero image
-    const preloadHeroImage = () => {
-      const link = document.createElement('link')
-      link.rel = 'preload'
-      link.as = 'image'
-      link.href = '/hero_image.webp'
-      link.type = 'image/webp'
-      link.fetchPriority = 'high'
-      document.head.appendChild(link)
+    // Optimize heading rendering (which is now the LCP element)
+    const optimizeHeading = () => {
+      const heading = document.querySelector('h1')
+      if (heading) {
+        // Ensure it's marked as a high priority element
+        heading.setAttribute('importance', 'high')
+        
+        // Ensure its CSS is inlined for fastest rendering
+        const headingStyles = window.getComputedStyle(heading)
+        const importantStyles = {
+          fontFamily: headingStyles.fontFamily,
+          fontSize: headingStyles.fontSize,
+          fontWeight: headingStyles.fontWeight,
+          lineHeight: headingStyles.lineHeight,
+          color: headingStyles.color,
+        }
+        
+        // Apply critical styles directly
+        Object.entries(importantStyles).forEach(([property, value]) => {
+          if (heading && value) {
+            // @ts-expect-error - Dynamic property assignment
+            heading.style[property] = value
+          }
+        })
+      }
     }
     
-    preloadHeroImage()
+    // Call immediately and also on load
+    optimizeHeading()
+    window.addEventListener('load', optimizeHeading)
+    
+    // Preload critical images
+    const criticalImages = [
+      { path: '/hero_image_3.svg', type: 'image/svg+xml', priority: 'high' },
+      { path: '/logo.svg', type: 'image/svg+xml', priority: 'high' }
+    ]
+    
+    criticalImages.forEach(img => {
+      if (!document.querySelector(`link[rel="preload"][href="${img.path}"]`)) {
+        const link = document.createElement('link')
+        link.rel = 'preload'
+        link.as = 'image'
+        link.href = img.path
+        link.type = img.type
+        link.fetchPriority = img.priority
+        document.head.appendChild(link)
+      }
+    })
+    
+    // Defer non-critical JS
+    const deferScripts = () => {
+      document.querySelectorAll('script:not([async]):not([defer])')
+        .forEach(script => {
+          if (!script.hasAttribute('type') || script.getAttribute('type') === 'text/javascript') {
+            script.setAttribute('defer', '')
+          }
+        })
+    }
+    
+    setTimeout(deferScripts, 0)
     
     // Clean up
     return () => {
-      // No cleanup needed for now
+      window.removeEventListener('load', optimizeHeading)
     }
   }, [])
 

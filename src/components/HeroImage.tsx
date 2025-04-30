@@ -13,18 +13,19 @@ const HeroImage = () => {
                 <Image
                   src="/hero_image_3.svg"
                   alt="Application interface showing multiple screens including a playbook, chat interface, and customer support"
-                  fill
-                  className="object-contain rounded-lg px-2 md:px-16"
+                  width={1200}
+                  height={675}
+                  className="object-contain rounded-lg px-2 md:px-16 w-full h-full"
                   priority
                   sizes="(max-width: 640px) 95vw, (max-width: 768px) 85vw, (max-width: 1024px) 75vw, 1200px"
                   placeholder="blur"
                   blurDataURL="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAEIgJfVfyiCwAAAABJRU5ErkJggg=="
-                  quality={85}
+                  quality={75}
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
-              
-              {/* Feature indicators */}
-              {/* REMOVED the entire div grid containing the four feature items */}
+
             </div>
           </div>
         </div>

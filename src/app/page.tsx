@@ -10,16 +10,20 @@ import Timeline from "@/components/Timeline"
 import Testimonials from "@/components/Testimonials"
 import SimpleContactForm from "@/components/SimpleContactForm"
 import Script from "next/script"
+import { Suspense } from "react"
 
-// Opt into partial prerendering for better performance
-export const runtime = 'edge';
+// Opt into static generation
 export const preferredRegion = 'auto';
 export const dynamic = 'force-static';
+
+// Import loading components for Suspense
+const LoadingHero = () => <div className="h-[300px] bg-gray-100 animate-pulse rounded-xl" />
+const LoadingSection = () => <div className="h-[200px] bg-gray-100 animate-pulse rounded-xl my-8" />
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      <Script id="schema-structured-data" type="application/ld+json">
+      <Script id="schema-structured-data" type="application/ld+json" strategy="afterInteractive">
         {`
           {
             "@context": "https://schema.org",
@@ -43,12 +47,20 @@ export default function Home() {
       </Script>
       <Header />
       <Hero />
-      <HeroImage />
-      <CombinedProof />
+      <Suspense fallback={<LoadingHero />}>
+        <HeroImage />
+      </Suspense>
+      <Suspense fallback={<LoadingSection />}>
+        <CombinedProof />
+      </Suspense>
       <Timeline />
       <Features />
-      <AIFeatures />
-      <Testimonials />
+      <Suspense fallback={<LoadingSection />}>
+        <AIFeatures />
+      </Suspense>
+      <Suspense fallback={<LoadingSection />}>
+        <Testimonials />
+      </Suspense>
       <Pricing />
       <SimpleContactForm />
       <Footer />
