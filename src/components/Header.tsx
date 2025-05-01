@@ -93,6 +93,12 @@ const Header = () => {
                   >
                     Autopilot
                   </Link>
+                  <Link 
+                    href="/deep-reporting"
+                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                  >
+                    Deep Reporting
+                  </Link>
                 </div>
               )}
             </div>
@@ -197,6 +203,12 @@ const Header = () => {
                       className="block py-3 hover:text-gray-600 transition-colors"
                     >
                       Autopilot
+                    </Link>
+                    <Link 
+                      href="/deep-reporting"
+                      className="block py-3 hover:text-gray-600 transition-colors"
+                    >
+                      Deep Reporting
                     </Link>
                   </div>
                 )}
