@@ -175,10 +175,10 @@ export default function AutopilotPage() {
               <h2 className="text-3xl sm:text-4xl font-medium mb-6 text-black">
                 Ready to Put Your Store on Autopilot?
               </h2>
-              <p className="text-xl mb-8 text-purple-500">
+              <p className="text-xl mb-8 text-gray-600">
                 Join thousands of e-commerce stores using thinkr to automate their growth
               </p>
-              <Button size="lg" className="group bg-purple-500 hover:bg-purple-600" asChild>
+              <Button size="lg" className="group bg-black hover:bg-black/90" asChild>
                 <Link href="https://app.thinkr.com/signup">
                   Get Started Free
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
