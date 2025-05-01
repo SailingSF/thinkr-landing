@@ -9,11 +9,13 @@ import { useState, useEffect } from "react"
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
+  const [isChatOpen, setIsChatOpen] = useState(false)
 
-  // Close resource dropdown when mobile menu closes
+  // Close dropdowns when mobile menu closes
   useEffect(() => {
     if (!isMenuOpen) {
       setIsResourcesOpen(false)
+      setIsChatOpen(false)
     }
   }, [isMenuOpen])
 
@@ -69,9 +71,31 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <Link href="/all-in-one-chat" className="hover:text-gray-600 transition-colors">
-              Chat
-            </Link>
+            <div className="relative">
+              <div 
+                className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors"
+                onClick={() => setIsChatOpen(!isChatOpen)}
+              >
+                <span>Chat</span>
+                <ChevronDown className="w-4 h-4" />
+              </div>
+              {isChatOpen && (
+                <div className="absolute top-full mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+                  <Link 
+                    href="/all-in-one-chat"
+                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                  >
+                    All-In-One Chat
+                  </Link>
+                  <Link 
+                    href="/autopilot"
+                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                  >
+                    Autopilot
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link href="/company" className="hover:text-gray-600 transition-colors">
               About
             </Link>
@@ -150,9 +174,33 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <Link href="/all-in-one-chat" className="block py-3 hover:text-gray-600 transition-colors text-base">
-                Chat
-              </Link>
+              <div>
+                <button
+                  onClick={() => setIsChatOpen(!isChatOpen)}
+                  className="flex items-center justify-between w-full py-3 touch-manipulation transition-colors hover:text-gray-600"
+                  aria-expanded={isChatOpen}
+                  aria-label="Toggle chat menu"
+                >
+                  <span className="text-base">Chat</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isChatOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isChatOpen && (
+                  <div className="pl-4 py-2 space-y-3">
+                    <Link 
+                      href="/all-in-one-chat"
+                      className="block py-3 hover:text-gray-600 transition-colors"
+                    >
+                      All-In-One Chat
+                    </Link>
+                    <Link 
+                      href="/autopilot"
+                      className="block py-3 hover:text-gray-600 transition-colors"
+                    >
+                      Autopilot
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link href="/company" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 About
               </Link>
