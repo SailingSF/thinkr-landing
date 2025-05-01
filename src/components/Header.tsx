@@ -35,7 +35,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center flex-1 space-x-4 sm:space-x-8 md:space-x-16 lg:space-x-32 mx-8">
+          <div className="hidden lg:flex items-center justify-center flex-1 space-x-4 lg:space-x-8 xl:space-x-16 2xl:space-x-32 mx-8">
             <div className="relative">
               <div 
                 className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors"
@@ -71,62 +71,59 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <div className="relative">
+            <div className="relative group">
               <div 
                 className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors"
-                onClick={() => setIsChatOpen(!isChatOpen)}
               >
                 <span>Chat</span>
                 <ChevronDown className="w-4 h-4" />
               </div>
-              {isChatOpen && (
-                <div className="absolute top-full mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 left-1/2 -translate-x-1/2">
-                  <div className="grid grid-cols-3 gap-4 px-4">
-                    <Link 
-                      href="/all-in-one-chat"
-                      className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
-                    >
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                          <MessageSquare className="w-5 h-5 text-blue-500" />
-                        </div>
+              <div className="absolute top-full mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 left-1/2 -translate-x-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="grid grid-cols-3 gap-4 px-4">
+                  <Link 
+                    href="/all-in-one-chat"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                        <MessageSquare className="w-5 h-5 text-blue-500" />
                       </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">All-in-one Chat</h3>
-                        <p className="text-sm text-gray-600">Connect and chat with all your tools in one place</p>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">All-in-one Chat</h3>
+                      <p className="text-sm text-gray-600">Connect and chat with all your tools in one place</p>
+                    </div>
+                  </Link>
+                  <Link 
+                    href="/autopilot"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                        <Bot className="w-5 h-5 text-purple-500" />
                       </div>
-                    </Link>
-                    <Link 
-                      href="/autopilot"
-                      className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
-                    >
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
-                          <Bot className="w-5 h-5 text-purple-500" />
-                        </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">Autopilot</h3>
+                      <p className="text-sm text-gray-600">Let AI handle your routine tasks automatically</p>
+                    </div>
+                  </Link>
+                  <Link 
+                    href="/deep-reporting"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                        <BarChart3 className="w-5 h-5 text-green-500" />
                       </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">Autopilot</h3>
-                        <p className="text-sm text-gray-600">Let AI handle your routine tasks automatically</p>
-                      </div>
-                    </Link>
-                    <Link 
-                      href="/deep-reporting"
-                      className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
-                    >
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
-                          <BarChart3 className="w-5 h-5 text-green-500" />
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Deep Reporting</h3>
-                        <p className="text-sm text-gray-600">Get comprehensive analytics and insights</p>
-                      </div>
-                    </Link>
-                  </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Deep Reporting</h3>
+                      <p className="text-sm text-gray-600">Get comprehensive analytics and insights</p>
+                    </div>
+                  </Link>
                 </div>
-              )}
+              </div>
             </div>
             <Link href="/company" className="hover:text-gray-600 transition-colors">
               About
@@ -136,7 +133,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button className="bg-primary hover:bg-primary-300 text-white px-5 sm:px-6 py-2 rounded-lg" asChild>
               <Link href="https://www.thinkrapp.com/">
                 Sign Up
@@ -145,7 +142,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center space-x-3 sm:space-x-4">
+          <div className="lg:hidden flex items-center space-x-3 sm:space-x-4">
             <Button className="bg-primary hover:bg-primary-300 text-white px-4 sm:px-6 py-2 rounded-lg text-sm whitespace-nowrap" asChild>
               <Link href="https://www.thinkrapp.com/">
                 Sign Up
@@ -167,7 +164,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-50">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-50">
             <div className="p-4 space-y-3">
               <div>
                 <button
