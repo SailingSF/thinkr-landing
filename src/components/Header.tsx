@@ -101,7 +101,7 @@ const Header = () => {
                 <span>Features</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180`} />
               </div>
-              <div className="absolute top-full mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 left-1/2 -translate-x-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="absolute top-full mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 left-1/2 -translate-x-1/2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out z-50">
                 <div className="grid grid-cols-3 gap-4 px-4">
                   <Link 
                     href="/all-in-one-chat"
