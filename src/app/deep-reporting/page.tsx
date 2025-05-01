@@ -333,40 +333,35 @@ export default function DeepReportingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-white border-t border-gray-100">
+        <section className="py-20 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-medium mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#4F46E5] to-[#8C74FF]">
+              <h2 className="text-4xl md:text-5xl font-medium mb-6">
                 Ready to transform your reporting?
               </h2>
-              <p className="text-gray-600 text-lg md:text-xl mb-12">
+              <p className="text-gray-600 text-lg sm:text-xl mb-10">
                 Join thousands of e-commerce businesses using thinkr to make better decisions, faster.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button 
-                  size="lg" 
-                  className="bg-[#4F46E5] hover:bg-[#4F46E5]/90 text-white min-w-[200px] h-14"
-                >
-                  <Link href="https://apps.shopify.com/thinkr" className="flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="group bg-[#8C74FF] hover:bg-[#8C74FF]/90">
+                  <Link href="https://apps.shopify.com/thinkr" className="flex items-center">
                     Get Started Free
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-gray-300 hover:bg-gray-50 min-w-[200px] h-14"
-                >
-                  <Link href="/contact" className="flex items-center justify-center">
+                <Button size="lg" variant="outline" className="group">
+                  <Link href="/demo" className="flex items-center">
                     Schedule Demo
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
+
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 } 
