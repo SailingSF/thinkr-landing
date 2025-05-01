@@ -8,7 +8,7 @@ const usesCases = [
   {
     id: "scale-operations",
     title: "Scale Your Operations Without Growing Your Team",
-    subtitle: "From 100 to 1000 orders per day with the same team size",
+    subtitle: "From 1,000 to 10,000 orders per day with the same team size",
     description: "See how Fashion Boutique X automated their operations and scaled their business without hiring additional staff.",
     challenge: "Managing increasing order volume was overwhelming their small team, leading to delays and errors.",
     solution: [
@@ -24,13 +24,13 @@ const usesCases = [
         { label: "Team Size", value: "Same", subtext: "no additional hires" }
       ]
     },
-    imagePath: "/placeholder-dashboard.png"
+    imagePath: "/usecase1-operations.webp"
   },
   {
     id: "unified-data",
     title: "All Your Data in One Conversation",
     subtitle: "How Outdoor Gear Co. cut reporting time by 10+ hours every week",
-    description: "See how one fast-growing ecommerce team used Thinkr's all-in-one chat to get instant answers from Shopify, Meta Ads, Google Ads, Klaviyo, and more—without switching tools or exporting data.",
+    description: "See how one fast-growing ecommerce team used thinkr's all-in-one chat to get instant answers from Shopify, Meta Ads, Google Ads, Klaviyo, and more—without switching tools or exporting data.",
     challenge: "Manually checking performance across platforms took hours, delayed decisions, and led to missed opportunities.",
     solution: [
       "Unified chat for 300+ ecommerce tools",
@@ -45,13 +45,13 @@ const usesCases = [
         { label: "Decision Speed", value: "90%", subtext: "faster insights" }
       ]
     },
-    imagePath: "/placeholder-analytics.png"
+    imagePath: "/usecase2-operations.webp"
   },
   {
     id: "cart-recovery",
     title: "Recover Abandoned Carts Instantly",
     subtitle: "How Candle Shop boosted sales by 9% with one click",
-    description: "Learn how Candle Shop recovered abandoned carts and increased average order value by using Thinkr's AI-powered suggestions—delivered directly to their inbox with one-click automation.",
+    description: "Learn how Candle Shop recovered abandoned carts and increased average order value by using thinkr's AI-powered suggestions—delivered directly to their inbox with one-click automation.",
     challenge: "Customers were frequently abandoning carts due to shipping costs, especially in the $65–$74 range—leading to missed revenue and lower AOV.",
     solution: [
       "AI detected cart drop-off thresholds using store data",
@@ -66,7 +66,7 @@ const usesCases = [
         { label: "Cart Recovery", value: "+42%", subtext: "abandoned cart saves" }
       ]
     },
-    imagePath: "/placeholder-cart.png"
+    imagePath: "/usecases/ecommerce_agent_3.webp"
   }
 ];
 
@@ -77,11 +77,11 @@ export default function LearnMore() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-tight text-gray-900">
             Real Results for Real Businesses
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 px-4 sm:px-8">
-            Discover how e-commerce businesses like yours are using Thinkr to automate operations, boost revenue, and deliver exceptional customer experiences
+          <p className="text-gray-600 text-lg sm:text-xl md:text-2xl mt-2 mb-8 sm:mb-12">
+            Discover how e-commerce businesses like yours are using thinkr to automate operations, boost revenue, and deliver exceptional customer experiences
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <Link href="https://apps.shopify.com/thinkr" target="_blank" className="w-full sm:w-auto">
@@ -123,7 +123,7 @@ export default function LearnMore() {
                   {/* Content Section */}
                   <div className="flex-1 min-w-0 space-y-6 sm:space-y-8 order-2 lg:order-none">
                     <div>
-                      <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{useCase.title}</h3>
+                      <h3 className="text-2xl sm:text-3xl font-medium mb-2 sm:mb-3">{useCase.title}</h3>
                       <p className="text-lg sm:text-xl text-primary font-medium">{useCase.subtitle}</p>
                     </div>
                     
@@ -185,7 +185,7 @@ export default function LearnMore() {
             Ready to Transform Your E-commerce Business?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8">
-            Join hundreds of successful businesses using Thinkr to automate operations and drive growth
+            Join hundreds of successful businesses using thinkr to automate operations and drive growth
           </p>
           <Link href="https://apps.shopify.com/thinkr" target="_blank" className="block w-full sm:w-auto">
             <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3">
