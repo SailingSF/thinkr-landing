@@ -3,194 +3,369 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BarChart3, Clock, Database, FileText, Zap, Search, CheckCircle2, LineChart, PieChart, TrendingUp, BarChart, Shield } from 'lucide-react';
 
 export default function DeepReportingPage() {
   return (
     <>
       <Header />
-      <main>
-        <div className="w-full container mx-auto px-4 py-12 md:py-20 lg:py-28">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-tight">
-              Deep Insights for E-commerce Growth
-            </h1>
-            <p className="text-gray-600 text-lg sm:text-xl md:text-2xl mt-2 mb-8 sm:mb-12">
-              Get comprehensive analytics and AI-powered insights across Shopify, Facebook Ads, Klaviyo, and 300+ integrations to make data-driven decisions.
-            </p>
-            <div className="flex justify-center">
-              <Button asChild size="lg" className="w-full sm:w-auto group">
-                <Link href="https://www.thinkr-app.com/">
-                  Get Started Now
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-
-          <div className="max-w-5xl mx-auto flex justify-center mt-12 md:mt-16 lg:mt-20">
-            <Image 
-              src="/thinkr chat.png"
-              alt="Thinkr reporting interface showing comprehensive analytics and insights"
-              width={1000}
-              height={250}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-
-          {/* Analytics Features Section */}
-          <div className="max-w-6xl mx-auto mt-24 md:mt-32 px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-center mb-4">
-              AI-Powered Analytics for Better Decisions
-            </h2>
-            <p className="text-gray-600 text-lg sm:text-xl text-center max-w-3xl mx-auto mb-10 md:mb-16">
-              Transform complex data into actionable insights with AI-driven analytics and reporting
-            </p>
-            
-            <div className="flex flex-col lg:flex-row items-start gap-12">
-              <div className="w-full lg:w-1/2 flex items-center justify-center rounded-lg">
-                <Image 
-                  src="/thinkr-chat-black.png"
-                  alt="Thinkr reporting dashboard showing comprehensive analytics"
-                  width={1000}
-                  height={600}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-
-              <div className="w-full lg:w-1/2">
-                <div className="grid gap-6">
-                  <div className="group">
-                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+      <main className="bg-white">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden">
+          <div className="container mx-auto px-4 pt-20 pb-16 md:pt-28 md:pb-24 relative">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight">
+                Advanced AI-powered{' '}
+                <span className="text-[#8C74FF]">Data</span>{' '}
+                <span className="text-[#8C74FF]">Analysis</span>
+              </h1>
+              
+              {/* Connected Icons */}
+              <div className="flex justify-center items-center space-x-8 my-16">
+                <div className="relative flex items-center">
+                  {/* Icons with connecting lines */}
+                  <div className="flex items-center justify-between w-full max-w-3xl mx-auto relative">
+                    <div className="flex flex-col items-center">
+                      <div className="w-12 h-12 rounded-full bg-[#8C74FF]/10 flex items-center justify-center">
+                        <Database className="w-6 h-6 text-[#8C74FF]" />
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors mb-1">Unified Analytics</h3>
-                        <p className="text-gray-600 text-base">All your data in one place, with cross-platform insights.</p>
-                      </div>
+                      <span className="text-sm mt-2 text-gray-600">Raw Data</span>
                     </div>
-                  </div>
-
-                  <div className="group">
-                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                    
+                    {/* Connecting line */}
+                    <div className="flex-1 h-[2px] bg-gradient-to-r from-[#8C74FF]/20 to-[#8C74FF]/30 mx-2" />
+                    
+                    <div className="flex flex-col items-center">
+                      <div className="w-12 h-12 rounded-full bg-[#8C74FF]/10 flex items-center justify-center">
+                        <Zap className="w-6 h-6 text-[#8C74FF]" />
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-purple-600 transition-colors mb-1">Predictive Analytics</h3>
-                        <p className="text-gray-600 text-base">AI forecasting helps you anticipate trends and opportunities.</p>
-                      </div>
+                      <span className="text-sm mt-2 text-gray-600">Process</span>
                     </div>
-                  </div>
-
-                  <div className="group">
-                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-50 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                        </svg>
+                    
+                    {/* Connecting line */}
+                    <div className="flex-1 h-[2px] bg-gradient-to-r from-[#8C74FF]/30 to-[#8C74FF]/40 mx-2" />
+                    
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 rounded-full bg-[#8C74FF] flex items-center justify-center shadow-lg shadow-[#8C74FF]/20">
+                        <BarChart className="w-8 h-8 text-white" />
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-green-600 transition-colors mb-1">Custom Reports</h3>
-                        <p className="text-gray-600 text-base">Build and automate reports that matter to your business.</p>
-                      </div>
+                      <span className="text-sm mt-2 text-gray-600">Analysis</span>
                     </div>
-                  </div>
-
-                  <div className="group">
-                    <div className="flex items-start space-x-4 p-4 rounded-lg transition-colors hover:bg-gray-50">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
+                    
+                    {/* Connecting line */}
+                    <div className="flex-1 h-[2px] bg-gradient-to-r from-[#8C74FF]/40 to-[#8C74FF]/30 mx-2" />
+                    
+                    <div className="flex flex-col items-center">
+                      <div className="w-12 h-12 rounded-full bg-[#8C74FF]/10 flex items-center justify-center">
+                        <TrendingUp className="w-6 h-6 text-[#8C74FF]" />
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-lg text-gray-900 group-hover:text-orange-600 transition-colors mb-1">Real-time Insights</h3>
-                        <p className="text-gray-600 text-base">Live data and alerts keep you ahead of the curve.</p>
+                      <span className="text-sm mt-2 text-gray-600">Insights</span>
+                    </div>
+                    
+                    {/* Connecting line */}
+                    <div className="flex-1 h-[2px] bg-gradient-to-r from-[#8C74FF]/30 to-[#8C74FF]/20 mx-2" />
+                    
+                    <div className="flex flex-col items-center">
+                      <div className="w-12 h-12 rounded-full bg-[#8C74FF]/10 flex items-center justify-center">
+                        <LineChart className="w-6 h-6 text-[#8C74FF]" />
                       </div>
+                      <span className="text-sm mt-2 text-gray-600">Growth</span>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto mb-8">
+                Using cutting-edge machine learning and deep analytics, thinkr helps e-commerce businesses unlock hidden patterns, predict trends, and optimize performance across all channels.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="group bg-[#8C74FF] hover:bg-[#8C74FF]/90">
+                  <Link href="https://apps.shopify.com/thinkr" className="flex items-center">
+                    Get Started Now
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* Integrations Section */}
-          <div className="max-w-6xl mx-auto mt-16 md:mt-20 lg:mt-24">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-center mb-10 md:mb-16">
-              Connect Your Data Sources
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[ // Array of integration data
+        {/* Key Features Section */}
+        <section className="py-20 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-medium mb-6">
+                Essential Reports for E-commerce Growth
+              </h2>
+              <p className="text-gray-600 text-lg">
+                Get the insights you need to make data-driven decisions and scale your store
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {[
                 {
-                  logo: "/integration-logos/meta-icon-2.png",
-                  name: "Facebook (Meta) Ads",
-                  description: "Deep dive into ad performance, audience insights, and ROAS analytics.",
+                  icon: <Database className="w-6 h-6 text-blue-500" />,
+                  title: "Performance Reports",
+                  description: "Real-time metrics tracking revenue, AOV, conversion rates, and customer LTV across all sales channels"
                 },
                 {
-                  logo: "/integration-logos/google-ads-icon-2.png",
-                  name: "Google Ads",
-                  description: "Comprehensive campaign analytics, keyword performance, and conversion tracking.",
+                  icon: <Zap className="w-6 h-6 text-purple-500" />,
+                  title: "Marketing ROI Analysis",
+                  description: "Compare ROAS across Meta Ads, Google Ads, and email campaigns with automated attribution modeling"
                 },
                 {
-                  logo: "/integration-logos/google-analytics-icon.png",
-                  name: "Google Analytics",
-                  description: "Advanced user behavior analysis, funnel visualization, and attribution modeling.",
+                  icon: <FileText className="w-6 h-6 text-green-500" />,
+                  title: "Inventory Intelligence",
+                  description: "Stock forecasting, reorder recommendations, and inventory turnover analysis by SKU and variant"
                 },
                 {
-                  logo: "/integration-logos/klaviyo-icon-black.png",
-                  name: "Klaviyo",
-                  description: "Detailed email performance metrics, customer segmentation analysis, and ROI tracking.",
+                  icon: <Search className="w-6 h-6 text-orange-500" />,
+                  title: "Customer Cohort Analysis",
+                  description: "Track retention, repeat purchase rates, and customer lifetime value segmented by acquisition source"
                 },
                 {
-                  logo: "/integration-logos/gorgias-icon.png",
-                  name: "Gorgias",
-                  description: "Customer support analytics, sentiment analysis, and response time metrics.",
+                  icon: <Clock className="w-6 h-6 text-red-500" />,
+                  title: "Product Performance",
+                  description: "Best/worst sellers, bundle analysis, price optimization suggestions, and margin contribution reports"
                 },
                 {
-                  logo: "/integration-logos/pinterest-icon.png",
-                  name: "Pinterest Ads",
-                  description: "In-depth pin analytics, audience engagement metrics, and conversion tracking.",
-                },
-                {
-                  logo: "/integration-logos/mailchimp-icon-2.png",
-                  name: "Mailchimp",
-                  description: "Comprehensive email analytics, subscriber insights, and campaign performance metrics.",
-                },
-              ].map((integration) => (
-                <div key={integration.name} className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center">
-                  <Image 
-                    src={integration.logo}
-                    alt={`${integration.name} logo`}
-                    width={48}
-                    height={48}
-                    className="mb-4 h-12 w-12 object-contain"
-                  />
-                  <h4 className="text-lg font-medium mb-2">{integration.name}</h4>
-                  <p className="text-gray-600 text-sm">{integration.description}</p>
+                  icon: <CheckCircle2 className="w-6 h-6 text-teal-500" />,
+                  title: "Growth Opportunities",
+                  description: "AI-identified opportunities in pricing, cross-selling, inventory, and marketing spend allocation"
+                }
+              ].map((feature, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 transition-all hover:shadow-lg">
+                  <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-medium mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
                 </div>
               ))}
-              {/* Placeholder for the '300+' card */}
-              <div className="bg-gray-100 p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center justify-center text-center">
-                 <h4 className="text-lg font-medium mb-2">More on the way</h4>
-                 <p className="text-gray-600 text-sm">Connect all your data sources for complete insights.</p>
-                 <Button variant="outline" size="sm" className="mt-4" asChild>
-                   <Link href="/contact">
-                     Request an integration
-                   </Link>
-                 </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Accuracy Section */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                {/* Visual Representation */}
+                <div className="w-full lg:w-1/2 relative">
+                  <div className="aspect-square max-w-[500px] mx-auto relative">
+                    {/* Outer circle */}
+                    <div className="absolute inset-0 rounded-full border-4 border-dashed border-[#8C74FF]/20 animate-[spin_20s_linear_infinite]" />
+                    
+                    {/* Middle circle */}
+                    <div className="absolute inset-8 rounded-full border-4 border-[#8C74FF]/30 flex items-center justify-center">
+                      {/* Inner circle with content */}
+                      <div className="absolute inset-8 rounded-full bg-[#8C74FF]/5 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="font-bold text-4xl text-[#8C74FF]">100%</div>
+                          <div className="text-gray-600 mt-2">Accuracy</div>
+                        </div>
+                      </div>
+                      
+                      {/* Floating icons */}
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 shadow-lg">
+                        <Database className="w-6 h-6 text-[#8C74FF]" />
+                      </div>
+                      <div className="absolute top-1/2 -right-4 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg">
+                        <CheckCircle2 className="w-6 h-6 text-[#8C74FF]" />
+                      </div>
+                      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 shadow-lg">
+                        <Zap className="w-6 h-6 text-[#8C74FF]" />
+                      </div>
+                      <div className="absolute top-1/2 -left-4 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg">
+                        <ArrowRight className="w-6 h-6 text-[#8C74FF]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Text Content */}
+                <div className="w-full lg:w-1/2">
+                  <h2 className="text-3xl md:text-4xl font-medium mb-6">
+                    Accuracy You Can{' '}
+                    <span className="text-[#8C74FF]">Trust</span>
+                  </h2>
+                  <p className="text-gray-600 text-lg mb-8">
+                    thinkr pulls data directly from connected platforms using APIs and cross-checks it using proprietary logic—so your numbers are always up to date and aligned with the source of truth.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#8C74FF]/10 flex items-center justify-center">
+                        <Database className="w-5 h-5 text-[#8C74FF]" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium mb-1">Direct API Access</h3>
+                        <p className="text-gray-600 text-sm">Real-time data from your platforms</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#8C74FF]/10 flex items-center justify-center">
+                        <CheckCircle2 className="w-5 h-5 text-[#8C74FF]" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium mb-1">Cross-Checking</h3>
+                        <p className="text-gray-600 text-sm">Proprietary validation logic</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </section>
 
-        </div>
+        {/* Time Savings Section */}
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-medium mb-6">
+                  What{' '}
+                  <span className="text-[#8C74FF]">thinkr</span>{' '}
+                  Saves You
+                </h2>
+              </div>
+
+              {/* Before & After Cards */}
+              <div className="flex flex-col md:flex-row gap-8 md:gap-4 items-center justify-center mb-20">
+                {/* Before Card */}
+                <div className="w-full md:w-5/12 bg-white rounded-2xl p-6 shadow-lg">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-red-500" />
+                    </div>
+                    <h3 className="text-xl font-medium">Traditional Process</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-gray-600">
+                      <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+                      Downloading multiple CSVs
+                    </li>
+                    <li className="flex items-center gap-3 text-gray-600">
+                      <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+                      Switching between tabs
+                    </li>
+                    <li className="flex items-center gap-3 text-gray-600">
+                      <span className="w-2 h-2 bg-red-400 rounded-full"></span>
+                      Manual deck building
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Arrow */}
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-[#8C74FF] flex items-center justify-center">
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+
+                {/* After Card */}
+                <div className="w-full md:w-5/12 bg-white rounded-2xl p-6 shadow-lg">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-[#8C74FF]/10 flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-[#8C74FF]" />
+                    </div>
+                    <h3 className="text-xl font-medium">With thinkr</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-gray-600">
+                      <span className="w-2 h-2 bg-[#8C74FF] rounded-full"></span>
+                      Automated data collection
+                    </li>
+                    <li className="flex items-center gap-3 text-gray-600">
+                      <span className="w-2 h-2 bg-[#8C74FF] rounded-full"></span>
+                      Unified reporting interface
+                    </li>
+                    <li className="flex items-center gap-3 text-gray-600">
+                      <span className="w-2 h-2 bg-[#8C74FF] rounded-full"></span>
+                      Error-free calculations
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Benefits Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <div className="bg-white rounded-2xl p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-[#8C74FF]/10 flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-[#8C74FF]" />
+                    </div>
+                    <h3 className="text-xl font-medium">Save 10+ Hours Monthly</h3>
+                  </div>
+                  <p className="text-gray-600">
+                    Automated reporting cuts hours from your end-of-month process.
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-[#8C74FF]/10 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-[#8C74FF]" />
+                    </div>
+                    <h3 className="text-xl font-medium">Zero Manual Work</h3>
+                  </div>
+                  <p className="text-gray-600">
+                    No more downloading CSVs or switching between tools.
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-[#8C74FF]/10 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-[#8C74FF]" />
+                    </div>
+                    <h3 className="text-xl font-medium">Error-Free Results</h3>
+                  </div>
+                  <p className="text-gray-600">
+                    Eliminate errors from copy-pasting and complex formulas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-24 bg-white border-t border-gray-100">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl font-medium mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                Ready to transform your reporting?
+              </h2>
+              <p className="text-gray-600 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+                Join thousands of e-commerce businesses using thinkr to make better decisions, faster.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white min-w-[200px] h-14"
+                >
+                  <Link href="https://apps.shopify.com/thinkr" className="flex items-center justify-center">
+                    Get Started Free
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-gray-300 hover:bg-gray-50 min-w-[200px] h-14"
+                >
+                  <Link href="/contact" className="flex items-center justify-center">
+                    Schedule Demo
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
