@@ -15,9 +15,8 @@ export default function DeepReportingPage() {
           <div className="container mx-auto px-4 pt-20 pb-16 md:pt-28 md:pb-24 relative">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight">
-                Advanced AI-powered{' '}
-                <span className="text-[#8C74FF]">Data</span>{' '}
-                <span className="text-[#8C74FF]">Analysis</span>
+                Advanced AI-powered<br />
+                <span className="text-[#8C74FF]">Data Analysis</span>
               </h1>
               
               {/* Connected Icons */}
@@ -337,20 +336,20 @@ export default function DeepReportingPage() {
         <section className="py-24 bg-white border-t border-gray-100">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-medium mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+              <h2 className="text-4xl md:text-5xl font-medium mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#4F46E5] to-[#8C74FF]">
                 Ready to transform your reporting?
               </h2>
-              <p className="text-gray-600 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+              <p className="text-gray-600 text-lg md:text-xl mb-12">
                 Join thousands of e-commerce businesses using thinkr to make better decisions, faster.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white min-w-[200px] h-14"
+                  className="bg-[#4F46E5] hover:bg-[#4F46E5]/90 text-white min-w-[200px] h-14"
                 >
                   <Link href="https://apps.shopify.com/thinkr" className="flex items-center justify-center">
                     Get Started Free
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button 
