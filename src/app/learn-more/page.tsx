@@ -27,67 +27,46 @@ const usesCases = [
     imagePath: "/placeholder-dashboard.png"
   },
   {
-    id: "boost-revenue",
-    title: "Turn Customer Data Into Revenue",
-    subtitle: "How a beauty brand increased AOV by 40% using AI insights",
-    description: "Discover how Beauty Co. leveraged Thinkr's AI to analyze customer behavior and automatically optimize their marketing strategies.",
-    challenge: "Struggling to personalize marketing efforts and increase customer lifetime value in a competitive market.",
+    id: "unified-data",
+    title: "All Your Data in One Conversation",
+    subtitle: "How Outdoor Gear Co. cut reporting time by 10+ hours every week",
+    description: "See how one fast-growing ecommerce team used Thinkr's all-in-one chat to get instant answers from Shopify, Meta Ads, Google Ads, Klaviyo, and more—without switching tools or exporting data.",
+    challenge: "Manually checking performance across platforms took hours, delayed decisions, and led to missed opportunities.",
     solution: [
-      "AI-powered customer segmentation",
-      "Automated cross-sell recommendations",
-      "Smart promotional campaigns",
-      "Personalized email marketing automation"
+      "Unified chat for 300+ ecommerce tools",
+      "Instant insights across all sales and ad channels",
+      "Auto-generated performance reports",
+      "Smart prompts to uncover trends and issues faster"
     ],
     results: {
       metrics: [
-        { label: "Average Order Value", value: "+40%", subtext: "increase in 3 months" },
-        { label: "Customer LTV", value: "+55%", subtext: "year over year" },
-        { label: "Email Revenue", value: "3x", subtext: "increase" }
+        { label: "Time Saved", value: "10hrs", subtext: "weekly on reporting" },
+        { label: "Data Sources", value: "12+", subtext: "unified platforms" },
+        { label: "Decision Speed", value: "90%", subtext: "faster insights" }
       ]
     },
     imagePath: "/placeholder-analytics.png"
   },
   {
-    id: "inventory-optimization",
-    title: "Never Miss a Sale Due to Stock Issues",
-    subtitle: "How an electronics store reduced stockouts by 95%",
-    description: "Learn how Tech Store Pro eliminated stockouts while reducing inventory holding costs using AI-powered forecasting.",
-    challenge: "Frequent stockouts of popular items and excess inventory of slow-moving products were eating into profits.",
+    id: "cart-recovery",
+    title: "Recover Abandoned Carts Instantly",
+    subtitle: "How Candle Shop boosted sales by 9% with one click",
+    description: "Learn how Candle Shop recovered abandoned carts and increased average order value by using Thinkr's AI-powered suggestions—delivered directly to their inbox with one-click automation.",
+    challenge: "Customers were frequently abandoning carts due to shipping costs, especially in the $65–$74 range—leading to missed revenue and lower AOV.",
     solution: [
-      "Predictive inventory forecasting",
-      "Automated reorder point optimization",
-      "Seasonal demand prediction",
-      "Real-time inventory alerts"
+      "AI detected cart drop-off thresholds using store data",
+      "Suggested free shipping at $75 to recover lost sales",
+      "Enabled in Shopify and Mailchimp in under 30 minutes",
+      "Result: +9% revenue growth from a single one-click change"
     ],
     results: {
       metrics: [
-        { label: "Stockouts", value: "-95%", subtext: "reduction" },
-        { label: "Inventory Costs", value: "-30%", subtext: "reduction" },
-        { label: "Revenue", value: "+25%", subtext: "increase" }
+        { label: "Revenue Growth", value: "+9%", subtext: "from one change" },
+        { label: "Setup Time", value: "30min", subtext: "quick implementation" },
+        { label: "Cart Recovery", value: "+42%", subtext: "abandoned cart saves" }
       ]
     },
-    imagePath: "/placeholder-inventory.png"
-  },
-  {
-    id: "customer-experience",
-    title: "Deliver 24/7 Premium Customer Service",
-    subtitle: "How a lifestyle brand achieved 98% customer satisfaction",
-    description: "See how Lifestyle Co. provides instant, personalized support around the clock with AI automation.",
-    challenge: "Unable to provide consistent customer support outside business hours, leading to customer dissatisfaction.",
-    solution: [
-      "24/7 AI customer support",
-      "Automated order status updates",
-      "Smart return processing",
-      "Proactive issue resolution"
-    ],
-    results: {
-      metrics: [
-        { label: "Response Time", value: "< 1min", subtext: "average" },
-        { label: "CSAT Score", value: "98%", subtext: "satisfaction" },
-        { label: "Support Costs", value: "-40%", subtext: "reduction" }
-      ]
-    },
-    imagePath: "/placeholder-support.png"
+    imagePath: "/placeholder-cart.png"
   }
 ];
 
@@ -135,7 +114,7 @@ export default function LearnMore() {
                     
                     <p className="text-base sm:text-lg text-gray-600">{useCase.description}</p>
                     
-                    <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm">
+                    <div className="bg-gray-100 rounded-xl p-4 sm:p-6 shadow-sm">
                       <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">The Challenge</h4>
                       <p className="text-sm sm:text-base text-gray-600">{useCase.challenge}</p>
                     </div>
@@ -158,7 +137,7 @@ export default function LearnMore() {
                       <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">The Results</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                         {useCase.results.metrics.map((metric, i) => (
-                          <div key={i} className="bg-white rounded-xl p-4 sm:p-6 text-center shadow-sm">
+                          <div key={i} className="bg-gray-100 rounded-xl p-4 sm:p-6 text-center shadow-sm">
                             <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">{metric.value}</div>
                             <div className="text-xs sm:text-sm text-gray-600">{metric.subtext}</div>
                           </div>
