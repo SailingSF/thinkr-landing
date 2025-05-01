@@ -191,6 +191,68 @@ export default function AllInOneChatPage() {
             </div>
           </div>
 
+          {/* Real-World Impact Section */}
+          <div className="max-w-6xl mx-auto mt-24 md:mt-32 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-center mb-4">
+              Real-World Impact, Real-Time Results
+            </h2>
+            <p className="text-gray-600 text-lg sm:text-xl text-center max-w-3xl mx-auto mb-12">
+              See how e-commerce businesses are transforming their operations with thinkr's AI-powered chat
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Impact Cards */}
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl border border-gray-100">
+                <div className="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-full mb-6">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Revenue Optimization</h3>
+                <p className="text-gray-700 mb-4">
+                  "We identified a 23% revenue opportunity by asking thinkr to analyze our cross-channel data and suggest optimizations."
+                </p>
+                <p className="text-sm text-gray-500 italic">- Fashion retailer, $5M/year</p>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl border border-gray-100">
+                <div className="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full mb-6">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Time Savings</h3>
+                <p className="text-gray-700 mb-4">
+                  "What used to take our team 4 hours of dashboard analysis now takes 5 minutes with a simple chat conversation."
+                </p>
+                <p className="text-sm text-gray-500 italic">- Beauty brand, $10M/year</p>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-gray-100">
+                <div className="flex items-center justify-center w-12 h-12 bg-purple-500 rounded-full mb-6">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Growth Insights</h3>
+                <p className="text-gray-700 mb-4">
+                  "thinkr spotted a trending product category we hadn't noticed, leading to a 40% increase in sales for that segment."
+                </p>
+                <p className="text-sm text-gray-500 italic">- Home goods store, $3M/year</p>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="mt-16 text-center">
+              <h3 className="text-2xl font-medium mb-6">Ready to Transform Your E-commerce Operations?</h3>
+              <Button size="lg" className="group">
+                <Link href="https://www.thinkr-app.com/demo" className="flex items-center">
+                  Schedule a Demo
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
