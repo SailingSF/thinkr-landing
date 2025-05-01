@@ -106,7 +106,22 @@ export default function LearnMore() {
                 <div className={`flex flex-col lg:flex-row gap-8 sm:gap-12 items-center ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}>
-                  <div className="flex-1 min-w-0 space-y-6 sm:space-y-8">
+                  {/* Image Section - Always First on Mobile */}
+                  <div className="flex-1 min-w-0 w-full lg:w-auto order-1 lg:order-none mb-8 lg:mb-0">
+                    <div className="relative aspect-square w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mx-auto rounded-2xl overflow-hidden shadow-xl">
+                      <Image
+                        src={useCase.imagePath}
+                        alt={useCase.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                        priority={index === 0}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="flex-1 min-w-0 space-y-6 sm:space-y-8 order-2 lg:order-none">
                     <div>
                       <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">{useCase.title}</h3>
                       <p className="text-lg sm:text-xl text-primary font-medium">{useCase.subtitle}</p>
@@ -154,19 +169,6 @@ export default function LearnMore() {
                           Achieve Similar Results
                         </Button>
                       </Link>
-                    </div>
-                  </div>
-                  
-                  <div className="flex-1 min-w-0 w-full lg:w-auto">
-                    <div className="relative aspect-square w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mx-auto rounded-2xl overflow-hidden shadow-xl">
-                      <Image
-                        src={useCase.imagePath}
-                        alt={useCase.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                        priority={index === 0}
-                      />
                     </div>
                   </div>
                 </div>
