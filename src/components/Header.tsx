@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X, MessageSquare, Bot, BarChart3 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 
@@ -80,25 +80,51 @@ const Header = () => {
                 <ChevronDown className="w-4 h-4" />
               </div>
               {isChatOpen && (
-                <div className="absolute top-full mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
-                  <Link 
-                    href="/all-in-one-chat"
-                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                  >
-                    All-In-One Chat
-                  </Link>
-                  <Link 
-                    href="/autopilot"
-                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                  >
-                    Autopilot
-                  </Link>
-                  <Link 
-                    href="/deep-reporting"
-                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                  >
-                    Deep Reporting
-                  </Link>
+                <div className="absolute top-full mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 left-1/2 -translate-x-1/2">
+                  <div className="grid grid-cols-3 gap-4 px-4">
+                    <Link 
+                      href="/all-in-one-chat"
+                      className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                          <MessageSquare className="w-5 h-5 text-blue-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">All-in-one Chat</h3>
+                        <p className="text-sm text-gray-600">Connect and chat with all your tools in one place</p>
+                      </div>
+                    </Link>
+                    <Link 
+                      href="/autopilot"
+                      className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                          <Bot className="w-5 h-5 text-purple-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">Autopilot</h3>
+                        <p className="text-sm text-gray-600">Let AI handle your routine tasks automatically</p>
+                      </div>
+                    </Link>
+                    <Link 
+                      href="/deep-reporting"
+                      className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                          <BarChart3 className="w-5 h-5 text-green-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Deep Reporting</h3>
+                        <p className="text-sm text-gray-600">Get comprehensive analytics and insights</p>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -194,21 +220,45 @@ const Header = () => {
                   <div className="pl-4 py-2 space-y-3">
                     <Link 
                       href="/all-in-one-chat"
-                      className="block py-3 hover:text-gray-600 transition-colors"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
-                      All-In-One Chat
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                          <MessageSquare className="w-5 h-5 text-blue-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">All-in-one Chat</h3>
+                        <p className="text-sm text-gray-600">Connect and chat with all your tools in one place</p>
+                      </div>
                     </Link>
                     <Link 
                       href="/autopilot"
-                      className="block py-3 hover:text-gray-600 transition-colors"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
-                      Autopilot
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                          <Bot className="w-5 h-5 text-purple-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">Autopilot</h3>
+                        <p className="text-sm text-gray-600">Let AI handle your routine tasks automatically</p>
+                      </div>
                     </Link>
                     <Link 
                       href="/deep-reporting"
-                      className="block py-3 hover:text-gray-600 transition-colors"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
-                      Deep Reporting
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                          <BarChart3 className="w-5 h-5 text-green-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Deep Reporting</h3>
+                        <p className="text-sm text-gray-600">Get comprehensive analytics and insights</p>
+                      </div>
                     </Link>
                   </div>
                 )}
