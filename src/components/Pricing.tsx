@@ -32,7 +32,7 @@ const tiers = [
       "100 Chat Query per day",
       "50 Automations a month",
       "4 Accounts per store",
-      "5 Deep Research topics per monthq"
+      "5 Deep Research topics per month"
     ],
     cta: "Upgrade",
     ctaLink: "https://apps.shopify.com/thinkr",
