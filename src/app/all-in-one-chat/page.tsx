@@ -197,7 +197,7 @@ export default function AllInOneChatPage() {
               Real-World Impact, Real-Time Results
             </h2>
             <p className="text-gray-600 text-lg sm:text-xl text-center max-w-3xl mx-auto mb-12">
-              See how e-commerce businesses are transforming their operations with thinkr's AI-powered chat
+              See how e-commerce businesses are transforming their operations with thinkr&apos;s AI-powered chat
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -210,7 +210,7 @@ export default function AllInOneChatPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Revenue Optimization</h3>
                 <p className="text-gray-700 mb-4">
-                  "We identified a 23% revenue opportunity by asking thinkr to analyze our cross-channel data and suggest optimizations."
+                  &quot;We identified a 23% revenue opportunity by asking thinkr to analyze our cross-channel data and suggest optimizations.&quot;
                 </p>
                 <p className="text-sm text-gray-500 italic">- Fashion retailer, $5M/year</p>
               </div>
@@ -223,7 +223,7 @@ export default function AllInOneChatPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Time Savings</h3>
                 <p className="text-gray-700 mb-4">
-                  "What used to take our team 4 hours of dashboard analysis now takes 5 minutes with a simple chat conversation."
+                    &quot;What used to take our team 4 hours of dashboard analysis now takes 5 minutes with a simple chat conversation.&quot;
                 </p>
                 <p className="text-sm text-gray-500 italic">- Beauty brand, $10M/year</p>
               </div>
@@ -236,7 +236,7 @@ export default function AllInOneChatPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Growth Insights</h3>
                 <p className="text-gray-700 mb-4">
-                  "thinkr spotted a trending product category we hadn't noticed, leading to a 40% increase in sales for that segment."
+                  &quot;thinkr spotted a trending product category we hadn&apos;t noticed, leading to a 40% increase in sales for that segment.&quot;
                 </p>
                 <p className="text-sm text-gray-500 italic">- Home goods store, $3M/year</p>
               </div>
