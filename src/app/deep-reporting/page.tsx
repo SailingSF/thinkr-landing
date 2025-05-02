@@ -1,9 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowRight, BarChart3, Clock, Database, FileText, Zap, Search, CheckCircle2, LineChart, PieChart, TrendingUp, BarChart, Shield } from 'lucide-react';
+import { ArrowRight, Clock, Database, FileText, Zap, Search, CheckCircle2, LineChart, TrendingUp, BarChart, Shield } from 'lucide-react';
 
 export default function DeepReportingPage() {
   return (
