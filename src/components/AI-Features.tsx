@@ -40,12 +40,12 @@ export default function AIFeatures() {
                 <h3 className="text-xl sm:text-2xl font-medium mb-2 sm:mb-3">{tool.title}</h3>
                 <p className="text-muted-foreground text-base sm:text-lg">{tool.description}</p>
               </div>
-              <div className="relative h-[200px] sm:h-[220px] md:h-[250px] w-full overflow-hidden rounded-lg">
+              <div className="relative h-[200px] sm:h-[220px] md:h-[250px] w-full overflow-hidden rounded-xl">
                 <Image
                   src={tool.image}
                   alt={tool.title}
                   fill
-                  className="object-cover"
+                  className="object-contain rounded-xl"
                   priority={index < 2}
                   quality={90}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
