@@ -43,7 +43,7 @@ const Testimonials = () => {
               </div>
               <div className="flex-1">
                 <blockquote className="text-xl text-gray-900 mb-6 leading-relaxed">
-                  "{testimonial.quote}"
+                  “{testimonial.quote}”
                 </blockquote>
                 <div>
                   <h4 className="font-medium text-lg">{testimonial.name}</h4>
