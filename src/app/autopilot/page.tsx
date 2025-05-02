@@ -42,7 +42,7 @@ export default function AutopilotPage() {
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
               {/* Replace with actual dashboard image */}
               <Image
-                src="/placeholder-autopilot-dashboard.png"
+                src="/autopilot-temporary.png"
                 alt="thinkr autopilot dashboard"
                 width={1200}
                 height={600}
@@ -119,7 +119,7 @@ export default function AutopilotPage() {
                 How Autopilot Works
               </h2>
               <p className="text-gray-600 text-lg">
-                Set it up once, and let AI handle the rest. Here's how thinkr's Autopilot 
+                Set it up once, and let AI handle the rest. Here&apos;s how thinkr&apos;s Autopilot 
                 transforms your operations.
               </p>
             </div>
@@ -156,7 +156,7 @@ export default function AutopilotPage() {
                 <div className="relative rounded-xl overflow-hidden shadow-lg">
                   {/* Replace with actual setup flow image */}
                   <Image
-                    src="/placeholder-setup-flow.png"
+                    src="/autopilot-temporary-2.png"
                     alt="thinkr autopilot setup process"
                     width={600}
                     height={800}
