@@ -2,18 +2,20 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X, MessageSquare, Bot, BarChart3, Linkedin, ShoppingBag, BookOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
+  const [isChatOpen, setIsChatOpen] = useState(false)
 
-  // Close resource dropdown when mobile menu closes
+  // Close dropdowns when mobile menu closes
   useEffect(() => {
     if (!isMenuOpen) {
       setIsResourcesOpen(false)
+      setIsChatOpen(false)
     }
   }, [isMenuOpen])
 
@@ -33,45 +35,119 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center flex-1 space-x-4 sm:space-x-8 md:space-x-16 lg:space-x-32 mx-8">
-            <div className="relative">
+          <div className="hidden lg:flex items-center justify-center flex-1 space-x-4 lg:space-x-8 xl:space-x-16 2xl:space-x-32 mx-8">
+            <div className="relative group">
               <div 
-                className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors"
-                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors group-hover:text-gray-600"
               >
                 <span>Resources</span>
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180`} />
               </div>
-              {isResourcesOpen && (
-                <div className="absolute top-full mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+              <div className="absolute top-full left-0 mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out z-50">
+                <div className="grid grid-cols-3 gap-4 px-4">
                   <a 
-                    href="https://www.linkedin.com/company/thinkr-pro/about/" 
+                    href="https://www.linkedin.com/company/thinkr-pro/about/"
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group/item"
                   >
-                    LinkedIn
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover/item:bg-blue-100 transition-colors">
+                        <Linkedin className="w-5 h-5 text-blue-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover/item:text-blue-600 transition-colors">LinkedIn</h3>
+                      <p className="text-sm text-gray-600">Follow our journey and latest updates</p>
+                    </div>
                   </a>
                   <a 
-                    href="https://apps.shopify.com/thinkr" 
+                    href="https://apps.shopify.com/thinkr"
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group/item"
                   >
-                    Shopify App
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover/item:bg-green-100 transition-colors">
+                        <ShoppingBag className="w-5 h-5 text-green-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover/item:text-green-600 transition-colors">Shopify App</h3>
+                      <p className="text-sm text-gray-600">Install thinkr on your Shopify store</p>
+                    </div>
                   </a>
-                  <a 
+                  <Link 
                     href="/learn-more"
-                    className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group/item"
                   >
-                    Learn More
-                  </a>
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover/item:bg-purple-100 transition-colors">
+                        <BookOpen className="w-5 h-5 text-purple-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover/item:text-purple-600 transition-colors">Use Cases</h3>
+                      <p className="text-sm text-gray-600">See how businesses succeed with thinkr</p>
+                    </div>
+                  </Link>
                 </div>
-              )}
+              </div>
             </div>
-            <Link href="/all-in-one-chat" className="hover:text-gray-600 transition-colors">
-              Chat
-            </Link>
+            <div className="relative group">
+              <div 
+                className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors group-hover:text-gray-600"
+              >
+                <span>Features</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180`} />
+              </div>
+              <div className="absolute top-full mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 left-1/2 -translate-x-1/2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out z-50">
+                <div className="grid grid-cols-3 gap-4 px-4">
+                  <Link 
+                    href="/all-in-one-chat"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                        <MessageSquare className="w-5 h-5 text-blue-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">All-in-one Chat</h3>
+                      <p className="text-sm text-gray-600">Connect and chat with all your tools in one place</p>
+                    </div>
+                  </Link>
+                  <Link 
+                    href="/autopilot"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                        <Bot className="w-5 h-5 text-purple-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">Autopilot</h3>
+                      <p className="text-sm text-gray-600">Let AI handle your routine tasks automatically</p>
+                    </div>
+                  </Link>
+                  <Link 
+                    href="/deep-reporting"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                        <BarChart3 className="w-5 h-5 text-green-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Deep Reporting</h3>
+                      <p className="text-sm text-gray-600">Get comprehensive analytics and insights</p>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
             <Link href="/company" className="hover:text-gray-600 transition-colors">
               About
             </Link>
@@ -80,7 +156,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button className="bg-primary hover:bg-primary-300 text-white px-5 sm:px-6 py-2 rounded-lg" asChild>
               <Link href="https://www.thinkrapp.com/">
                 Sign Up
@@ -89,7 +165,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center space-x-3 sm:space-x-4">
+          <div className="lg:hidden flex items-center space-x-3 sm:space-x-4">
             <Button className="bg-primary hover:bg-primary-300 text-white px-4 sm:px-6 py-2 rounded-lg text-sm whitespace-nowrap" asChild>
               <Link href="https://www.thinkrapp.com/">
                 Sign Up
@@ -111,7 +187,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-50">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-50">
             <div className="p-4 space-y-3">
               <div>
                 <button
@@ -126,33 +202,111 @@ const Header = () => {
                 {isResourcesOpen && (
                   <div className="pl-4 py-2 space-y-3">
                     <a 
-                      href="https://www.linkedin.com/company/thinkr-pro/about/" 
+                      href="https://www.linkedin.com/company/thinkr-pro/about/"
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="block py-3 hover:text-gray-600 transition-colors"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
-                      LinkedIn
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                          <Linkedin className="w-5 h-5 text-blue-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">LinkedIn</h3>
+                        <p className="text-sm text-gray-600">Follow our journey and latest updates</p>
+                      </div>
                     </a>
                     <a 
-                      href="https://apps.shopify.com/thinkr" 
+                      href="https://apps.shopify.com/thinkr"
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="block py-3 hover:text-gray-600 transition-colors"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
-                      Shopify App
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                          <ShoppingBag className="w-5 h-5 text-green-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Shopify App</h3>
+                        <p className="text-sm text-gray-600">Install thinkr on your Shopify store</p>
+                      </div>
                     </a>
-                    <a 
+                    <Link 
                       href="/learn-more"
-                      className="block py-3 hover:text-gray-600 transition-colors"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
-                      Learn More
-                    </a>
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                          <BookOpen className="w-5 h-5 text-purple-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">Use Cases</h3>
+                        <p className="text-sm text-gray-600">See how businesses succeed with thinkr</p>
+                      </div>
+                    </Link>
                   </div>
                 )}
               </div>
-              <Link href="/all-in-one-chat" className="block py-3 hover:text-gray-600 transition-colors text-base">
-                Chat
-              </Link>
+              <div>
+                <button
+                  onClick={() => setIsChatOpen(!isChatOpen)}
+                  className="flex items-center justify-between w-full py-3 touch-manipulation transition-colors hover:text-gray-600"
+                  aria-expanded={isChatOpen}
+                  aria-label="Toggle features menu"
+                >
+                  <span className="text-base">Features</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isChatOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isChatOpen && (
+                  <div className="pl-4 py-2 space-y-3">
+                    <Link 
+                      href="/all-in-one-chat"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                          <MessageSquare className="w-5 h-5 text-blue-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">All-in-one Chat</h3>
+                        <p className="text-sm text-gray-600">Connect and chat with all your tools in one place</p>
+                      </div>
+                    </Link>
+                    <Link 
+                      href="/autopilot"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                          <Bot className="w-5 h-5 text-purple-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">Autopilot</h3>
+                        <p className="text-sm text-gray-600">Let AI handle your routine tasks automatically</p>
+                      </div>
+                    </Link>
+                    <Link 
+                      href="/deep-reporting"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                          <BarChart3 className="w-5 h-5 text-green-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Deep Reporting</h3>
+                        <p className="text-sm text-gray-600">Get comprehensive analytics and insights</p>
+                      </div>
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link href="/company" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 About
               </Link>

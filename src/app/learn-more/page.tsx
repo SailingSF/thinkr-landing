@@ -4,77 +4,69 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
-const features = [
-  {
-    title: "Seamless Integration",
-    description: "Thinkr integrates directly with your Shopify store, providing immediate value without complex setup processes. Start optimizing your store operations in minutes."
-  },
-  {
-    title: "AI-Powered Insights",
-    description: "Leverage advanced AI technology to gain valuable insights about your store's performance, customer behavior, and optimization opportunities."
-  },
-  {
-    title: "Automated Shopify Tasks",
-    description: "Automate repetitive tasks like order processing, inventory management, and customer support with our AI agent."
-  },
-  {
-    title: "Chat with your Shopify data",
-    description: "Ask questions about your store's performance, customer behavior, and optimization opportunities with our AI agent, and ask for research reports to explore strategies to make your store grow."
-  }
-];
-
 const usesCases = [
   {
-    id: "manage-inventory",
-    title: "Manage inventory with AI-driven insights",
-    description: "Automate inventory tracking, get low stock alerts, and optimize reorder points with AI-driven predictions based on historical sales data and seasonality.",
-    details: [
-      "Real-time inventory tracking across all your sales channels",
-      "Smart reorder point calculations based on historical data",
-      "Seasonal demand prediction to optimize stock levels",
-      "Automated low stock alerts with customizable thresholds",
-      "Inventory valuation and cost tracking"
+    id: "scale-operations",
+    title: "Scale Your Operations Without Growing Your Team",
+    subtitle: "From 1,000 to 10,000 orders per day with the same team size",
+    description: "See how Fashion Boutique X automated their operations and scaled their business without hiring additional staff.",
+    challenge: "Managing increasing order volume was overwhelming their small team, leading to delays and errors.",
+    solution: [
+      "Automated 80% of customer service inquiries",
+      "Reduced order processing time by 65%",
+      "Automated inventory forecasting and reordering",
+      "Streamlined fulfillment workflows"
     ],
-    imagePath: "/diagrams/agent_inventory.png" 
+    results: {
+      metrics: [
+        { label: "Orders Processed", value: "10x", subtext: "increase in daily orders" },
+        { label: "Customer Response Time", value: "5min", subtext: "down from 4 hours" },
+        { label: "Team Size", value: "Same", subtext: "no additional hires" }
+      ]
+    },
+    imagePath: "/usecase1-operations.webp"
   },
   {
-    id: "update-orders",
-    title: "Streamline order management",
-    description: "Automatically process and update order statuses, sync shipping information, and manage fulfillment across multiple sales channels in real-time.",
-    details: [
-      "Automated order processing and status updates",
-      "Multi-channel order synchronization",
-      "Smart fulfillment routing and optimization",
-      "Real-time shipping updates and tracking",
-      "Bulk order processing capabilities"
+    id: "unified-data",
+    title: "All Your Data in One Conversation",
+    subtitle: "How Outdoor Gear Co. cut reporting time by 10+ hours every week",
+    description: "See how one fast-growing ecommerce team used thinkr's all-in-one chat to get instant answers from Shopify, Meta Ads, Google Ads, Klaviyo, and more—without switching tools or exporting data.",
+    challenge: "Manually checking performance across platforms took hours, delayed decisions, and led to missed opportunities.",
+    solution: [
+      "Unified chat for 300+ ecommerce tools",
+      "Instant insights across all sales and ad channels",
+      "Auto-generated performance reports",
+      "Smart prompts to uncover trends and issues faster"
     ],
-    imagePath: "/diagrams/agent_orders.png"
+    results: {
+      metrics: [
+        { label: "Time Saved", value: "10hrs", subtext: "weekly on reporting" },
+        { label: "Data Sources", value: "12+", subtext: "unified platforms" },
+        { label: "Decision Speed", value: "90%", subtext: "faster insights" }
+      ]
+    },
+    imagePath: "/usecase2-operations.webp"
   },
   {
-    id: "store-analysis",
-    title: "Data-driven store analytics",
-    description: "Get deep insights into your store's performance with AI-powered analytics, automated report tracking, and actionable recommendations for growth.",
-    details: [
-      "Comprehensive sales and revenue analytics",
-      "Customer behavior and purchase pattern analysis",
-      "Product performance metrics and insights",
-      "Automated report generation and scheduling",
-      "AI-powered growth recommendations"
+    id: "cart-recovery",
+    title: "Recover Abandoned Carts Instantly",
+    subtitle: "How Candle Shop boosted sales by 9% with one click",
+    description: "Learn how Candle Shop recovered abandoned carts and increased average order value by using thinkr's AI-powered suggestions—delivered directly to their inbox with one-click automation.",
+    challenge: "Customers were frequently abandoning carts due to shipping costs, especially in the $65–$74 range—leading to missed revenue and lower AOV.",
+    solution: [
+      "AI detected cart drop-off thresholds using store data",
+      "Suggested free shipping at $75 to recover lost sales",
+      "Enabled in Shopify and Mailchimp in under 30 minutes",
+      "Result: +9% revenue growth from a single one-click change"
     ],
-    imagePath: "/diagrams/agent_analytics.png"
-  },
-  {
-    id: "create-promotions",
-    title: "Smart promotional campaigns",
-    description: "Automatically generate and optimize promotional campaigns based on customer segments, purchase history, and market trends.",
-    details: [
-      "AI-driven customer segmentation",
-      "Personalized promotion recommendations",
-      "Campaign performance tracking",
-      "Automated A/B testing",
-      "ROI analysis and optimization"
-    ],
-    imagePath: "/diagrams/agent_promotions.png"
+    results: {
+      metrics: [
+        { label: "Revenue Growth", value: "+9%", subtext: "from one change" },
+        { label: "Setup Time", value: "30min", subtext: "quick implementation" },
+        { label: "Cart Recovery", value: "+42%", subtext: "abandoned cart saves" }
+      ]
+    },
+    imagePath: "/usecases/ecommerce_agent_3.webp"
   }
 ];
 
@@ -83,100 +75,100 @@ export default function LearnMore() {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Header />
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-medium text-gray-900 mb-6">
-            Enhance Your Shopify Store with Thinkr
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-tight text-gray-900">
+            Real Results for Real Businesses
           </h1>
-          <p className="text-xl text-gray-600 mb-12">
-            Transform your e-commerce experience with our powerful AI-driven solutions
+          <p className="text-gray-600 text-lg sm:text-xl md:text-2xl mt-2 mb-8 sm:mb-12">
+            Discover how e-commerce businesses like yours are using thinkr to automate operations, boost revenue, and deliver exceptional customer experiences
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="https://apps.shopify.com/thinkr" target="_blank">
-              <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-3">
-                Install on Shopify
-              </Button>
-            </Link>
-            <Link href="https://thinkrapp.com" target="_blank">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="w-full sm:w-auto border-primary text-primary hover:bg-primary/10 px-8 py-3"
-              >
-                Open Web App
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+            <Link href="https://apps.shopify.com/thinkr" target="_blank" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3">
+                Start Your Success Story
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-medium mb-4 text-gray-900">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Use Cases Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            AI that goes beyond search and chat
-          </h2>
-          <p className="text-xl md:text-2xl text-center text-muted-foreground mb-16">
-            Discover how Thinkr transforms your Shopify operations
-          </p>
-          
-          <div className="space-y-24">
+      <section className="py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="space-y-16 sm:space-y-24 md:space-y-32">
             {usesCases.map((useCase, index) => (
               <div
                 key={useCase.id}
                 id={useCase.id}
                 className="scroll-mt-24"
               >
-                <div className={`flex flex-col lg:flex-row gap-12 items-center ${
+                <div className={`flex flex-col lg:flex-row gap-8 sm:gap-12 items-center ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-3xl font-semibold mb-6">{useCase.title}</h3>
-                    <p className="text-lg text-muted-foreground mb-8">{useCase.description}</p>
-                    <ul className="space-y-4">
-                      {useCase.details.map((detail, i) => (
-                        <li key={i} className="flex items-start gap-4">
-                          <div className="w-2 h-2 rounded-full bg-primary mt-2"></div>
-                          <span className="text-gray-600 flex-1">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-8">
-                      <Link href="https://apps.shopify.com/thinkr" target="_blank">
-                        <Button 
-                          variant="outlineCustom" 
-                          textColor="hsl(var(--primary))"
-                          className="hover:bg-primary/10"
-                        >
-                          Try it Now
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="relative aspect-square w-full max-w-[500px] mx-auto">
+                  {/* Image Section - Always First on Mobile */}
+                  <div className="flex-1 min-w-0 w-full lg:w-auto order-1 lg:order-none mb-8 lg:mb-0">
+                    <div className="relative aspect-square w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mx-auto rounded-2xl overflow-hidden shadow-xl">
                       <Image
                         src={useCase.imagePath}
                         alt={useCase.title}
                         fill
-                        className="object-contain"
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                        priority={index === 0}
                       />
+                    </div>
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="flex-1 min-w-0 space-y-6 sm:space-y-8 order-2 lg:order-none">
+                    <div>
+                      <h3 className="text-2xl sm:text-3xl font-medium mb-2 sm:mb-3">{useCase.title}</h3>
+                      <p className="text-lg sm:text-xl text-primary font-medium">{useCase.subtitle}</p>
+                    </div>
+                    
+                    <p className="text-base sm:text-lg text-gray-600">{useCase.description}</p>
+                    
+                    <div className="bg-gray-100 rounded-xl p-4 sm:p-6 shadow-sm">
+                      <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">The Challenge</h4>
+                      <p className="text-sm sm:text-base text-gray-600">{useCase.challenge}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">The Solution</h4>
+                      <ul className="space-y-2 sm:space-y-3">
+                        {useCase.solution.map((item, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary"></div>
+                            </div>
+                            <span className="text-sm sm:text-base text-gray-600">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">The Results</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                        {useCase.results.metrics.map((metric, i) => (
+                          <div key={i} className="bg-gray-100 rounded-xl p-4 sm:p-6 text-center shadow-sm">
+                            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">{metric.value}</div>
+                            <div className="text-xs sm:text-sm text-gray-600">{metric.subtext}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="pt-2 sm:pt-4">
+                      <Link href="https://apps.shopify.com/thinkr" target="_blank" className="block w-full sm:w-auto">
+                        <Button 
+                          size="lg"
+                          className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white"
+                        >
+                          Achieve Similar Results
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -185,6 +177,24 @@ export default function LearnMore() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+        <div className="max-w-4xl mx-auto text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+            Ready to Transform Your E-commerce Business?
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8">
+            Join hundreds of successful businesses using thinkr to automate operations and drive growth
+          </p>
+          <Link href="https://apps.shopify.com/thinkr" target="_blank" className="block w-full sm:w-auto">
+            <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3">
+              Get Started Today
+            </Button>
+          </Link>
+        </div>
+      </section>
+      
       <Footer />
     </div>
   );
