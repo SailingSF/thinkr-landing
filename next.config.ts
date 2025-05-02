@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['react-icons'],
+    optimizePackageImports: ['react-icons', 'lucide-react'],
   },
   compress: true,
   webpack: (config) => {

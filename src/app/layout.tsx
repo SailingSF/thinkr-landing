@@ -3,9 +3,7 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
-import OptimizeLoadingMetrics from "@/components/OptimizeLoadingMetrics"
 
 // Font with preload enabled
 const inter = Inter({ 
@@ -87,10 +85,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="/hero_image_3.svg" type="image/svg+xml" fetchPriority="high" />
+        <link rel="preload" as="image" href="/usecase1-operations.webp" type="image/webp" fetchPriority="high" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
       </head>
       <body className={inter.className}>
-        <OptimizeLoadingMetrics />
+        {/* Removed OptimizeLoadingMetrics for performance improvements */}
         
         {/* Google Tag Manager - Body Section (noscript) */}
         <noscript dangerouslySetInnerHTML={{ __html: `
@@ -103,8 +102,8 @@ export default function RootLayout({
           src="https://www.facebook.com/tr?id=${fbPixelId}&ev=PageView&noscript=1" />
         `}} />
         {children}
+        {/* Core Analytics only */}
         <Analytics />
-        <SpeedInsights />
         {/* Google Tag Manager Script */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

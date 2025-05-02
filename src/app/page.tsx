@@ -1,25 +1,21 @@
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
-import HeroImage from "@/components/HeroImage"
-import CombinedProof from '@/components/CombinedProof'
 import Footer from "@/components/Footer"
 import Features from "@/components/Features"
-import AIFeatures from "@/components/AI-Features"
 import Pricing from "@/components/Pricing"
 import Timeline from "@/components/Timeline"
-import Testimonials from "@/components/Testimonials"
 import SimpleContactForm from "@/components/SimpleContactForm"
 import Script from "next/script"
-import { Suspense } from "react"
+import HeroImage from "@/components/HeroImage"
+import CombinedProof from "@/components/CombinedProof"
+import AIFeatures from "@/components/AI-Features"
+import Testimonials from "@/components/Testimonials"
 
 // Opt into static generation
 export const preferredRegion = 'auto';
 export const dynamic = 'force-static';
 
-// Import loading components for Suspense
-const LoadingHero = () => <div className="h-[300px] bg-gray-100 animate-pulse rounded-xl" />
-const LoadingSection = () => <div className="h-[200px] bg-gray-100 animate-pulse rounded-xl my-8" />
-
+// Page content
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
@@ -47,20 +43,12 @@ export default function Home() {
       </Script>
       <Header />
       <Hero />
-      <Suspense fallback={<LoadingHero />}>
-        <HeroImage />
-      </Suspense>
-      <Suspense fallback={<LoadingSection />}>
-        <CombinedProof />
-      </Suspense>
+      <HeroImage />
+      <CombinedProof />
       <Timeline />
       <Features />
-      <Suspense fallback={<LoadingSection />}>
-        <AIFeatures />
-      </Suspense>
-      <Suspense fallback={<LoadingSection />}>
-        <Testimonials />
-      </Suspense>
+      <AIFeatures />
+      <Testimonials />
       <Pricing />
       <SimpleContactForm />
       <Footer />
