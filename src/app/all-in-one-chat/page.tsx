@@ -20,7 +20,7 @@ export default function AllInOneChatPage() {
             </p>
             <div className="flex justify-center">
               <Button asChild size="lg" className="w-full sm:w-auto group">
-                <Link href="https://www.thinkr-app.com/">
+                <Link href="https://www.thinkrapp.com/">
                   Get Started Now
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -246,7 +246,7 @@ export default function AllInOneChatPage() {
             <div className="mt-16 text-center">
               <h3 className="text-2xl font-medium mb-6">Ready to Transform Your E-commerce Operations?</h3>
               <Button size="lg" className="group">
-                <Link href="https://www.thinkr-app.com/demo" className="flex items-center">
+                <Link href="/contact" className="flex items-center">
                   Schedule a Demo
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>

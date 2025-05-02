@@ -26,7 +26,7 @@ export default function AutopilotPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="group">
-                <Link href="https://app.thinkr.com/signup" className="flex items-center">
+                <Link href="https://thinkrapp.com" className="flex items-center">
                   Enable Autopilot
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -179,7 +179,7 @@ export default function AutopilotPage() {
                 Join thousands of e-commerce stores using thinkr to automate their growth
               </p>
               <Button size="lg" className="group bg-black hover:bg-black/90" asChild>
-                <Link href="https://app.thinkr.com/signup">
+                <Link href="https://thinkrapp.com">
                   Get Started Free
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>

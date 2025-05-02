@@ -349,7 +349,7 @@ export default function DeepReportingPage() {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="group">
-                  <Link href="/demo" className="flex items-center">
+                  <Link href="/contact" className="flex items-center">
                     Schedule Demo
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
