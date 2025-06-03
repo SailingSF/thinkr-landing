@@ -12,6 +12,11 @@ const tools = [
     image: "/features/chat_feature.webp",
   },
   {
+    title: "Alert Agent",
+    description: "Never miss critical business moments",
+    image: "/features/chat_feature.webp",
+  },
+  {
     title: "Scheduler",
     description: "Smart campaign and content scheduling",
     image: "/features/scheduler_feature.webp",
@@ -33,7 +38,7 @@ export default function AIFeatures() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-6">
           {tools.map((tool, index) => (
             <div key={index} className="group flex flex-col h-full justify-between bg-white rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow">
               <div className="mb-4 sm:mb-6">
@@ -48,7 +53,7 @@ export default function AIFeatures() {
                   className="object-contain rounded-xl"
                   priority={index < 2}
                   quality={90}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                 />
               </div>
             </div>
