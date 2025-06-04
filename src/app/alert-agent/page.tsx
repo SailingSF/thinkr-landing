@@ -39,12 +39,137 @@ export default function AlertAgentPage() {
 
           {/* Hero Image */}
           <div className="max-w-6xl mx-auto mt-16">
-            <div className="relative rounded-xl overflow-hidden shadow-2xl">
-              <div className="bg-gradient-to-r from-red-50 to-orange-50 p-8 min-h-[400px] flex items-center justify-center">
-                <div className="text-center">
-                  <Bell className="w-16 h-16 text-red-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-medium text-gray-800 mb-2">Alert Agent Dashboard</h3>
-                  <p className="text-gray-600">Real-time monitoring and intelligent alerts</p>
+            <div className="relative rounded-xl overflow-hidden shadow-2xl bg-gray-900 p-8">
+              {/* Platform Interface Header */}
+              <div className="flex gap-8 mb-8 border-b border-gray-700 pb-4">
+                <div className="text-orange-400 border-b-2 border-orange-400 pb-4">
+                  <span className="flex items-center gap-2">
+                    Alert Agents
+                    <span className="bg-orange-500 text-white text-xs rounded-full px-2 py-1">3</span>
+                  </span>
+                </div>
+              </div>
+
+              {/* Alert Examples */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Low Orders Alert */}
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-blue-400 rounded-full mt-2"></div>
+                    <div className="flex-1">
+                      <h3 className="text-white text-lg font-medium mb-2">Low Orders</h3>
+                      <div className="flex items-center gap-4 mb-3">
+                        <span className="text-blue-400 text-sm">Orders Count</span>
+                        <span className="text-gray-400 text-sm">&lt; 1</span>
+                        <span className="text-gray-400 text-sm">Daily</span>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">Please send me an email.</p>
+                      <div className="flex items-center gap-2 text-gray-500 text-xs">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                        <span>Next check: Jun 3, 2025, 5:15:43 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Low Sales Alert */}
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-green-400 rounded-full mt-2"></div>
+                    <div className="flex-1">
+                      <h3 className="text-white text-lg font-medium mb-2">Low Sales Alert</h3>
+                      <div className="flex items-center gap-4 mb-3">
+                        <span className="text-green-400 text-sm">Revenue</span>
+                        <span className="text-gray-400 text-sm">&lt; $1</span>
+                        <span className="text-gray-400 text-sm">Daily</span>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">Please send me an Email</p>
+                      <div className="flex items-center gap-2 text-gray-500 text-xs">
+                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <span>Next check: Jun 3, 2025, 5:16:18 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Inventory Tracking */}
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-orange-400 rounded-full mt-2"></div>
+                    <div className="flex-1">
+                      <h3 className="text-white text-lg font-medium mb-2">Healthy Inventory Tracking</h3>
+                      <div className="flex items-center gap-4 mb-3">
+                        <span className="text-orange-400 text-sm">Inventory Level</span>
+                        <span className="text-gray-400 text-sm">&lt; 100</span>
+                        <span className="text-gray-400 text-sm">Daily</span>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">Please send me an email.</p>
+                      <div className="flex items-center gap-2 text-gray-500 text-xs">
+                        <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                        <span>Next check: Jun 3, 2025, 5:17:03 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* High Cart Abandonment */}
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-red-400 rounded-full mt-2"></div>
+                    <div className="flex-1">
+                      <h3 className="text-white text-lg font-medium mb-2">High Cart Abandonment</h3>
+                      <div className="flex items-center gap-4 mb-3">
+                        <span className="text-red-400 text-sm">Abandonment Rate</span>
+                        <span className="text-gray-400 text-sm">&gt; 75%</span>
+                        <span className="text-gray-400 text-sm">Hourly</span>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">Send Slack notification to team.</p>
+                      <div className="flex items-center gap-2 text-gray-500 text-xs">
+                        <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                        <span>Next check: Jun 3, 2025, 6:00:00 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Ad Performance Drop */}
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mt-2"></div>
+                    <div className="flex-1">
+                      <h3 className="text-white text-lg font-medium mb-2">Ad Performance Drop</h3>
+                      <div className="flex items-center gap-4 mb-3">
+                        <span className="text-purple-400 text-sm">ROAS</span>
+                        <span className="text-gray-400 text-sm">&lt; 2.5</span>
+                        <span className="text-gray-400 text-sm">Every 4 hours</span>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">Pause underperforming campaigns.</p>
+                      <div className="flex items-center gap-2 text-gray-500 text-xs">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span>Next check: Jun 3, 2025, 9:00:00 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Customer Churn Risk */}
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full mt-2"></div>
+                    <div className="flex-1">
+                      <h3 className="text-white text-lg font-medium mb-2">Customer Churn Risk</h3>
+                      <div className="flex items-center gap-4 mb-3">
+                        <span className="text-yellow-400 text-sm">Days Since Purchase</span>
+                        <span className="text-gray-400 text-sm">&gt; 60</span>
+                        <span className="text-gray-400 text-sm">Weekly</span>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">Trigger re-engagement email sequence.</p>
+                      <div className="flex items-center gap-2 text-gray-500 text-xs">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                        <span>Next check: Jun 10, 2025, 9:00:00 AM</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
