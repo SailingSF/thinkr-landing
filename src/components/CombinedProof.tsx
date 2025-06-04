@@ -1,11 +1,52 @@
 import React from 'react';
 import Image from 'next/image';
+import { ArrowUp } from 'lucide-react';
 
 // --- Stats Data ---
 const agencyStats = [
-  { value: '42%', description: 'increase in revenue within 90 days' },
-  { value: '2x', description: 'increase in client retention.' },
-  { value: '30%', description: 'faster campaign optimizations.' },
+  { 
+    value: '42%', 
+    description: 'increase in revenue within 90 days',
+    label: 'increase in revenue within 90 days'
+  },
+  { 
+    value: '2x', 
+    description: 'increase in client retention.',
+    label: 'increase in client retention'  
+  },
+  { 
+    value: '30%', 
+    description: 'faster campaign optimizations.',
+    label: 'faster campaign optimizations'
+  },
+];
+
+// --- Case Studies Data ---
+const caseStudies = [
+  {
+    title: 'Global law firm automates compiling and analysis of legal docs today',
+    value: '62%',
+    label: 'time savings',
+    highlight: 'revenue growth'
+  },
+  {
+    title: 'European fintech scaleup uses AI agent for new hire onboarding tasks',
+    value: '10h',
+    label: 'per week/employee saved',
+    highlight: 'customer retention boost'
+  },
+  {
+    title: 'Leading Swedish mining company automates R&D analysis workflows daily',
+    value: '50%',
+    label: 'time savings',
+    highlight: 'campaign optimization speed'
+  },
+  {
+    title: 'Industrial market leader uses AI agent to augment customer support.',
+    value: '2x',
+    label: 'number of issues resolved',
+    highlight: 'operational efficiency'
+  },
 ];
 
 // --- Logos Data ---
@@ -54,7 +95,7 @@ const CombinedProof = () => {
         </div>
       </section>
 
-      {/* --- Agency/Stats Proof Part --- */}
+      {/* --- Stats Section with Dark Cards --- */}
       <section className="pt-10 sm:pt-12 pb-16 sm:pb-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 sm:mb-16">
@@ -62,15 +103,30 @@ const CombinedProof = () => {
               Stores that use thinkr see
             </h2>
           </div>
-          <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-10 md:gap-16 max-w-6xl mx-auto">
-            {agencyStats.map((stat, index) => (
-              <div key={`agency-${index}`} className="flex items-center gap-3 text-left">
-                <span className="text-6xl sm:text-7xl font-bold text-primary">
-                  {stat.value}
-                </span>
-                <span className="text-base sm:text-lg text-gray-600 max-w-[150px]">
-                  {stat.description}
-                </span>
+          
+          {/* Grid of Case Study Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {caseStudies.map((study, index) => (
+              <div key={`case-${index}`} className="bg-gray-900 text-white p-6 rounded-2xl relative overflow-hidden group hover:bg-gray-800 transition-colors">
+                {/* Case Study Title */}
+                <h3 className="text-sm font-medium text-gray-300 mb-8 leading-relaxed relative z-10">
+                  {study.title}
+                </h3>
+                
+                {/* Statistics */}
+                <div className="relative z-10 mt-auto">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-6xl sm:text-7xl font-bold text-primary leading-none">
+                      {study.value}
+                    </span>
+                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <ArrowUp className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-400 mt-2">
+                    {study.label}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
