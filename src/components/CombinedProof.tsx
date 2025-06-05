@@ -24,25 +24,25 @@ const agencyStats = [
 // --- Case Studies Data ---
 const caseStudies = [
   {
-    title: 'Global law firm automates compiling and analysis of legal docs today',
+    title: 'Shopify fashion store automates Meta & Google Ads ROAS optimization daily',
     value: '62%',
     label: 'time savings',
     highlight: 'revenue growth'
   },
   {
-    title: 'European fintech scaleup uses AI agent for new hire onboarding tasks',
+    title: 'DTC skincare brand uses AI to recover abandoned carts and boost AOV',
     value: '10h',
     label: 'per week/employee saved',
     highlight: 'customer retention boost'
   },
   {
-    title: 'Leading Swedish mining company automates R&D analysis workflows daily',
+    title: 'Multi-location retailer automates Shopify-Klaviyo email campaign triggers',
     value: '50%',
     label: 'time savings',
     highlight: 'campaign optimization speed'
   },
   {
-    title: 'Industrial market leader uses AI agent to augment customer support.',
+    title: 'Shopify Plus store uses AI to detect pricing drops and inventory alerts.',
     value: '2x',
     label: 'number of issues resolved',
     highlight: 'operational efficiency'
