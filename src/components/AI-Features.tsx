@@ -1,6 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { MessageSquare, Bot, BarChart3, Bell } from "lucide-react"
 
 const tools = [
   {
@@ -10,9 +11,7 @@ const tools = [
     href: "/all-in-one-chat",
     icon: (
       <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
+        <MessageSquare className="w-5 h-5 text-blue-600" />
       </div>
     ),
     features: [
@@ -28,9 +27,7 @@ const tools = [
     href: "/autopilot",
     icon: (
       <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-        <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
+        <Bot className="w-5 h-5 text-purple-600" />
       </div>
     ),
     features: [
@@ -46,9 +43,7 @@ const tools = [
     href: "/deep-reporting",
     icon: (
       <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
+        <BarChart3 className="w-5 h-5 text-green-600" />
       </div>
     ),
     features: [
@@ -64,11 +59,7 @@ const tools = [
     href: "/alert-agent",
     icon: (
       <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-        <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM15 17h5l-5 5v-5zM11 19H6.5A2.5 2.5 0 014 16.5v-9A2.5 2.5 0 016.5 5h11A2.5 2.5 0 0120 7.5v9a2.5 2.5 0 01-2.5 2.5H16" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01" />
-        </svg>
+        <Bell className="w-5 h-5 text-red-600" />
       </div>
     ),
     features: [
@@ -130,7 +121,7 @@ export default function AIFeatures() {
                 </div>
                 
                 <div className="flex-grow mb-6">
-                  <p className="text-base text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-base text-black mb-4 leading-relaxed">
                     {tool.description}
                   </p>
                   
