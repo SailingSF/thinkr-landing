@@ -2,25 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowUp } from 'lucide-react';
 
-// --- Stats Data ---
-const agencyStats = [
-  { 
-    value: '42%', 
-    description: 'increase in revenue within 90 days',
-    label: 'increase in revenue within 90 days'
-  },
-  { 
-    value: '2x', 
-    description: 'increase in client retention.',
-    label: 'increase in client retention'  
-  },
-  { 
-    value: '30%', 
-    description: 'faster campaign optimizations.',
-    label: 'faster campaign optimizations'
-  },
-];
-
 // --- Case Studies Data ---
 const caseStudies = [
   {
