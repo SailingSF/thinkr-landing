@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronDown, Menu, X, MessageSquare, Bot, BarChart3, Linkedin, ShoppingBag, BookOpen } from "lucide-react"
+import { ChevronDown, Menu, X, MessageSquare, Bot, BarChart3, Linkedin, ShoppingBag, BookOpen, Bell } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 
@@ -101,8 +101,8 @@ const Header = () => {
                 <span>Features</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180`} />
               </div>
-              <div className="absolute top-full mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 left-1/2 -translate-x-1/2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out z-50">
-                <div className="grid grid-cols-3 gap-4 px-4">
+              <div className="absolute top-full mt-2 w-[800px] bg-white rounded-md shadow-lg py-6 left-1/2 -translate-x-1/2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out z-50">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-6 px-6">
                   <Link 
                     href="/all-in-one-chat"
                     className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
@@ -143,6 +143,20 @@ const Header = () => {
                     <div>
                       <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Deep Reporting</h3>
                       <p className="text-sm text-gray-600">Get comprehensive analytics and insights</p>
+                    </div>
+                  </Link>
+                  <Link 
+                    href="/alert-agent"
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-red-100 transition-colors">
+                        <Bell className="w-5 h-5 text-red-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover:text-red-600 transition-colors">Alert Agent</h3>
+                      <p className="text-sm text-gray-600">Never miss critical business moments with AI monitoring</p>
                     </div>
                   </Link>
                 </div>
@@ -302,6 +316,20 @@ const Header = () => {
                       <div>
                         <h3 className="font-medium text-gray-900 group-hover:text-green-600 transition-colors">Deep Reporting</h3>
                         <p className="text-sm text-gray-600">Get comprehensive analytics and insights</p>
+                      </div>
+                    </Link>
+                    <Link 
+                      href="/alert-agent"
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-red-100 transition-colors">
+                          <Bell className="w-5 h-5 text-red-500" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-red-600 transition-colors">Alert Agent</h3>
+                        <p className="text-sm text-gray-600">Never miss critical business moments with AI monitoring</p>
                       </div>
                     </Link>
                   </div>
