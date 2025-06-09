@@ -16,7 +16,7 @@ const inter = Inter({
 })
 
 // Get tracking IDs from environment variable
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-1234567890'
+const gaMeasurementId = process.env.NEXT_PUBLIC_GTM_ID || 'G-1234567890'
 const fbPixelId = process.env.NEXT_PUBLIC_FB_PIXEL_ID || '1234567890'
 
 export const metadata: Metadata = {
