@@ -1,3 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
 Use the latest version of Next (15.1.7)and Tailwind CSS.
 Use the button component from components/ui/button.tsx when using buttons.
 Keep mobile optimization in mind when writing code.
+Make colors always reference the tailwind configuration [tailwind.config.ts](mdc:tailwind.config.ts) if available.
