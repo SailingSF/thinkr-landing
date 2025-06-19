@@ -2,21 +2,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
-const testimonials = [
-  {
-    name: "Daniel Pierce",
-    role: "CEO Kiera.io",
-    quote: "With thinkr, we transformed raw data into actionable insights, improving productivity, streamlining processes, and enhancing strategic planning.",
-    image: "/testimonial/testimonialpic1.png",
-    type: "general"
-  },
-  {
-    name: "Saviera Joeal",
-    role: "Founder Lokalane.com",
-    quote: "From raw data to real results, thinkr boosts productivity, optimizes operations, and empowers smarter, data-driven business decisions with unmatched efficiency.",
-    image: "/testimonial/testimonialpic2.png",
-    type: "general"
-  }
+// Define the testimonial type for clarity
+interface Testimonial {
+  name: string;
+  role: string;
+  quote: string;
+  image: string;
+  type: string;
+}
+
+const testimonials: Testimonial[] = [
+  // Removed Daniel Pierce and Saviera Joeal testimonials
 ]
 
 const shopifyReviews = [
@@ -61,14 +57,11 @@ const Testimonials = () => {
   return (
     <section className="py-16 sm:py-20 bg-white font-sans">
       <div className="container mx-auto px-4">
-        <div className="mb-16">
+        <div className="mb-6">
           <div className="max-w-4xl">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight whitespace-nowrap font-sans">
               What Our Customers Say About Their Experience
             </h2>
-            <p className="mt-6 text-gray-600 text-lg font-sans">
-              Genuine feedback showcasing real success and customer satisfaction.
-            </p>
           </div>
         </div>
 

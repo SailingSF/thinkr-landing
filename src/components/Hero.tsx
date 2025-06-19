@@ -9,12 +9,11 @@ const Hero = () => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium mb-4 sm:mb-6 md:mb-8 lg:mb-10 mx-auto leading-tight max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl
           animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out motion-reduce:animate-none motion-reduce:opacity-100"
         >
-          Autonomous Ecommerce Operations in One Platform.
+          The Unfair Advantage of Autonomous Ecommerce
         </h1>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 mb-6 sm:mb-8 md:mb-10 lg:mb-12 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto leading-relaxed
         animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out delay-150 motion-reduce:animate-none motion-reduce:opacity-100">
-          Stores that use thinkr protect revenue, double client retention,<br className="hidden sm:block" />
-          and save 10+ hours a week.
+          We figure out how ecommerce stores can <span className="font-bold text-primary-500">grow 30% in 90 days</span> using AI Agents.
         </p>
         <div className="flex flex-col items-center justify-center space-y-3 sm:space-y-4 md:space-y-5 mx-auto
         animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out delay-300 motion-reduce:animate-none motion-reduce:opacity-100">
