@@ -113,7 +113,7 @@
   .big-message-box {
     @apply rounded-[15px] w-full max-w-big-message min-h-[200px] sm:min-h-[250px] md:min-h-[293px];
   }
-
+  
   .big-message-text {
     @apply font-normal text-xl sm:text-2xl md:text-[30px] text-center text-white;
   }

@@ -87,6 +87,20 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="/hero_image_3.svg" type="image/svg+xml" fetchPriority="high" />
         <link rel="preload" as="image" href="/usecase1-operations.webp" type="image/webp" fetchPriority="high" />
+        {/* SEO: sitemap link */}
+        <link rel="sitemap" href="/sitemap.xml" />
+        {/* SEO: Organization schema */}
+        <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "thinkr",
+              "url": "https://thinkr.pro",
+              "logo": "https://thinkr.pro/thinkr_white_leftlogo.png"
+            }
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         {/* Removed OptimizeLoadingMetrics for performance improvements */}
