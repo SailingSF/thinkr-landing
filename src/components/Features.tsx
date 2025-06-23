@@ -4,30 +4,30 @@ import Image from "next/image"
 
 const features = [
   {
-    title: "Manage inventory.",
+    title: "inventory Manager Agent.",
     description:
-      "Track inventory automatically with AI that alerts on low stock and optimizes reorders based on sales history and seasons.",
+      "Monitors inventory levels, predicts demand patterns, automates reordering processes, prevents stockouts and overstock situations across all your products 24/7.",
     href: "/learn-more#manage-inventory",
     image: "/usecases/ecommerce_agent_1.webp"
   },
   {
-    title: "Update orders.",
+    title: "Growth Analyst Agent",
     description:
-      "Process and update orders, sync shipping info, and manage fulfillment across multiple channels in real-time.",
+      "Analyzes multi-channel performance data, identifies high-impact growth opportunities, creates strategic recommendations with one-click implementation.e channels in real-time.",
     href: "/learn-more#update-orders",
     image: "/usecases/ecommerce_agent_3.webp"
   },
   {
-    title: "Run promotions.",
+    title: "Data Analyst Agent",
     description:
-      "Generate targeted promotional campaigns based on customer segments, purchase history, and trends.",
+      "Answers business questions in natural language, creates ad-hoc reports through chat, automates routine reporting tasks across all platforms daily now.",
     href: "/learn-more#run-promotions",
     image: "/usecases/ecommerce_agent_2.webp"
   },
   {
-    title: "Create Collections.",
+    title: "Sales Agent (Soon)",
     description:
-      "Use AI to group products into dynamic collections based on attributes, performance, and seasonal trends.",
+      "Recovers abandoned carts via personalized phone calls and SMS, engages customers with human-like conversations to convert lost sales revenue back 24/7.",
     href: "/learn-more#create-collections",
     image: "/usecases/ecommerce_agent_4.webp"
   },
