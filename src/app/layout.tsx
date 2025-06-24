@@ -57,9 +57,6 @@ export const metadata: Metadata = {
     description: 'thinkr is an AI agent for ecommerce that puts Shopify operations on autopilot. Save time with one-click automations for your store.',
     images: ['/thinkr_black_leftlogo.png'],
   },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification',
-  },
   icons: {
     icon: ["/favicon.ico"],
     apple: ["/apple-touch-icon.png"],
