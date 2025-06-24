@@ -35,8 +35,8 @@ export default function Home() {
             "description": "thinkr is an AI agent for ecommerce that puts Shopify operations on autopilot. Save time with one-click automations for your store.",
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "ratingCount": "125"
+              "ratingValue": "5.0",
+              "ratingCount": "10"
             }
           }
         `}
