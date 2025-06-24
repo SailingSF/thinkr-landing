@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.webp',
-        width: 1200,
-        height: 630,
-        alt: 'thinkr',
+        url: '/thinkr_black_leftlogo.png',
+        width: 500,
+        height: 500,
+        alt: 'thinkr logo',
       },
     ],
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'thinkr | AI Agent for Shopify Store Operations',
     description: 'thinkr is an AI agent for ecommerce that puts Shopify operations on autopilot. Save time with one-click automations for your store.',
-    images: ['/og-image.webp'],
+    images: ['/thinkr_black_leftlogo.png'],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification',
@@ -97,7 +97,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "thinkr",
               "url": "https://thinkr.pro",
-              "logo": "https://thinkr.pro/thinkr_white_leftlogo.png"
+              "logo": "https://thinkr.pro/thinkr_black_leftlogo.png"
             }
           `}
         </Script>
