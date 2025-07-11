@@ -49,7 +49,7 @@ const CombinedProof = () => {
   return (
     <>
       {/* --- Logo Carousel Part --- */}
-      <section className="pt-8 sm:pt-12 pb-10 sm:pb-12 bg-white">
+      <section className="pt-0 pb-4 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h3 className="text-lg sm:text-xl font-medium text-gray-600 tracking-tight">

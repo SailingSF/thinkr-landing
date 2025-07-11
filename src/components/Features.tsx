@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const features = [
   {
-    title: "inventory Manager Agent.",
+    title: "Inventory Manager Agent.",
     description:
       "Monitors inventory levels, predicts demand patterns, automates reordering processes, prevents stockouts and overstock situations across all your products 24/7.",
     href: "/learn-more#manage-inventory",
