@@ -1,39 +1,69 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
+
+const PLACEHOLDER_TEXT = "Build an AI Agent to..."
 
 const Hero = () => {
   return (
-    <section className="py-2 text-center">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <h1 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium mb-2 mx-auto leading-tight max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl
-          animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out motion-reduce:animate-none motion-reduce:opacity-100"
-        >
-          The Unfair Advantage of Autonomous Ecommerce
-        </h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 mb-2 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto leading-relaxed
-        animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out delay-150 motion-reduce:animate-none motion-reduce:opacity-100">
-          We figure out how ecommerce stores can <span className="font-bold text-primary-500">grow 30% in 90 days</span> using AI Agents.
-        </p>
-        <div className="flex flex-col items-center justify-center space-y-3 mx-auto
-        animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out delay-300 motion-reduce:animate-none motion-reduce:opacity-100">
-          <Button
-            asChild
-            variant="default"
-            size="lg"
-            className="bg-black hover:bg-primary text-white font-medium rounded-lg transition-colors w-auto min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:min-w-[200px] text-sm sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5"
-          >
-            <Link href="https://www.thinkrapp.com/" className="flex items-center justify-center">
-              Try thinkr free
-            </Link>
-          </Button>
-          <p className="text-xs sm:text-sm md:text-base text-gray-600">
-            No setup fees. No risk. Just results.
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center flex flex-col items-center">
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-5xl font-regular text-black mb-3 font-inter leading-tight">
+            The Unfair Advantage<br />of Autonomous Ecommerce
+          </h1>
+          {/* Subheading */}
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 font-inter">
+            Let's grow your store <span className="text-primary-500 font-bold">4x faster</span> with AI Agents.
           </p>
+          {/* Chat/Input Bar */}
+          <div className="w-full max-w-2xl mx-auto bg-zinc-900 rounded-xl shadow-lg px-4 py-4 flex flex-col gap-0">
+            {/* First row: textarea only, full width */}
+            <div className="flex items-center w-full">
+              <textarea
+                placeholder={PLACEHOLDER_TEXT}
+                rows={3}
+                className="flex-1 bg-zinc-800 text-white placeholder-gray-400 rounded-md px-4 py-3 h-auto min-h-[48px] focus:outline-none focus:ring-2 focus:ring-primary-500 text-base border border-zinc-700 resize-none"
+                style={{ minWidth: 0 }}
+              />
+            </div>
+            {/* Add vertical space between rows */}
+            <div className="h-4" />
+            {/* Second row: left and right groups */}
+            <div className="flex items-center justify-between w-full">
+              {/* Left group */}
+              <div className="flex items-center gap-x-2">
+                <button
+                  className="bg-primary-500 hover:bg-primary-600 text-white font-semibold px-4 h-10 rounded-md text-sm transition-colors flex items-center"
+                  style={{ minWidth: 80 }}
+                >
+                  + Ask
+                </button>
+                <span className="text-white font-medium text-sm px-2 cursor-pointer hover:text-primary-400 transition-colors">Research</span>
+                <span className="text-white font-medium text-sm px-2 cursor-pointer hover:text-primary-400 transition-colors">Agents</span>
+              </div>
+              {/* Right group */}
+              <div className="flex items-center gap-x-2">
+                <button className="flex items-center bg-zinc-800 text-white px-3 h-10 rounded-md gap-1 border border-zinc-700 flex-shrink-0">
+                  Integrations
+                  <img src="/integration-logos/gorgias-icon.png" alt="Gorgias" className="ml-1 w-4 h-4" />
+                  <img src="/integration-logos/meta-icon-2.png" alt="Meta" className="ml-1 w-4 h-4" />
+                  <img src="/integration-logos/mailchimp-icon-2.png" alt="Mailchimp" className="ml-1 w-4 h-4" />
+                  <img src="/integration-logos/google-ads-icon-2.png" alt="Google Ads" className="ml-1 w-4 h-4" />
+                  <img src="/integration-logos/pinterest-icon.png" alt="Klaviyo" className="ml-1 w-4 h-4" />
+                  <span className="ml-1 text-base">^</span>
+                </button>
+                <button className="bg-primary-500 hover:bg-primary-600 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors flex-shrink-0">
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Hero
