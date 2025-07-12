@@ -52,7 +52,7 @@ const Hero = () => {
                   <img src="/integration-logos/pinterest-icon.png" alt="Klaviyo" className="ml-1 w-4 h-4" />
                   <span className="ml-1 text-base">^</span>
                 </button>
-                <button className="bg-primary-500 hover:bg-primary-600 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors flex-shrink-0">
+                <button className="bg-primary-500 hover:bg-primary-600 text-white rounded-md w-10 h-10 flex items-center justify-center transition-colors flex-shrink-0">
                   <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
