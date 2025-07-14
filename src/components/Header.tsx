@@ -201,7 +201,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-50">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-[9999]" style={{overflow: 'visible'}}>
             <div className="p-4 space-y-3">
               <div>
                 <button
