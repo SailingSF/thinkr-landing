@@ -1,4 +1,4 @@
-export default {
+const config = {
   siteUrl: "https://thinkr.pro",
   generateRobotsTxt: true,
   changefreq: "weekly",
@@ -16,4 +16,6 @@ export default {
       },
     ],
   },
-} 
+}
+
+export default config; 
