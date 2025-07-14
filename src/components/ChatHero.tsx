@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 import { ArrowUp, Sparkles } from 'lucide-react'
 import { useViewportTrigger, useReducedMotion } from '@/lib/hooks'
@@ -106,13 +106,22 @@ export default function ChatHero() {
   const [showTypingIndicator, setShowTypingIndicator] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
 
+  // Track all timeouts to clear on reset/unmount
+  const timeouts = useRef<number[]>([])
+
+  const clearAllTimeouts = useCallback(() => {
+    timeouts.current.forEach((id) => clearTimeout(id))
+    timeouts.current = []
+  }, [])
+
   const currentScenario = chatScenarios[currentScenarioIndex]
 
   const resetAnimation = useCallback(() => {
+    clearAllTimeouts()
     setVisibleMessages([])
     setShowTypingIndicator(false)
     setIsPlaying(false)
-  }, [])
+  }, [clearAllTimeouts])
 
   const startNextScenario = useCallback(() => {
     const nextIndex = (currentScenarioIndex + 1) % chatScenarios.length
@@ -129,9 +138,10 @@ export default function ChatHero() {
     const showNextMessage = () => {
       if (messageIndex >= currentScenario.lines.length) {
         // Scenario complete, wait longer before starting next
-        setTimeout(() => {
+        const timeoutId = window.setTimeout(() => {
           startNextScenario()
         }, 4000) // Increased from 2200ms to 4000ms
+        timeouts.current.push(timeoutId)
         return
       }
 
@@ -142,27 +152,31 @@ export default function ChatHero() {
         setVisibleMessages(prev => [...prev, messageIndex])
         
         // Wait for user message to settle, then show typing indicator
-        setTimeout(() => {
+        const userMsgTimeout = window.setTimeout(() => {
           messageIndex++
           if (messageIndex < currentScenario.lines.length) {
             setShowTypingIndicator(true)
             // Show typing indicator for a while, then show AI response
-            setTimeout(() => {
+            const typingTimeout = window.setTimeout(() => {
               setShowTypingIndicator(false)
               // Small delay before showing AI response
-              setTimeout(() => {
+              const aiDelayTimeout = window.setTimeout(() => {
                 showNextMessage()
               }, 100)
+              timeouts.current.push(aiDelayTimeout)
             }, 1800) // Typing indicator duration
+            timeouts.current.push(typingTimeout)
           } else {
             showNextMessage()
           }
         }, message.delay || 1200) // User message display time
+        timeouts.current.push(userMsgTimeout)
       } else {
         // AI message - show with smooth animation
         setVisibleMessages(prev => [...prev, messageIndex])
         messageIndex++
-        setTimeout(showNextMessage, message.delay || 3500) // AI message display time
+        const aiMsgTimeout = window.setTimeout(showNextMessage, message.delay || 3500) // AI message display time
+        timeouts.current.push(aiMsgTimeout)
       }
     }
 
@@ -172,20 +186,32 @@ export default function ChatHero() {
   // Start animation when in view
   useEffect(() => {
     if (inView && !prefersReducedMotion && !isPlaying) {
-      const timer = setTimeout(() => {
+      const timer = window.setTimeout(() => {
         playScenario()
       }, 1200) // Slightly longer initial delay
-      return () => clearTimeout(timer)
+      timeouts.current.push(timer)
+      return () => {
+        clearAllTimeouts()
+      }
     } else if (!inView) {
       resetAnimation()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView, prefersReducedMotion, playScenario, resetAnimation, isPlaying])
+
+  // Clear timeouts on unmount
+  useEffect(() => {
+    return () => {
+      clearAllTimeouts()
+    }
+  }, [clearAllTimeouts])
 
   // Handle click to restart
   const handleClick = () => {
     if (!prefersReducedMotion) {
       resetAnimation()
-      setTimeout(playScenario, 500)
+      const clickTimeout = window.setTimeout(playScenario, 500)
+      timeouts.current.push(clickTimeout)
     }
   }
 
