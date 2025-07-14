@@ -135,7 +135,7 @@ export default function AIFeatures() {
                   </ul>
                 </div>
                 
-                <Button asChild className={`w-full ${colors.button} shadow-sm`} size="default">
+                <Button asChild className={`w-full ${colors.button} shadow-sm`}>
                   <Link href={tool.href}>
                     Learn More
                   </Link>

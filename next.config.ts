@@ -16,10 +16,14 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['react-icons', 'lucide-react'],
   },
   compress: true,
-  webpack: (config) => {
-    config.optimization.minimize = true;
-    return config;
-  },
+  // Remove problematic webpack configuration in development
+  // webpack: (config, { dev }) => {
+  //   // Only minimize in production
+  //   if (!dev) {
+  //     config.optimization.minimize = true;
+  //   }
+  //   return config;
+  // },
   headers: async () => {
     return [
       {
@@ -53,4 +57,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default nextConfig; 

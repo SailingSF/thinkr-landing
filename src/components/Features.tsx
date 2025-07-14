@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const features = [
   {
-    title: "inventory Manager Agent.",
+    title: "Inventory Manager Agent.",
     description:
       "Monitors inventory levels, predicts demand patterns, automates reordering processes, prevents stockouts and overstock situations across all your products 24/7.",
     href: "/learn-more#manage-inventory",
@@ -55,7 +55,7 @@ export default function Features() {
               <h3 className="text-2xl font-medium mb-3">{feature.title}</h3>
               <p className="text-muted-foreground text-lg mb-6">{feature.description}</p>
               <Link href={feature.href}>
-                <Button variant="outlineCustom" textColor="hsl(var(--primary))" className="w-fit hover:bg-secondary/80">
+                <Button textColor="hsl(var(--primary))" className="w-fit hover:bg-secondary/80 border-2 border-primary-600 bg-white text-primary-700 hover:bg-primary-50">
                   See Use Case
                 </Button>
               </Link>
