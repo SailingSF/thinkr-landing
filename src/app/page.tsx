@@ -6,7 +6,7 @@ import Pricing from "@/components/Pricing"
 import Timeline from "@/components/Timeline"
 import SimpleContactForm from "@/components/SimpleContactForm"
 import Script from "next/script"
-import HeroImage from "@/components/HeroImage"
+import ChatHero from "@/components/ChatHero"
 import CombinedProof from "@/components/CombinedProof"
 import AIFeatures from "@/components/AI-Features"
 import Testimonials from "@/components/Testimonials"
@@ -43,7 +43,7 @@ export default function Home() {
       </Script>
       <Header />
       <Hero />
-      <HeroImage />
+      <ChatHero />
       <CombinedProof />
       <Timeline />
       <Features />
