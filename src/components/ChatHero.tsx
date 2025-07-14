@@ -108,13 +108,24 @@ export default function ChatHero() {
 
   // Track all timeouts to clear on reset/unmount
   const timeouts = useRef<number[]>([])
+  
+  // Use refs to avoid recreating callbacks and triggering useEffect
+  const currentScenarioIndexRef = useRef(currentScenarioIndex)
+  const isPlayingRef = useRef(isPlaying)
+  
+  // Update refs when state changes
+  useEffect(() => {
+    currentScenarioIndexRef.current = currentScenarioIndex
+  }, [currentScenarioIndex])
+  
+  useEffect(() => {
+    isPlayingRef.current = isPlaying
+  }, [isPlaying])
 
   const clearAllTimeouts = useCallback(() => {
     timeouts.current.forEach((id) => clearTimeout(id))
     timeouts.current = []
   }, [])
-
-  const currentScenario = chatScenarios[currentScenarioIndex]
 
   const resetAnimation = useCallback(() => {
     clearAllTimeouts()
@@ -124,23 +135,24 @@ export default function ChatHero() {
   }, [clearAllTimeouts])
 
   const startNextScenario = useCallback(() => {
-    const nextIndex = (currentScenarioIndex + 1) % chatScenarios.length
+    const nextIndex = (currentScenarioIndexRef.current + 1) % chatScenarios.length
     setCurrentScenarioIndex(nextIndex)
     resetAnimation()
-  }, [currentScenarioIndex, resetAnimation])
+  }, [resetAnimation])
 
   const playScenario = useCallback(() => {
-    if (!currentScenario || isPlaying) return
+    const currentScenario = chatScenarios[currentScenarioIndexRef.current]
+    if (!currentScenario || isPlayingRef.current) return
     
     setIsPlaying(true)
     let messageIndex = 0
     
     const showNextMessage = () => {
       if (messageIndex >= currentScenario.lines.length) {
-        // Scenario complete, wait longer before starting next
+        // Scenario complete, wait before starting next
         const timeoutId = window.setTimeout(() => {
           startNextScenario()
-        }, 4000) // Increased from 2200ms to 4000ms
+        }, 3000) // Pause between scenarios
         timeouts.current.push(timeoutId)
         return
       }
@@ -162,42 +174,40 @@ export default function ChatHero() {
               // Small delay before showing AI response
               const aiDelayTimeout = window.setTimeout(() => {
                 showNextMessage()
-              }, 100)
+              }, 200)
               timeouts.current.push(aiDelayTimeout)
-            }, 1800) // Typing indicator duration
+            }, 2200) // Increased typing indicator duration for better UX
             timeouts.current.push(typingTimeout)
           } else {
             showNextMessage()
           }
-        }, message.delay || 1200) // User message display time
+        }, message.delay || 1500) // Slightly longer user message display time
         timeouts.current.push(userMsgTimeout)
       } else {
         // AI message - show with smooth animation
         setVisibleMessages(prev => [...prev, messageIndex])
         messageIndex++
-        const aiMsgTimeout = window.setTimeout(showNextMessage, message.delay || 3500) // AI message display time
+        const aiMsgTimeout = window.setTimeout(showNextMessage, message.delay || 4500) // Increased AI message display time
         timeouts.current.push(aiMsgTimeout)
       }
     }
 
     showNextMessage()
-  }, [currentScenario, isPlaying, startNextScenario])
+  }, [startNextScenario])
 
-  // Start animation when in view
+  const currentScenario = chatScenarios[currentScenarioIndex]
+
+  // Start animation when in view - simplified dependencies
   useEffect(() => {
     if (inView && !prefersReducedMotion && !isPlaying) {
       const timer = window.setTimeout(() => {
         playScenario()
-      }, 1200) // Slightly longer initial delay
+      }, 1000) // Optimal initial delay
       timeouts.current.push(timer)
-      return () => {
-        clearAllTimeouts()
-      }
     } else if (!inView) {
       resetAnimation()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView, prefersReducedMotion, playScenario, resetAnimation, isPlaying])
+  }, [inView, prefersReducedMotion, isPlaying, playScenario, resetAnimation])
 
   // Clear timeouts on unmount
   useEffect(() => {
@@ -298,7 +308,7 @@ export default function ChatHero() {
             {/* Chat Messages with better spacing */}
             <div className="flex-1 px-6 overflow-hidden" style={{ minHeight: '240px' }}>
               <div className="space-y-4 h-full">
-                {currentScenario?.lines.slice(0, 4).map((message, index) => (
+                {currentScenario?.lines.map((message, index) => (
                   <MessageBubble
                     key={`${currentScenarioIndex}-${index}`}
                     message={message}
