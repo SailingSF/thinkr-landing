@@ -225,21 +225,7 @@ export default function ChatHero() {
     }
   }
 
-  // Fallback for reduced motion or no JS
-  if (prefersReducedMotion) {
-    return (
-      <div className="relative mx-auto w-full max-w-5xl px-4 py-12">
-        <Image
-          src="/hero_image_3.svg"
-          alt="thinkr chat interface"
-          width={1100}
-          height={620}
-          className="w-full h-auto rounded-3xl shadow-2xl"
-          priority
-        />
-      </div>
-    )
-  }
+
 
   return (
     <section className="py-12 px-4 bg-gradient-to-b from-black via-gray-950 to-black">
@@ -258,15 +244,7 @@ export default function ChatHero() {
           className="relative mx-auto w-full max-w-4xl"
           aria-label="thinkr chat preview"
         >
-          <noscript>
-            <Image
-              src="/hero_image_3.svg"
-              alt="thinkr chat interface"
-              width={1100}
-              height={620}
-              className="w-full h-auto rounded-3xl shadow-2xl"
-            />
-          </noscript>
+
           
           {/* Ambient glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-xl -z-10 animate-pulse" />
