@@ -84,6 +84,55 @@ export const chatScenarios: Scenario[] = [
     ]
   },
   {
+    id: 'facebook-ad-campaigns',
+    title: 'Facebook Ad Analysis',
+    lines: [
+      {
+        role: 'user',
+        text: 'Analyze my Facebook ad campaigns from the last 30 days',
+        delay: 1500
+      },
+      {
+        role: 'ai',
+        text: 'I&apos;ve analyzed your Facebook ad performance over the last 30 days:',
+        delay: 2000
+      },
+      {
+        role: 'ai',
+        text: `<div>
+          <div class="mb-3">
+            📊 <strong>Overall Performance</strong>:<br/>
+            • Total Spend: $8,450<br/>
+            • Conversions: 127 purchases<br/>
+            • Conversion Rate: 1.5%<br/>
+            • Average Cost per Click: $2.34
+          </div>
+          <div class="my-3 py-2">
+            <strong>Top Performing Ads</strong>:<br/>
+            <div class="ml-2 mt-1">
+              🥇 <strong>"Summer Collection Launch"</strong> - 3.2% conversion, $1.89 CPC<br/>
+              🥈 <strong>"Free Shipping Offer"</strong> - 2.8% conversion, $2.12 CPC<br/>
+              🥉 <strong>"Customer Reviews"</strong> - 2.1% conversion, $2.67 CPC
+            </div>
+          </div>
+          <div class="my-3 py-2">
+            <strong>Platform Performance</strong>:<br/>
+            <div class="ml-2 mt-1">
+              📱 <strong>Instagram Feed</strong>: 2.4% CTR, $2.18 CPC<br/>
+              📘 <strong>Facebook Feed</strong>: 1.8% CTR, $2.45 CPC<br/>
+              📺 <strong>Instagram Stories</strong>: 1.2% CTR, $1.95 CPC
+            </div>
+          </div>
+          <div class="mt-3 pt-3 border-t border-gray-600">
+            💡 <strong>Recommendation</strong>: Scale "Summer Collection Launch" and increase Instagram Feed budget - it has the best CTR and conversion rate.
+          </div>
+        </div>`,
+        isHtml: true,
+        delay: 4500
+      }
+    ]
+  },
+  {
     id: 'customer-reengagement-agent',
     title: 'Smart Agent Creation',
     lines: [
