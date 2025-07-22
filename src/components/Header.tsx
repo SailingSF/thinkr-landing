@@ -35,7 +35,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-center flex-1 space-x-4 lg:space-x-8 xl:space-x-16 2xl:space-x-32 mx-8">
+          <div className="hidden lg:flex items-center justify-center flex-1 space-x-2 lg:space-x-4 xl:space-x-6 2xl:space-x-8 mx-8">
             <div className="relative group">
               <div 
                 className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors group-hover:text-gray-600"
@@ -164,6 +164,9 @@ const Header = () => {
             </div>
             <Link href="/company" className="hover:text-gray-600 transition-colors">
               About
+            </Link>
+            <Link href="/webinars" className="hover:text-gray-600 transition-colors">
+              Webinars
             </Link>
             <Link href="/contact" className="hover:text-gray-600 transition-colors">
               Contact
@@ -337,6 +340,9 @@ const Header = () => {
               </div>
               <Link href="/company" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 About
+              </Link>
+              <Link href="/webinars" className="block py-3 hover:text-gray-600 transition-colors text-base">
+                Webinars
               </Link>
               <Link href="/contact" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 Contact
