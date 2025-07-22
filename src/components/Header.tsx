@@ -165,6 +165,9 @@ const Header = () => {
             <Link href="/company" className="hover:text-gray-600 transition-colors">
               About
             </Link>
+            <Link href="/webinars" className="hover:text-gray-600 transition-colors">
+              Webinars
+            </Link>
             <Link href="/contact" className="hover:text-gray-600 transition-colors">
               Contact
             </Link>
@@ -337,6 +340,9 @@ const Header = () => {
               </div>
               <Link href="/company" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 About
+              </Link>
+              <Link href="/webinars" className="block py-3 hover:text-gray-600 transition-colors text-base">
+                Webinars
               </Link>
               <Link href="/contact" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 Contact
