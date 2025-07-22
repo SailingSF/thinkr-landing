@@ -1,10 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock, Users, Video, ArrowRight, Zap } from "lucide-react"
+import { Calendar, Users, Video, ArrowRight, Zap, CheckCircle, AlertCircle } from "lucide-react"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import { registerForWebinar } from "@/lib/googleSheets"
 
 const WebinarsPage = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +22,9 @@ const WebinarsPage = () => {
     notifications: false,
     privacy: false
   })
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -37,10 +42,46 @@ const WebinarsPage = () => {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement form submission logic
-    console.log("Form submitted:", formData, agreements)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      await registerForWebinar({
+        ...formData,
+        notifications: agreements.notifications
+      })
+
+      // Track Google Analytics conversion event
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'webinar_registration', {
+          page_location: window.location.href,
+          page_title: document.title
+        })
+      }
+
+      setSubmitStatus('success')
+      
+      // Reset form after successful submission
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        role: "",
+        webinarInterest: "",
+        phone: ""
+      })
+      setAgreements({
+        notifications: false,
+        privacy: false
+      })
+    } catch (error) {
+      console.error('Failed to submit form:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const [isMounted, setIsMounted] = useState(false)
@@ -69,9 +110,11 @@ const WebinarsPage = () => {
             <div className="order-1 lg:order-1">
               {/* Shopify Logo */}
               <div className="mb-6">
-                <img 
+                <Image 
                   src="/shopify_logo_black.png" 
                   alt="Shopify" 
+                  width={200}
+                  height={64}
                   className="h-16 mb-4"
                 />
               </div>
@@ -87,7 +130,7 @@ const WebinarsPage = () => {
             </h1>
             
               <p className="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
-              Join our expert-led webinars to discover how thinkr's AI solutions can transform your Shopify store operations, boost sales, and streamline your workflow.
+              Join our expert-led webinars to discover how thinkr&apos;s AI solutions can transform your Shopify store operations, boost sales, and streamline your workflow.
             </p>
 
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-8">
@@ -114,9 +157,11 @@ const WebinarsPage = () => {
             {/* Right Column - Image */}
             <div className="order-2 lg:order-2">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
+                <Image 
                   src="/webinar_image.jpg" 
                   alt="E-commerce AI Automation Webinar" 
+                  width={600}
+                  height={480}
                   className="w-full h-120 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -144,7 +189,7 @@ const WebinarsPage = () => {
                   What Will We Cover in Our AI-Powered E-commerce Webinar?
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Join our expert-led session where in just 40 minutes, you'll discover how to transform from reactive spreadsheet juggling to masterful AI-powered automation. Learn how to chat with your data, set up proactive alerts, and automate reporting to reclaim up to 16 hours per week.
+                  Join our expert-led session where in just 40 minutes, you&apos;ll discover how to transform from reactive spreadsheet juggling to masterful AI-powered automation. Learn how to chat with your data, set up proactive alerts, and automate reporting to reclaim up to 16 hours per week.
                 </p>
               </div>
 
@@ -196,7 +241,7 @@ const WebinarsPage = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Bonus: Exclusive Access</h3>
                     <p className="text-gray-700">
-                      All attendees will receive a free 14-day trial of thinkr's AI automation platform and a comprehensive "From Reactive to Masterful" implementation guide valued at $297.
+                      All attendees will receive a free 14-day trial of thinkr&apos;s AI automation platform and a comprehensive &ldquo;From Reactive to Masterful&rdquo; implementation guide valued at $297.
                     </p>
                   </div>
                 </div>
@@ -210,6 +255,32 @@ const WebinarsPage = () => {
             {/* Right Column - Registration Form */}
             <div id="webinar-form" className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Register for the Webinar</h3>
+              
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-medium text-green-900">Registration Successful!</h4>
+                    <p className="text-sm text-green-700 mt-1">
+                      Thank you for registering! You&apos;ll receive a confirmation email shortly with webinar details.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start space-x-3">
+                  <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-medium text-red-900">Registration Failed</h4>
+                    <p className="text-sm text-red-700 mt-1">
+                      There was an error processing your registration. Please try again.
+                    </p>
+                  </div>
+                </div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -226,6 +297,7 @@ const WebinarsPage = () => {
                       placeholder="Enter your first name"
                       value={formData.firstName}
                       onChange={handleInputChange}
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div>
@@ -241,6 +313,7 @@ const WebinarsPage = () => {
                       placeholder="Enter your last name"
                       value={formData.lastName}
                       onChange={handleInputChange}
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -258,6 +331,7 @@ const WebinarsPage = () => {
                     placeholder="Enter your email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -271,6 +345,7 @@ const WebinarsPage = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     value={formData.role}
                     onChange={handleInputChange}
+                    disabled={isSubmitting}
                   >
                     <option value="">Please Select</option>
                     <option value="owner">Store Owner</option>
@@ -292,6 +367,7 @@ const WebinarsPage = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     value={formData.webinarInterest}
                     onChange={handleInputChange}
+                    disabled={isSubmitting}
                   >
                     <option value="">Please Select</option>
                     <option value="ai-automation">AI Automation & Workflows</option>
@@ -315,6 +391,7 @@ const WebinarsPage = () => {
                     placeholder="Enter your phone number"
                     value={formData.phone}
                     onChange={handleInputChange}
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -327,6 +404,7 @@ const WebinarsPage = () => {
                       className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
                       checked={agreements.notifications}
                       onChange={handleCheckboxChange}
+                      disabled={isSubmitting}
                     />
                     <label htmlFor="notifications" className="text-sm text-gray-700">
                       Notify me about upcoming webinars and exclusive e-commerce insights
@@ -341,6 +419,7 @@ const WebinarsPage = () => {
                       className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
                       checked={agreements.privacy}
                       onChange={handleCheckboxChange}
+                      disabled={isSubmitting}
                     />
                     <label htmlFor="privacy" className="text-sm text-gray-700">
                       I agree to the{" "}
@@ -353,9 +432,10 @@ const WebinarsPage = () => {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary-300 text-white py-4 text-lg font-semibold rounded-lg"
+                  className="w-full bg-primary hover:bg-primary-300 text-white py-4 text-lg font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
                 >
-                  REGISTER NOW
+                  {isSubmitting ? 'REGISTERING...' : 'REGISTER NOW'}
                 </Button>
               </form>
             </div>
@@ -381,9 +461,11 @@ const WebinarsPage = () => {
               <div className="flex items-start space-x-6">
                 <div className="relative">
                   <div className="w-20 h-20 rounded-full overflow-hidden">
-                    <img 
+                    <Image 
                       src="/foto edu.jpg" 
                       alt="Edu Samayoa" 
+                      width={80}
+                      height={80}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -395,7 +477,7 @@ const WebinarsPage = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-1">Edu Samayoa</h3>
                   <p className="text-gray-600 mb-3">Co-Founder & CEO</p>
                   <p className="text-gray-700 leading-relaxed">
-                    Will lead this transformative webinar session and demonstrate how AI automation can revolutionize your e-commerce operations. With deep expertise in building AI solutions for Shopify stores, Edu brings real-world insights from helping hundreds of e-commerce businesses scale efficiently. He'll show you exactly how to implement AI-powered automation that saves time, boosts sales, and eliminates the manual work that's holding your business back.
+                    Will lead this transformative webinar session and demonstrate how AI automation can revolutionize your e-commerce operations. With deep expertise in building AI solutions for Shopify stores, Edu brings real-world insights from helping hundreds of e-commerce businesses scale efficiently. He&apos;ll show you exactly how to implement AI-powered automation that saves time, boosts sales, and eliminates the manual work that&apos;s holding your business back.
                   </p>
                 </div>
               </div>
@@ -419,7 +501,7 @@ const WebinarsPage = () => {
                   </div>
                   <p className="text-gray-600 mb-3">AI & E-commerce Expert</p>
                   <p className="text-gray-700 leading-relaxed">
-                    We have a very special surprise guest joining us for this exclusive webinar! This industry expert will share unique insights and real-world case studies that you won't find anywhere else. Stay tuned to discover who will be sharing their expertise on AI automation and e-commerce optimization.
+                    We have a very special surprise guest joining us for this exclusive webinar! This industry expert will share unique insights and real-world case studies that you won&apos;t find anywhere else. Stay tuned to discover who will be sharing their expertise on AI automation and e-commerce optimization.
                   </p>
                 </div>
               </div>
@@ -476,7 +558,7 @@ const WebinarsPage = () => {
                 Expert Q&A Session
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Get your burning questions answered by thinkr's AI automation experts. Learn from real-world case studies and avoid common pitfalls that cost other store owners time and money.
+                Get your burning questions answered by thinkr&apos;s AI automation experts. Learn from real-world case studies and avoid common pitfalls that cost other store owners time and money.
               </p>
             </div>
 
@@ -489,7 +571,7 @@ const WebinarsPage = () => {
                 Exclusive Free Trial Access
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                All attendees receive a free 14-day trial of thinkr's AI platform plus a comprehensive implementation guide valued at $297. Start automating immediately after the session.
+                All attendees receive a free 14-day trial of thinkr&apos;s AI platform plus a comprehensive implementation guide valued at $297. Start automating immediately after the session.
               </p>
             </div>
           </div>
