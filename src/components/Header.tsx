@@ -35,7 +35,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-center flex-1 space-x-4 lg:space-x-8 xl:space-x-16 2xl:space-x-32 mx-8">
+          <div className="hidden lg:flex items-center justify-center flex-1 space-x-2 lg:space-x-4 xl:space-x-6 2xl:space-x-8 mx-8">
             <div className="relative group">
               <div 
                 className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors group-hover:text-gray-600"

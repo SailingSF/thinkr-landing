@@ -67,12 +67,21 @@ const WebinarsPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
             <div className="order-1 lg:order-1">
+              {/* Shopify Logo */}
+              <div className="mb-6">
+                <img 
+                  src="/shopify_logo_black.png" 
+                  alt="Shopify" 
+                  className="h-16 mb-4"
+                />
+              </div>
+              
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
               <Video className="w-4 h-4 mr-2" />
-              Live Learning Sessions
+              Live Learning Sessions for Ecommerce Growth
             </div>
             
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
                 Master Your Reporting & Alerts{" "}
                 <span className="text-primary">with AI-Powered Automation</span>
             </h1>
@@ -82,38 +91,35 @@ const WebinarsPage = () => {
             </p>
 
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-8">
-                <div className="flex items-center text-gray-600 text-sm">
-                  <Calendar className="w-4 h-4 mr-2 flex-shrink-0" />
-                <span>Monthly Sessions</span>
+                <div className="flex items-center text-red-600 text-lg font-medium">
+                  <Calendar className="w-6 h-6 mr-2 flex-shrink-0 text-red-600" />
+                  <span>Wednesday July 30th</span>
+                </div>
+                <div className="flex items-center text-red-600 text-lg font-medium">
+                  <Users className="w-6 h-6 mr-2 flex-shrink-0 text-red-600" />
+                  <span>Live Q&A</span>
+                </div>
               </div>
-                <div className="flex items-center text-gray-600 text-sm">
-                  <Clock className="w-4 h-4 mr-2 flex-shrink-0" />
-                <span>45-60 Minutes</span>
-              </div>
-                <div className="flex items-center text-gray-600 text-sm">
-                  <Users className="w-4 h-4 mr-2 flex-shrink-0" />
-                <span>Interactive Q&A</span>
-              </div>
-            </div>
 
             <Button 
               size="lg" 
                 className="bg-primary hover:bg-primary-300 text-white px-6 py-3 text-base rounded-lg"
               onClick={scrollToForm}
             >
-              Register for Next Webinar
+              Register for Free!
                 <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
             </div>
 
             {/* Right Column - Image */}
             <div className="order-2 lg:order-2">
-              <div className="bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-2xl p-8 h-80 flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <Video className="w-20 h-20 mx-auto mb-4 opacity-50" />
-                  <p className="text-base">Webinar Image Placeholder</p>
-                  <p className="text-sm">Add your webinar hero image here</p>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/webinar_image.jpg" 
+                  alt="E-commerce AI Automation Webinar" 
+                  className="w-full h-120 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
             </div>
           </div>
@@ -374,18 +380,22 @@ const WebinarsPage = () => {
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex items-start space-x-6">
                 <div className="relative">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">MC</span>
+                  <div className="w-20 h-20 rounded-full overflow-hidden">
+                    <img 
+                      src="/foto edu.jpg" 
+                      alt="Edu Samayoa" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
                     <Video className="w-3 h-3 text-white" />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Max Cohen</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Edu Samayoa</h3>
                   <p className="text-gray-600 mb-3">Co-Founder & CEO</p>
                   <p className="text-gray-700 leading-relaxed">
-                    Will act as master of ceremonies and guide you through the AI automation journey. With firsthand experience building thinkr from the ground up, Max understands the challenges e-commerce founders face daily. He'll be your best ally to understand how AI can transform your business operations and help you make the best decisions for your store's growth.
+                    Will lead this transformative webinar session and demonstrate how AI automation can revolutionize your e-commerce operations. With deep expertise in building AI solutions for Shopify stores, Edu brings real-world insights from helping hundreds of e-commerce businesses scale efficiently. He'll show you exactly how to implement AI-powered automation that saves time, boosts sales, and eliminates the manual work that's holding your business back.
                   </p>
                 </div>
               </div>
