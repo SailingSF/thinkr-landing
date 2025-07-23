@@ -7,8 +7,13 @@ import { Calendar, Users, Video, ArrowRight, Zap, CheckCircle, AlertCircle } fro
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { registerForWebinar } from "@/lib/googleSheets"
+import { useTranslations, getLocaleFromPath } from "@/lib/i18n"
+import { usePathname } from "next/navigation"
 
 const WebinarsPage = () => {
+  const pathname = usePathname()
+  const locale = getLocaleFromPath(pathname)
+  const t = useTranslations(locale)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -120,38 +125,38 @@ const WebinarsPage = () => {
               </div>
               
               <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
-              <Video className="w-4 h-4 mr-2" />
-              Live Learning Sessions for Ecommerce Growth
-            </div>
+                <Video className="w-4 h-4 mr-2" />
+                {t('webinar.hero.badge') as string}
+              </div>
             
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
-                Master Your Reporting & Alerts{" "}
-                <span className="text-primary">with AI-Powered Automation</span>
-            </h1>
+                {t('webinar.hero.title') as string}{" "}
+                <span className="text-primary">{t('webinar.hero.titleHighlight') as string}</span>
+              </h1>
             
               <p className="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
-              Join our expert-led webinars to discover how thinkr&apos;s AI solutions can transform your Shopify store operations, boost sales, and streamline your workflow.
-            </p>
+                {t('webinar.hero.description') as string}
+              </p>
 
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-8">
                 <div className="flex items-center text-red-600 text-lg font-medium">
                   <Calendar className="w-6 h-6 mr-2 flex-shrink-0 text-red-600" />
-                  <span>Wednesday July 30th</span>
+                  <span>{t('webinar.hero.date') as string}</span>
                 </div>
                 <div className="flex items-center text-red-600 text-lg font-medium">
                   <Users className="w-6 h-6 mr-2 flex-shrink-0 text-red-600" />
-                  <span>Live Q&A</span>
+                  <span>{t('webinar.hero.liveQa') as string}</span>
                 </div>
               </div>
 
-            <Button 
-              size="lg" 
+              <Button 
+                size="lg" 
                 className="bg-primary hover:bg-primary-300 text-white px-6 py-3 text-base rounded-lg"
-              onClick={scrollToForm}
-            >
-              Register for Free!
+                onClick={scrollToForm}
+              >
+                {t('webinar.hero.cta') as string}
                 <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+              </Button>
             </div>
 
             {/* Right Column - Image */}
@@ -186,50 +191,22 @@ const WebinarsPage = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                  What Will We Cover in Our AI-Powered E-commerce Webinar?
+                  {t('webinar.content.title') as string}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Join our expert-led session where in just 40 minutes, you&apos;ll discover how to transform from reactive spreadsheet juggling to masterful AI-powered automation. Learn how to chat with your data, set up proactive alerts, and automate reporting to reclaim up to 16 hours per week.
+                  {t('webinar.content.description') as string}
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
-                    <Zap className="w-4 h-4 text-primary" />
+                {(t('webinar.content.topics') as string[]).map((topic: string, index: number) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
+                      <Zap className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-gray-700">{topic}</span>
                   </div>
-                  <span className="text-gray-700">Introduction to AI-Powered Automation  for E-commerce</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
-                    <Zap className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-gray-700">Leveraging Data without the Headache</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
-                    <Zap className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-gray-700">Your Automated 24/7 Watchdog: AI Agents and Proactive Alerts</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
-                    <Zap className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-gray-700">Automated Reporting: Goodbye Spreadsheets, Hello Freedom</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
-                    <Zap className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-gray-700">Live Demo: Setting Up Your First Automated Report in Under 5 Minutes</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border border-gray-200">
-                    <Zap className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-gray-700">Q&A Session with thinkr AI Automation Experts</span>
-                </div>
+                ))}
               </div>
 
               {/* Bonus Section */}
@@ -239,31 +216,31 @@ const WebinarsPage = () => {
                     <Zap className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Bonus: Exclusive Access</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">{t('webinar.content.bonus.title') as string}</h3>
                     <p className="text-gray-700">
-                      All attendees will receive a free 14-day trial of thinkr&apos;s AI automation platform and a comprehensive &ldquo;From Reactive to Masterful&rdquo; implementation guide valued at $297.
+                      {t('webinar.content.bonus.description') as string}
                     </p>
                   </div>
                 </div>
               </div>
 
               <p className="text-sm text-gray-500">
-                *Terms and conditions apply. Find complete details in our privacy policy and terms of service.
+                {t('webinar.content.terms') as string}
               </p>
             </div>
 
             {/* Right Column - Registration Form */}
             <div id="webinar-form" className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Register for the Webinar</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('webinar.form.title') as string}</h3>
               
               {/* Success Message */}
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-medium text-green-900">Registration Successful!</h4>
+                    <h4 className="font-medium text-green-900">{t('webinar.form.success.title') as string}</h4>
                     <p className="text-sm text-green-700 mt-1">
-                      Thank you for registering! You&apos;ll receive a confirmation email shortly with webinar details.
+                      {t('webinar.form.success.message') as string}
                     </p>
                   </div>
                 </div>
@@ -274,9 +251,9 @@ const WebinarsPage = () => {
                 <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start space-x-3">
                   <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-medium text-red-900">Registration Failed</h4>
+                    <h4 className="font-medium text-red-900">{t('webinar.form.error.title') as string}</h4>
                     <p className="text-sm text-red-700 mt-1">
-                      There was an error processing your registration. Please try again.
+                      {t('webinar.form.error.message') as string}
                     </p>
                   </div>
                 </div>
@@ -286,7 +263,7 @@ const WebinarsPage = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name *
+                      {t('webinar.form.fields.firstName') as string}
                     </label>
                     <input
                       type="text"
@@ -294,7 +271,7 @@ const WebinarsPage = () => {
                       name="firstName"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder="Enter your first name"
+                      placeholder={t('webinar.form.placeholders.firstName') as string}
                       value={formData.firstName}
                       onChange={handleInputChange}
                       disabled={isSubmitting}
@@ -302,7 +279,7 @@ const WebinarsPage = () => {
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name *
+                      {t('webinar.form.fields.lastName') as string}
                     </label>
                     <input
                       type="text"
@@ -310,7 +287,7 @@ const WebinarsPage = () => {
                       name="lastName"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder="Enter your last name"
+                      placeholder={t('webinar.form.placeholders.lastName') as string}
                       value={formData.lastName}
                       onChange={handleInputChange}
                       disabled={isSubmitting}
@@ -320,7 +297,7 @@ const WebinarsPage = () => {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
+                    {t('webinar.form.fields.email') as string}
                   </label>
                   <input
                     type="email"
@@ -328,7 +305,7 @@ const WebinarsPage = () => {
                     name="email"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder="Enter your email"
+                    placeholder={t('webinar.form.placeholders.email') as string}
                     value={formData.email}
                     onChange={handleInputChange}
                     disabled={isSubmitting}
@@ -337,7 +314,7 @@ const WebinarsPage = () => {
 
                 <div>
                   <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your Role
+                    {t('webinar.form.fields.role') as string}
                   </label>
                   <select
                     id="role"
@@ -347,19 +324,19 @@ const WebinarsPage = () => {
                     onChange={handleInputChange}
                     disabled={isSubmitting}
                   >
-                    <option value="">Please Select</option>
-                    <option value="owner">Store Owner</option>
-                    <option value="manager">Store Manager</option>
-                    <option value="marketing">Marketing Manager</option>
-                    <option value="operations">Operations Manager</option>
-                    <option value="developer">Developer</option>
-                    <option value="other">Other</option>
+                    <option value="">{t('webinar.form.roleOptions.select') as string}</option>
+                    <option value="owner">{t('webinar.form.roleOptions.owner') as string}</option>
+                    <option value="manager">{t('webinar.form.roleOptions.manager') as string}</option>
+                    <option value="marketing">{t('webinar.form.roleOptions.marketing') as string}</option>
+                    <option value="operations">{t('webinar.form.roleOptions.operations') as string}</option>
+                    <option value="developer">{t('webinar.form.roleOptions.developer') as string}</option>
+                    <option value="other">{t('webinar.form.roleOptions.other') as string}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="webinarInterest" className="block text-sm font-medium text-gray-700 mb-2">
-                    Webinar Topics of Interest
+                    {t('webinar.form.fields.webinarInterest') as string}
                   </label>
                   <select
                     id="webinarInterest"
@@ -369,26 +346,26 @@ const WebinarsPage = () => {
                     onChange={handleInputChange}
                     disabled={isSubmitting}
                   >
-                    <option value="">Please Select</option>
-                    <option value="ai-automation">AI Automation & Workflows</option>
-                    <option value="inventory-management">Inventory Management</option>
-                    <option value="customer-service">Customer Service Optimization</option>
-                    <option value="marketing-automation">Marketing Automation</option>
-                    <option value="analytics-reporting">Analytics & Reporting</option>
-                    <option value="all">All Topics</option>
+                    <option value="">{t('webinar.form.interestOptions.select') as string}</option>
+                    <option value="ai-automation">{t('webinar.form.interestOptions.aiAutomation') as string}</option>
+                    <option value="inventory-management">{t('webinar.form.interestOptions.inventoryManagement') as string}</option>
+                    <option value="customer-service">{t('webinar.form.interestOptions.customerService') as string}</option>
+                    <option value="marketing-automation">{t('webinar.form.interestOptions.marketingAutomation') as string}</option>
+                    <option value="analytics-reporting">{t('webinar.form.interestOptions.analyticsReporting') as string}</option>
+                    <option value="all">{t('webinar.form.interestOptions.all') as string}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number (Optional)
+                    {t('webinar.form.fields.phone') as string}
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder="Enter your phone number"
+                    placeholder={t('webinar.form.placeholders.phone') as string}
                     value={formData.phone}
                     onChange={handleInputChange}
                     disabled={isSubmitting}
@@ -407,7 +384,7 @@ const WebinarsPage = () => {
                       disabled={isSubmitting}
                     />
                     <label htmlFor="notifications" className="text-sm text-gray-700">
-                      Notify me about upcoming webinars and exclusive e-commerce insights
+                      {t('webinar.form.agreements.notifications') as string}
                     </label>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -422,10 +399,7 @@ const WebinarsPage = () => {
                       disabled={isSubmitting}
                     />
                     <label htmlFor="privacy" className="text-sm text-gray-700">
-                      I agree to the{" "}
-                      <a href="/privacy" className="text-primary hover:underline">privacy policy</a>
-                      {" "}and{" "}
-                      <a href="/terms" className="text-primary hover:underline">terms of service</a>
+                      {t('webinar.form.agreements.privacy') as string}
                     </label>
                   </div>
                 </div>
@@ -435,7 +409,7 @@ const WebinarsPage = () => {
                   className="w-full bg-primary hover:bg-primary-300 text-white py-4 text-lg font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'REGISTERING...' : 'REGISTER NOW'}
+                  {isSubmitting ? t('webinar.form.submitting') as string : t('webinar.form.submit') as string}
                 </Button>
               </form>
             </div>
@@ -448,10 +422,10 @@ const WebinarsPage = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-              Who Will Be the Speakers?
+              {t('webinar.speakers.title') as string}
             </h2>
             <p className="text-lg text-gray-600">
-              You have at your disposal our <em>dream team</em> in this super informative webinar.
+              {t('webinar.speakers.subtitle') as string}
             </p>
           </div>
 
@@ -474,10 +448,10 @@ const WebinarsPage = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Edu Samayoa</h3>
-                  <p className="text-gray-600 mb-3">Co-Founder & CEO</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{t('webinar.speakers.edu.name') as string}</h3>
+                  <p className="text-gray-600 mb-3">{t('webinar.speakers.edu.title') as string}</p>
                   <p className="text-gray-700 leading-relaxed">
-                    Will lead this transformative webinar session and demonstrate how AI automation can revolutionize your e-commerce operations. With deep expertise in building AI solutions for Shopify stores, Edu brings real-world insights from helping hundreds of e-commerce businesses scale efficiently. He&apos;ll show you exactly how to implement AI-powered automation that saves time, boosts sales, and eliminates the manual work that&apos;s holding your business back.
+                    {t('webinar.speakers.edu.description') as string}
                   </p>
                 </div>
               </div>
@@ -496,12 +470,12 @@ const WebinarsPage = () => {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-xl font-bold text-gray-900">Special Guest</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{t('webinar.speakers.guest.name') as string}</h3>
                     <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Surprise!</span>
                   </div>
-                  <p className="text-gray-600 mb-3">AI & E-commerce Expert</p>
+                  <p className="text-gray-600 mb-3">{t('webinar.speakers.guest.title') as string}</p>
                   <p className="text-gray-700 leading-relaxed">
-                    We have a very special surprise guest joining us for this exclusive webinar! This industry expert will share unique insights and real-world case studies that you won&apos;t find anywhere else. Stay tuned to discover who will be sharing their expertise on AI automation and e-commerce optimization.
+                    {t('webinar.speakers.guest.description') as string}
                   </p>
                 </div>
               </div>
@@ -515,65 +489,27 @@ const WebinarsPage = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Why E-commerce Operators & Owners Should Join This Webinar
+              {t('webinar.whyJoin.title') as string}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover the game-changing benefits that await you in this exclusive AI automation session
+              {t('webinar.whyJoin.subtitle') as string}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Reason 1 */}
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-white" />
+            {(t('webinar.whyJoin.reasons') as Array<{title: string, description: string}>).map((reason, index: number) => (
+              <div key={index} className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {reason.title}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {reason.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Save 16+ Hours Weekly
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Transform from reactive spreadsheet juggling to proactive AI automation. Learn how to automate repetitive tasks and focus on what truly matters - growing your business.
-              </p>
-            </div>
-
-            {/* Reason 2 */}
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Video className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Live Implementation Demo
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Watch us set up your first automated report in under 5 minutes. See real-time how AI can transform your data into actionable insights without the technical complexity.
-              </p>
-            </div>
-
-            {/* Reason 3 */}
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-green-200">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Expert Q&A Session
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Get your burning questions answered by thinkr&apos;s AI automation experts. Learn from real-world case studies and avoid common pitfalls that cost other store owners time and money.
-              </p>
-            </div>
-
-            {/* Reason 4 */}
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200">
-              <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Exclusive Free Trial Access
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                All attendees receive a free 14-day trial of thinkr&apos;s AI platform plus a comprehensive implementation guide valued at $297. Start automating immediately after the session.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -583,10 +519,10 @@ const WebinarsPage = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Past Webinars
+              {t('webinar.pastWebinars.title') as string}
             </h2>
             <p className="text-lg text-gray-600">
-              Missed a session? Catch up on our previous webinars
+              {t('webinar.pastWebinars.subtitle') as string}
             </p>
           </div>
 
@@ -596,9 +532,9 @@ const WebinarsPage = () => {
               <div className="text-gray-400 mb-4">
                 <Video className="w-12 h-12 mx-auto" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Coming Soon</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">{t('webinar.pastWebinars.comingSoon') as string}</h3>
               <p className="text-sm text-gray-600">
-                Our first webinar recordings will be available here soon
+                {t('webinar.pastWebinars.description') as string}
               </p>
             </div>
           </div>
