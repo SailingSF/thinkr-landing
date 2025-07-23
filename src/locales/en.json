@@ -1,0 +1,209 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "back": "Back",
+    "continue": "Continue",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "header": {
+    "nav": {
+      "resources": "Resources",
+      "features": "Features",
+      "pricing": "Pricing",
+      "company": "Company",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "cta": "Get Started"
+  },
+  "hero": {
+    "title": "AI Agent for Shopify Store Operations",
+    "subtitle": "thinkr is an AI agent for ecommerce that puts Shopify operations on autopilot. Save time with one-click automations for your store.",
+    "cta": "Get Started",
+    "secondaryCta": "Learn More"
+  },
+  "features": {
+    "title": "Powerful Features",
+    "subtitle": "Everything you need to automate your Shopify store operations",
+    "autopilot": {
+      "title": "Autopilot Mode",
+      "description": "Set up automated workflows that run 24/7"
+    },
+    "chat": {
+      "title": "AI Chat",
+      "description": "Chat with your data and get instant insights"
+    },
+    "deepSearch": {
+      "title": "Deep Search",
+      "description": "Find exactly what you need across all your data"
+    },
+    "scheduler": {
+      "title": "Smart Scheduler",
+      "description": "Automate tasks and reports on your schedule"
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that's right for your business",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save",
+    "perMonth": "per month",
+    "perYear": "per year",
+    "startFree": "Start Free",
+    "currentPlan": "Current Plan",
+    "features": {
+      "unlimitedChats": "Unlimited AI chats",
+      "automatedReports": "Automated reports",
+      "integrations": "All integrations",
+      "support": "Priority support",
+      "customWorkflows": "Custom workflows"
+    }
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "subtitle": "Join thousands of Shopify store owners who trust thinkr"
+  },
+  "footer": {
+    "description": "thinkr is an AI agent for ecommerce that puts Shopify operations on autopilot.",
+    "links": {
+      "product": "Product",
+      "company": "Company",
+      "support": "Support",
+      "legal": "Legal"
+    },
+    "copyright": "© 2024 thinkr. All rights reserved."
+  },
+  "webinar": {
+    "hero": {
+      "badge": "Live Learning Sessions for Ecommerce Growth",
+      "title": "Master Your Reporting & Alerts",
+      "titleHighlight": "with AI-Powered Automation",
+      "description": "Join our expert-led webinars to discover how thinkr's AI solutions can transform your Shopify store operations, boost sales, and streamline your workflow.",
+      "date": "Wednesday July 30th",
+      "liveQa": "Live Q&A",
+      "cta": "Register for Free!"
+    },
+    "content": {
+      "title": "What Will We Cover in Our AI-Powered E-commerce Webinar?",
+      "description": "Join our expert-led session where in just 40 minutes, you'll discover how to transform from reactive spreadsheet juggling to masterful AI-powered automation. Learn how to chat with your data, set up proactive alerts, and automate reporting to reclaim up to 16 hours per week.",
+      "topics": [
+        "Introduction to AI-Powered Automation for E-commerce",
+        "Leveraging Data without the Headache",
+        "Your Automated 24/7 Watchdog: AI Agents and Proactive Alerts",
+        "Automated Reporting: Goodbye Spreadsheets, Hello Freedom",
+        "Live Demo: Setting Up Your First Automated Report in Under 5 Minutes",
+        "Q&A Session with thinkr AI Automation Experts"
+      ],
+      "bonus": {
+        "title": "Bonus: Exclusive Access",
+        "description": "All attendees will receive a free 14-day trial of thinkr's AI automation platform and a comprehensive \"From Reactive to Masterful\" implementation guide valued at $297."
+      },
+      "terms": "*Terms and conditions apply. Find complete details in our privacy policy and terms of service."
+    },
+    "form": {
+      "title": "Register for the Webinar",
+      "success": {
+        "title": "Registration Successful!",
+        "message": "Thank you for registering! You'll receive a confirmation email shortly with webinar details."
+      },
+      "error": {
+        "title": "Registration Failed",
+        "message": "There was an error processing your registration. Please try again."
+      },
+      "fields": {
+        "firstName": "First Name *",
+        "lastName": "Last Name *",
+        "email": "Email Address *",
+        "role": "Your Role",
+        "webinarInterest": "Webinar Topics of Interest",
+        "phone": "Phone Number (Optional)"
+      },
+      "placeholders": {
+        "firstName": "Enter your first name",
+        "lastName": "Enter your last name",
+        "email": "Enter your email",
+        "phone": "Enter your phone number"
+      },
+      "roleOptions": {
+        "select": "Please Select",
+        "owner": "Store Owner",
+        "manager": "Store Manager",
+        "marketing": "Marketing Manager",
+        "operations": "Operations Manager",
+        "developer": "Developer",
+        "other": "Other"
+      },
+      "interestOptions": {
+        "select": "Please Select",
+        "aiAutomation": "AI Automation & Workflows",
+        "inventoryManagement": "Inventory Management",
+        "customerService": "Customer Service Optimization",
+        "marketingAutomation": "Marketing Automation",
+        "analyticsReporting": "Analytics & Reporting",
+        "all": "All Topics"
+      },
+      "agreements": {
+        "notifications": "Notify me about upcoming webinars and exclusive e-commerce insights",
+        "privacy": "I agree to the privacy policy and terms of service"
+      },
+      "submit": "REGISTER NOW",
+      "submitting": "REGISTERING..."
+    },
+    "speakers": {
+      "title": "Who Will Be the Speakers?",
+      "subtitle": "You have at your disposal our dream team in this super informative webinar.",
+      "edu": {
+        "name": "Edu Samayoa",
+        "title": "Co-Founder & CEO",
+        "description": "Will lead this transformative webinar session and demonstrate how AI automation can revolutionize your e-commerce operations. With deep expertise in building AI solutions for Shopify stores, Edu brings real-world insights from helping hundreds of e-commerce businesses scale efficiently. He'll show you exactly how to implement AI-powered automation that saves time, boosts sales, and eliminates the manual work that's holding your business back."
+      },
+      "guest": {
+        "name": "Special Guest",
+        "title": "AI & E-commerce Expert",
+        "description": "We have a very special surprise guest joining us for this exclusive webinar! This industry expert will share unique insights and real-world case studies that you won't find anywhere else. Stay tuned to discover who will be sharing their expertise on AI automation and e-commerce optimization."
+      }
+    },
+    "whyJoin": {
+      "title": "Why E-commerce Operators & Owners Should Join This Webinar",
+      "subtitle": "Discover the game-changing benefits that await you in this exclusive AI automation session",
+      "reasons": [
+        {
+          "title": "Save 16+ Hours Weekly",
+          "description": "Transform from reactive spreadsheet juggling to proactive AI automation. Learn how to automate repetitive tasks and focus on what truly matters - growing your business."
+        },
+        {
+          "title": "Live Implementation Demo",
+          "description": "Watch us set up your first automated report in under 5 minutes. See real-time how AI can transform your data into actionable insights without the technical complexity."
+        },
+        {
+          "title": "Expert Q&A Session",
+          "description": "Get your burning questions answered by thinkr's AI automation experts. Learn from real-world case studies and avoid common pitfalls that cost other store owners time and money."
+        },
+        {
+          "title": "Exclusive Free Trial Access",
+          "description": "All attendees receive a free 14-day trial of thinkr's AI platform plus a comprehensive implementation guide valued at $297. Start automating immediately after the session."
+        }
+      ]
+    },
+    "pastWebinars": {
+      "title": "Past Webinars",
+      "subtitle": "Missed a session? Catch up on our previous webinars",
+      "comingSoon": "Coming Soon",
+      "description": "Our first webinar recordings will be available here soon"
+    }
+  }
+} 

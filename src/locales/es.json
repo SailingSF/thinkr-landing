@@ -1,0 +1,209 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "close": "Cerrar",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar",
+    "contactUs": "Contáctanos",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio"
+  },
+  "header": {
+    "nav": {
+      "resources": "Recursos",
+      "features": "Características",
+      "pricing": "Precios",
+      "company": "Empresa",
+      "contact": "Contacto",
+      "blog": "Blog"
+    },
+    "cta": "Comenzar"
+  },
+  "hero": {
+    "title": "Agente de IA para Operaciones de Tiendas Shopify",
+    "subtitle": "thinkr es un agente de IA para ecommerce que pone las operaciones de Shopify en piloto automático. Ahorra tiempo con automatizaciones de un clic para tu tienda.",
+    "cta": "Comenzar",
+    "secondaryCta": "Saber Más"
+  },
+  "features": {
+    "title": "Características Potentes",
+    "subtitle": "Todo lo que necesitas para automatizar las operaciones de tu tienda Shopify",
+    "autopilot": {
+      "title": "Modo Piloto Automático",
+      "description": "Configura flujos de trabajo automatizados que funcionan 24/7"
+    },
+    "chat": {
+      "title": "Chat con IA",
+      "description": "Chatea con tus datos y obtén insights instantáneos"
+    },
+    "deepSearch": {
+      "title": "Búsqueda Profunda",
+      "description": "Encuentra exactamente lo que necesitas en todos tus datos"
+    },
+    "scheduler": {
+      "title": "Programador Inteligente",
+      "description": "Automatiza tareas e informes en tu horario"
+    }
+  },
+  "pricing": {
+    "title": "Precios Simples y Transparentes",
+    "subtitle": "Elige el plan que sea adecuado para tu negocio",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "save": "Ahorra",
+    "perMonth": "por mes",
+    "perYear": "por año",
+    "startFree": "Comenzar Gratis",
+    "currentPlan": "Plan Actual",
+    "features": {
+      "unlimitedChats": "Chats de IA ilimitados",
+      "automatedReports": "Informes automatizados",
+      "integrations": "Todas las integraciones",
+      "support": "Soporte prioritario",
+      "customWorkflows": "Flujos de trabajo personalizados"
+    }
+  },
+  "testimonials": {
+    "title": "Lo que Dicen Nuestros Clientes",
+    "subtitle": "Únete a miles de propietarios de tiendas Shopify que confían en thinkr"
+  },
+  "footer": {
+    "description": "thinkr es un agente de IA para ecommerce que pone las operaciones de Shopify en piloto automático.",
+    "links": {
+      "product": "Producto",
+      "company": "Empresa",
+      "support": "Soporte",
+      "legal": "Legal"
+    },
+    "copyright": "© 2024 thinkr. Todos los derechos reservados."
+  },
+  "webinar": {
+    "hero": {
+      "badge": "Sesiones de Aprendizaje en Vivo para el Crecimiento del Ecommerce",
+      "title": "Domina tus Informes y Alertas",
+      "titleHighlight": "con Automatización Impulsada por IA",
+      "description": "Únete a nuestros webinars dirigidos por expertos para descubrir cómo las soluciones de IA de thinkr pueden transformar las operaciones de tu tienda Shopify, aumentar las ventas y optimizar tu flujo de trabajo.",
+      "date": "Miércoles 30 de Julio",
+      "liveQa": "Preguntas y Respuestas en Vivo",
+      "cta": "¡Regístrate Gratis!"
+    },
+    "content": {
+      "title": "¿Qué Cubriremos en Nuestro Webinar de Ecommerce Impulsado por IA?",
+      "description": "Únete a nuestra sesión dirigida por expertos donde en solo 40 minutos, descubrirás cómo transformarte del manejo reactivo de hojas de cálculo a la automatización maestra impulsada por IA. Aprende a chatear con tus datos, configurar alertas proactivas y automatizar informes para recuperar hasta 16 horas por semana.",
+      "topics": [
+        "Introducción a la Automatización Impulsada por IA para Ecommerce",
+        "Aprovechar los Datos sin el Dolor de Cabeza",
+        "Tu Perro Guardián Automatizado 24/7: Agentes de IA y Alertas Proactivas",
+        "Informes Automatizados: Adiós Hojas de Cálculo, Hola Libertad",
+        "Demo en Vivo: Configurando tu Primer Informe Automatizado en Menos de 5 Minutos",
+        "Sesión de Preguntas y Respuestas con Expertos en Automatización de IA de thinkr"
+      ],
+      "bonus": {
+        "title": "Bonus: Acceso Exclusivo",
+        "description": "Todos los asistentes recibirán una prueba gratuita de 14 días de la plataforma de automatización de IA de thinkr y una guía completa de implementación \"De Reactivo a Maestro\" valorada en $297."
+      },
+      "terms": "*Se aplican términos y condiciones. Encuentra detalles completos en nuestra política de privacidad y términos de servicio."
+    },
+    "form": {
+      "title": "Regístrate para el Webinar",
+      "success": {
+        "title": "¡Registro Exitoso!",
+        "message": "¡Gracias por registrarte! Recibirás un email de confirmación pronto con los detalles del webinar."
+      },
+      "error": {
+        "title": "Registro Fallido",
+        "message": "Hubo un error procesando tu registro. Por favor intenta de nuevo."
+      },
+      "fields": {
+        "firstName": "Nombre *",
+        "lastName": "Apellido *",
+        "email": "Dirección de Email *",
+        "role": "Tu Rol",
+        "webinarInterest": "Temas de Interés del Webinar",
+        "phone": "Número de Teléfono (Opcional)"
+      },
+      "placeholders": {
+        "firstName": "Ingresa tu nombre",
+        "lastName": "Ingresa tu apellido",
+        "email": "Ingresa tu email",
+        "phone": "Ingresa tu número de teléfono"
+      },
+      "roleOptions": {
+        "select": "Por Favor Selecciona",
+        "owner": "Propietario de Tienda",
+        "manager": "Gerente de Tienda",
+        "marketing": "Gerente de Marketing",
+        "operations": "Gerente de Operaciones",
+        "developer": "Desarrollador",
+        "other": "Otro"
+      },
+      "interestOptions": {
+        "select": "Por Favor Selecciona",
+        "aiAutomation": "Automatización de IA y Flujos de Trabajo",
+        "inventoryManagement": "Gestión de Inventario",
+        "customerService": "Optimización del Servicio al Cliente",
+        "marketingAutomation": "Automatización de Marketing",
+        "analyticsReporting": "Análisis e Informes",
+        "all": "Todos los Temas"
+      },
+      "agreements": {
+        "notifications": "Notifícame sobre próximos webinars e insights exclusivos de ecommerce",
+        "privacy": "Acepto la política de privacidad y términos de servicio"
+      },
+      "submit": "REGISTRARSE AHORA",
+      "submitting": "REGISTRANDO..."
+    },
+    "speakers": {
+      "title": "¿Quiénes Serán los Oradores?",
+      "subtitle": "Tienes a tu disposición nuestro equipo de ensueño en este webinar súper informativo.",
+      "edu": {
+        "name": "Edu Samayoa",
+        "title": "Co-Fundador y CEO",
+        "description": "Dirigirá esta sesión transformadora del webinar y demostrará cómo la automatización de IA puede revolucionar las operaciones de tu ecommerce. Con profunda experiencia en construir soluciones de IA para tiendas Shopify, Edu trae insights del mundo real de ayudar a cientos de negocios de ecommerce a escalar eficientemente. Te mostrará exactamente cómo implementar automatización impulsada por IA que ahorra tiempo, aumenta las ventas y elimina el trabajo manual que está reteniendo tu negocio."
+      },
+      "guest": {
+        "name": "Invitado Especial",
+        "title": "Experto en IA y Ecommerce",
+        "description": "¡Tenemos un invitado especial muy sorprendente uniéndose a nosotros para este webinar exclusivo! Este experto de la industria compartirá insights únicos y casos de estudio del mundo real que no encontrarás en ningún otro lugar. Mantente atento para descubrir quién compartirá su experiencia en automatización de IA y optimización de ecommerce."
+      }
+    },
+    "whyJoin": {
+      "title": "Por Qué los Operadores y Propietarios de Ecommerce Deberían Unirse a Este Webinar",
+      "subtitle": "Descubre los beneficios revolucionarios que te esperan en esta sesión exclusiva de automatización de IA",
+      "reasons": [
+        {
+          "title": "Ahorra 16+ Horas Semanales",
+          "description": "Transfórmate del manejo reactivo de hojas de cálculo a la automatización proactiva de IA. Aprende a automatizar tareas repetitivas y enfócate en lo que realmente importa - hacer crecer tu negocio."
+        },
+        {
+          "title": "Demo de Implementación en Vivo",
+          "description": "Míranos configurar tu primer informe automatizado en menos de 5 minutos. Ve en tiempo real cómo la IA puede transformar tus datos en insights accionables sin la complejidad técnica."
+        },
+        {
+          "title": "Sesión de Preguntas y Respuestas con Expertos",
+          "description": "Obtén respuestas a tus preguntas más urgentes de los expertos en automatización de IA de thinkr. Aprende de casos de estudio del mundo real y evita errores comunes que cuestan tiempo y dinero a otros propietarios de tiendas."
+        },
+        {
+          "title": "Acceso Exclusivo a Prueba Gratuita",
+          "description": "Todos los asistentes reciben una prueba gratuita de 14 días de la plataforma de IA de thinkr más una guía completa de implementación valorada en $297. Comienza a automatizar inmediatamente después de la sesión."
+        }
+      ]
+    },
+    "pastWebinars": {
+      "title": "Webinars Anteriores",
+      "subtitle": "¿Te perdiste una sesión? Ponete al día con nuestros webinars anteriores",
+      "comingSoon": "Próximamente",
+      "description": "Nuestras primeras grabaciones de webinars estarán disponibles aquí pronto"
+    }
+  }
+} 
