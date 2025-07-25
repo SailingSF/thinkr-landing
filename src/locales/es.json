@@ -261,10 +261,16 @@
         "analyticsReporting": "Análisis e Informes",
         "all": "Todos los Temas"
       },
-      "agreements": {
-        "notifications": "Notifícame sobre próximos webinars e insights exclusivos de ecommerce",
-        "privacy": "Acepto la política de privacidad y términos de servicio"
-      },
+              "agreements": {
+          "notifications": "Notifícame sobre próximos webinars e insights exclusivos de ecommerce",
+          "privacy": {
+            "prefix": "Acepto la ",
+            "privacyLink": "política de privacidad",
+            "middle": " y ",
+            "termsLink": "términos de servicio",
+            "suffix": ""
+          }
+        },
       "submit": "REGISTRARSE AHORA",
       "submitting": "REGISTRANDO..."
     },

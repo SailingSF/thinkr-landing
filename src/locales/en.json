@@ -261,10 +261,16 @@
         "analyticsReporting": "Analytics & Reporting",
         "all": "All Topics"
       },
-      "agreements": {
-        "notifications": "Notify me about upcoming webinars and exclusive e-commerce insights",
-        "privacy": "I agree to the privacy policy and terms of service"
-      },
+              "agreements": {
+          "notifications": "Notify me about upcoming webinars and exclusive e-commerce insights",
+          "privacy": {
+            "prefix": "I agree to the ",
+            "privacyLink": "privacy policy",
+            "middle": " and ",
+            "termsLink": "terms of service",
+            "suffix": ""
+          }
+        },
       "submit": "REGISTER NOW",
       "submitting": "REGISTERING..."
     },
