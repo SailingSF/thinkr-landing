@@ -30,14 +30,31 @@
     "cta": "Comenzar"
   },
   "hero": {
-    "title": "Agente de IA para Operaciones de Tiendas Shopify",
-    "subtitle": "thinkr es un agente de IA para ecommerce que pone las operaciones de Shopify en piloto automático. Ahorra tiempo con automatizaciones de un clic para tu tienda.",
-    "cta": "Comenzar",
-    "secondaryCta": "Saber Más"
+    "title": "La Ventaja Injusta del Ecommerce Autónomo",
+    "subtitle": "Descubrimos cómo las tiendas de ecommerce pueden crecer 30% en 90 días usando Agentes de IA.",
+    "cta": "Prueba thinkr gratis",
+    "secondaryCta": "Sin tarifas de configuración. Sin riesgo. Solo resultados."
   },
   "features": {
     "title": "Características Potentes",
     "subtitle": "Todo lo que necesitas para automatizar las operaciones de tu tienda Shopify",
+    "inventory": {
+      "title": "Agente Gestor de Inventario.",
+      "description": "Monitorea niveles de inventario, predice patrones de demanda, automatiza procesos de reordenamiento, previene agotamientos y situaciones de sobrestock en todos tus productos 24/7."
+    },
+    "growth": {
+      "title": "Agente Analista de Crecimiento",
+      "description": "Analiza datos de rendimiento multicanal, identifica oportunidades de crecimiento de alto impacto, crea recomendaciones estratégicas con implementación de un clic en canales en tiempo real."
+    },
+    "dataAnalyst": {
+      "title": "Agente Analista de Datos",
+      "description": "Responde preguntas de negocio en lenguaje natural, crea informes ad-hoc a través del chat, automatiza tareas de informes rutinarios en todas las plataformas diariamente."
+    },
+    "sales": {
+      "title": "Agente de Ventas (Próximamente)",
+      "description": "Recupera carritos abandonados a través de llamadas telefónicas y SMS personalizados, interactúa con clientes con conversaciones humanas para convertir ingresos de ventas perdidos 24/7."
+    },
+    "cta": "Ver Caso de Uso",
     "autopilot": {
       "title": "Modo Piloto Automático",
       "description": "Configura flujos de trabajo automatizados que funcionan 24/7"
@@ -56,7 +73,7 @@
     }
   },
   "pricing": {
-    "title": "Precios Simples y Transparentes",
+    "title": "Precios.",
     "subtitle": "Elige el plan que sea adecuado para tu negocio",
     "monthly": "Mensual",
     "yearly": "Anual",
@@ -73,19 +90,107 @@
       "customWorkflows": "Flujos de trabajo personalizados"
     }
   },
+  "timeline": {
+    "title": "Chat Todo-en-Uno",
+    "subtitle": "Conecta con <span class=\"font-medium text-primary\">más de 300 integraciones</span> y comprende el universo de tu tienda.",
+    "cta": "Pruébalo ahora",
+    "imageAlt": "Interfaz de chat de Thinkr mostrando aplicaciones conectadas y un campo de entrada de chat"
+  },
   "testimonials": {
-    "title": "Lo que Dicen Nuestros Clientes",
-    "subtitle": "Únete a miles de propietarios de tiendas Shopify que confían en thinkr"
+    "title": "Lo que Dicen Nuestros Clientes Sobre Su Experiencia",
+    "subtitle": "Únete a miles de propietarios de tiendas Shopify que confían en thinkr",
+    "shopifyTitle": "Reseñas de la Tienda de Aplicaciones de Shopify",
+    "verified": "Verificado",
+    "shopifyAppStore": "Tienda de Aplicaciones de Shopify",
+    "viewAllReviews": "Ver Todas las Reseñas"
+  },
+  "combinedProof": {
+    "logoSection": {
+      "title": "Confiado por las mejores tiendas de Shopify"
+    },
+    "statsSection": {
+      "title": "Las tiendas que usan thinkr ven"
+    },
+    "case1": {
+      "title": "Tienda de moda Shopify automatiza optimización de ROAS de Meta & Google Ads diariamente",
+      "value": "62%",
+      "label": "ahorro de tiempo",
+      "highlight": "crecimiento de ingresos"
+    },
+    "case2": {
+      "title": "Marca DTC de cuidado de la piel usa IA para recuperar carritos abandonados y aumentar AOV",
+      "value": "10h",
+      "label": "por semana/empleado ahorrado",
+      "highlight": "aumento de retención de clientes"
+    },
+    "case3": {
+      "title": "Minorista multi-ubicación automatiza disparadores de campaña email Shopify-Klaviyo",
+      "value": "50%",
+      "label": "ahorro de tiempo",
+      "highlight": "velocidad de optimización de campaña"
+    },
+    "case4": {
+      "title": "Tienda Shopify Plus usa IA para detectar caídas de precios y alertas de inventario.",
+      "value": "2x",
+      "label": "número de problemas resueltos",
+      "highlight": "eficiencia operacional"
+    }
+  },
+  "chatHero": {
+    "title": "Experimenta el chat de thinkr",
+    "subtitle": "Mira cómo los agentes de IA de thinkr ayudan a las empresas de comercio electrónico a analizar datos, automatizar tareas y aumentar ventas sin esfuerzo.",
+    "greeting": "¡Buenos días! ¿Cómo puedo ayudar a tu negocio hoy?",
+    "placeholder": "Crea un Agente o pregunta cualquier cosa...",
+    "clickHint": "Haz clic para reiniciar la demo"
+  },
+  "aiFeatures": {
+    "title": "Las últimas funciones de IA, para tu tienda de comercio electrónico.",
+    "chat": {
+      "title": "Chat Todo-en-Uno",
+      "description": "Conecta y chatea con todas tus herramientas en un solo lugar",
+      "features": [
+        "Haz preguntas en lenguaje natural en todas las plataformas conectadas",
+        "Obtén respuestas instantáneas de Shopify, Meta Ads, Google Ads, Klaviyo y más de 300 integraciones",
+        "Recibe insights contextuales basados en tus objetivos de negocio específicos"
+      ]
+    },
+    "autopilot": {
+      "title": "Piloto Automático",
+      "description": "Deja que la IA maneje tus tareas rutinarias automáticamente",
+      "features": [
+        "Ajusta automáticamente el gasto en anuncios basado en métricas de rendimiento",
+        "Ejecuta acciones de crecimiento aprobadas con un clic de aprobación",
+        "Monitorea y optimiza campañas 24/7 sin intervención manual"
+      ]
+    },
+    "reporting": {
+      "title": "Reportes Profundos",
+      "description": "Obtén análisis completos e insights",
+      "features": [
+        "Analiza datos de múltiples canales para identificar oportunidades de ingresos",
+        "Rastrea métricas clave como ROAS, AOV y valor de por vida del cliente",
+        "Descubre patrones y tendencias en todo tu stack de comercio electrónico"
+      ]
+    },
+    "alerts": {
+      "title": "Agente de Alertas",
+      "description": "Nunca te pierdas momentos críticos del negocio con monitoreo de IA",
+      "features": [
+        "Monitorea continuamente el rendimiento en todos los canales de marketing",
+        "Detecta caídas en ROAS, escasez de inventario y riesgos operativos",
+        "Activa automáticamente acciones correctivas antes de que los problemas impacten los ingresos"
+      ]
+    }
   },
   "footer": {
-    "description": "thinkr es un agente de IA para ecommerce que pone las operaciones de Shopify en piloto automático.",
+    "description": "Automatiza las operaciones diarias de ecommerce usando agentes de IA.",
     "links": {
       "product": "Producto",
       "company": "Empresa",
       "support": "Soporte",
       "legal": "Legal"
     },
-    "copyright": "© 2024 thinkr. Todos los derechos reservados."
+    "copyright": "© 2025 thinkr. Todos los derechos reservados."
   },
   "webinar": {
     "hero": {

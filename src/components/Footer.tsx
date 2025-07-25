@@ -1,7 +1,14 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
+import { getLocaleFromPath, useTranslations } from "@/lib/i18n"
 
 const Footer = () => {
+  const pathname = usePathname()
+  const locale = getLocaleFromPath(pathname)
+  const t = useTranslations(locale)
   return (
     <div className="container mx-auto px-4 pb-8 sm:pb-16">
       <footer className="bg-black text-white py-8 sm:py-12 md:py-16 rounded-2xl">
@@ -18,15 +25,15 @@ const Footer = () => {
                   priority
                 />
               </Link>
-              <p className="text-gray-400 max-w-[300px] text-sm sm:text-base">Automate day-to-day ecommerce operations using AI agents.</p>
+              <p className="text-gray-400 max-w-[300px] text-sm sm:text-base">{t('footer.description') as string}</p>
             </div>
             <div className="flex flex-col sm:flex-row md:flex-col md:items-end space-y-4 sm:space-y-0 sm:space-x-6 md:space-x-0 md:space-y-4">
-              <Link
-                href="https://www.thinkrapp.com/"
-                className="bg-primary hover:bg-primary-300 text-white px-6 py-3 rounded-lg transition-colors text-center min-h-[44px] flex items-center justify-center sm:max-w-[150px] md:max-w-none w-full md:w-auto"
-              >
-                Sign Up
-              </Link>
+                              <Link
+                  href="https://www.thinkrapp.com/"
+                  className="bg-primary hover:bg-primary-300 text-white px-6 py-3 rounded-lg transition-colors text-center min-h-[44px] flex items-center justify-center sm:max-w-[150px] md:max-w-none w-full md:w-auto"
+                >
+                  {t('header.cta') as string}
+                </Link>
               <Link
                 href="https://apps.shopify.com/thinkr"
                 target="_blank"
@@ -35,30 +42,30 @@ const Footer = () => {
               >
                 Shopify App Store
               </Link>
-              <nav className="hidden md:flex flex-col items-end space-y-2">
-                <Link href="/company" className="hover:text-gray-400 transition-colors">
-                  Company
-                </Link>
-                <Link href="/blog" className="hover:text-gray-400 transition-colors">
-                  Blog
-                </Link>
-                <Link href="/contact" className="hover:text-gray-400 transition-colors">
-                  Contact Us
-                </Link>
-              </nav>
+                              <nav className="hidden md:flex flex-col items-end space-y-2">
+                  <Link href="/company" className="hover:text-gray-400 transition-colors">
+                    {t('header.nav.company') as string}
+                  </Link>
+                  <Link href="/blog" className="hover:text-gray-400 transition-colors">
+                    {t('header.nav.blog') as string}
+                  </Link>
+                  <Link href="/contact" className="hover:text-gray-400 transition-colors">
+                    {t('header.nav.contact') as string}
+                  </Link>
+                </nav>
             </div>
           </div>
 
           {/* Mobile Nav Links */}
           <nav className="md:hidden flex flex-wrap gap-x-6 gap-y-3 mb-8">
             <Link href="/company" className="hover:text-gray-400 transition-colors text-sm">
-              Company
+              {t('header.nav.company') as string}
             </Link>
             <Link href="/blog" className="hover:text-gray-400 transition-colors text-sm">
-              Blog
+              {t('header.nav.blog') as string}
             </Link>
             <Link href="/contact" className="hover:text-gray-400 transition-colors text-sm">
-              Contact Us
+              {t('header.nav.contact') as string}
             </Link>
           </nav>
 
@@ -99,9 +106,9 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-6 sm:pt-8 border-t border-gray-800">
-            <p className="text-gray-400 text-xs sm:text-sm">© 2025 thinkr. All rights reserved.</p>
+            <p className="text-gray-400 text-xs sm:text-sm">{t('footer.copyright') as string}</p>
             <Link href="/privacy" className="hover:text-gray-400 transition-colors mt-3 sm:mt-0 text-xs sm:text-sm">
-              Privacy Policy
+              {t('common.privacyPolicy') as string}
             </Link>
           </div>
         </div>

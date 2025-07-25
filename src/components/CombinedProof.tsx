@@ -1,34 +1,10 @@
+"use client"
+
 import React from 'react';
 import Image from 'next/image';
 import { ArrowUp } from 'lucide-react';
-
-// --- Case Studies Data ---
-const caseStudies = [
-  {
-    title: 'Shopify fashion store automates Meta & Google Ads ROAS optimization daily',
-    value: '62%',
-    label: 'time savings',
-    highlight: 'revenue growth'
-  },
-  {
-    title: 'DTC skincare brand uses AI to recover abandoned carts and boost AOV',
-    value: '10h',
-    label: 'per week/employee saved',
-    highlight: 'customer retention boost'
-  },
-  {
-    title: 'Multi-location retailer automates Shopify-Klaviyo email campaign triggers',
-    value: '50%',
-    label: 'time savings',
-    highlight: 'campaign optimization speed'
-  },
-  {
-    title: 'Shopify Plus store uses AI to detect pricing drops and inventory alerts.',
-    value: '2x',
-    label: 'number of issues resolved',
-    highlight: 'operational efficiency'
-  },
-];
+import { usePathname } from "next/navigation"
+import { getLocaleFromPath, useTranslations } from "@/lib/i18n"
 
 // --- Logos Data ---
 const logos = [
@@ -44,7 +20,37 @@ const logos = [
 ];
 
 const CombinedProof = () => {
+  const pathname = usePathname()
+  const locale = getLocaleFromPath(pathname)
+  const t = useTranslations(locale)
   const duplicatedLogos = [...logos, ...logos];
+
+  const caseStudies = [
+    {
+      title: t('combinedProof.case1.title') as string,
+      value: t('combinedProof.case1.value') as string,
+      label: t('combinedProof.case1.label') as string,
+      highlight: t('combinedProof.case1.highlight') as string
+    },
+    {
+      title: t('combinedProof.case2.title') as string,
+      value: t('combinedProof.case2.value') as string,
+      label: t('combinedProof.case2.label') as string,
+      highlight: t('combinedProof.case2.highlight') as string
+    },
+    {
+      title: t('combinedProof.case3.title') as string,
+      value: t('combinedProof.case3.value') as string,
+      label: t('combinedProof.case3.label') as string,
+      highlight: t('combinedProof.case3.highlight') as string
+    },
+    {
+      title: t('combinedProof.case4.title') as string,
+      value: t('combinedProof.case4.value') as string,
+      label: t('combinedProof.case4.label') as string,
+      highlight: t('combinedProof.case4.highlight') as string
+    },
+  ];
 
   return (
     <>
@@ -53,7 +59,7 @@ const CombinedProof = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h3 className="text-lg sm:text-xl font-medium text-gray-600 tracking-tight">
-              Trusted by top Shopify stores
+              {t('combinedProof.logoSection.title') as string}
             </h3>
           </div>
           <div className="w-full overflow-hidden bg-transparent">
@@ -81,7 +87,7 @@ const CombinedProof = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-4xl sm:text-5xl font-semibold text-gray-900 tracking-tight">
-              Stores that use thinkr see
+              {t('combinedProof.statsSection.title') as string}
             </h2>
           </div>
           

@@ -13,16 +13,10 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
   const [isChatOpen, setIsChatOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
-  
-  const locale = mounted ? getLocaleFromPath(pathname) : 'en'
+  const locale = getLocaleFromPath(pathname)
   const t = useTranslations(locale)
-  const isSpanishPage = mounted && pathname.startsWith('/es')
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const isSpanishPage = pathname.startsWith('/es')
 
   useEffect(() => {
     if (!isMenuOpen) {
@@ -32,8 +26,7 @@ const Header = () => {
   }, [isMenuOpen])
 
   // Get consistent text for both server and client rendering
-  const getNavText = (key: string, fallback: string) => {
-    if (!mounted) return fallback
+  const getNavText = (key: string) => {
     return t(key) as string
   }
 
@@ -56,7 +49,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center justify-center flex-1 space-x-2 lg:space-x-4 xl:space-x-6 2xl:space-x-8 mx-8">
             <div className="relative group">
               <div className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors group-hover:text-gray-600">
-                <span>{getNavText('header.nav.resources', 'Resources')}</span>
+                <span>{getNavText('header.nav.resources')}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180`} />
               </div>
               <div className="absolute top-full left-0 mt-2 w-[900px] bg-white rounded-md shadow-lg py-4 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out z-50">
@@ -112,7 +105,7 @@ const Header = () => {
             </div>
             <div className="relative group">
               <div className="flex items-center space-x-1 cursor-pointer hover:text-gray-600 transition-colors group-hover:text-gray-600">
-                <span>{getNavText('header.nav.features', 'Features')}</span>
+                <span>{getNavText('header.nav.features')}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180`} />
               </div>
               <div className="absolute top-full mt-2 w-[800px] bg-white rounded-md shadow-lg py-6 left-1/2 -translate-x-1/2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out z-50">
@@ -177,13 +170,13 @@ const Header = () => {
               </div>
             </div>
             <Link href="/company" className="hover:text-gray-600 transition-colors">
-              {getNavText('header.nav.company', 'Company')}
+              {getNavText('header.nav.company')}
             </Link>
             <Link href="/webinars" className="hover:text-gray-600 transition-colors">
               Webinars
             </Link>
             <Link href="/contact" className="hover:text-gray-600 transition-colors">
-              {getNavText('header.nav.contact', 'Contact')}
+              {getNavText('header.nav.contact')}
             </Link>
           </div>
 
@@ -191,7 +184,7 @@ const Header = () => {
             {isSpanishPage && <LanguageSwitcher />}
             <Button className="bg-primary hover:bg-primary-300 text-white px-5 sm:px-6 py-2 rounded-lg" asChild>
               <Link href="https://www.thinkrapp.com/">
-                {getNavText('header.cta', 'Sign Up')}
+                {getNavText('header.cta')}
               </Link>
             </Button>
           </div>
@@ -201,7 +194,7 @@ const Header = () => {
             {isSpanishPage && <LanguageSwitcher />}
             <Button className="bg-primary hover:bg-primary-300 text-white px-4 sm:px-6 py-2 rounded-lg text-sm whitespace-nowrap" asChild>
               <Link href="https://www.thinkrapp.com/">
-                {getNavText('header.cta', 'Sign Up')}
+                {getNavText('header.cta')}
               </Link>
             </Button>
             <button
@@ -229,7 +222,7 @@ const Header = () => {
                   aria-expanded={isResourcesOpen}
                   aria-label="Toggle resources menu"
                 >
-                  <span className="text-base">{getNavText('header.nav.resources', 'Resources')}</span>
+                  <span className="text-base">{getNavText('header.nav.resources')}</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isResourcesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isResourcesOpen && (
@@ -290,7 +283,7 @@ const Header = () => {
                   aria-expanded={isChatOpen}
                   aria-label="Toggle features menu"
                 >
-                  <span className="text-base">{getNavText('header.nav.features', 'Features')}</span>
+                  <span className="text-base">{getNavText('header.nav.features')}</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isChatOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isChatOpen && (
@@ -355,13 +348,13 @@ const Header = () => {
                 )}
               </div>
               <Link href="/company" className="block py-3 hover:text-gray-600 transition-colors text-base">
-                {getNavText('header.nav.company', 'Company')}
+                {getNavText('header.nav.company')}
               </Link>
               <Link href="/webinars" className="block py-3 hover:text-gray-600 transition-colors text-base">
                 Webinars
               </Link>
               <Link href="/contact" className="block py-3 hover:text-gray-600 transition-colors text-base">
-                {getNavText('header.nav.contact', 'Contact')}
+                {getNavText('header.nav.contact')}
               </Link>
             </div>
           </div>

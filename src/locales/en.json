@@ -30,14 +30,31 @@
     "cta": "Get Started"
   },
   "hero": {
-    "title": "AI Agent for Shopify Store Operations",
-    "subtitle": "thinkr is an AI agent for ecommerce that puts Shopify operations on autopilot. Save time with one-click automations for your store.",
-    "cta": "Get Started",
-    "secondaryCta": "Learn More"
+    "title": "The Unfair Advantage of Autonomous Ecommerce",
+    "subtitle": "We figure out how ecommerce stores can grow 30% in 90 days using AI Agents.",
+    "cta": "Try thinkr free",
+    "secondaryCta": "No setup fees. No risk. Just results."
   },
   "features": {
     "title": "Powerful Features",
     "subtitle": "Everything you need to automate your Shopify store operations",
+    "inventory": {
+      "title": "Inventory Manager Agent.",
+      "description": "Monitors inventory levels, predicts demand patterns, automates reordering processes, prevents stockouts and overstock situations across all your products 24/7."
+    },
+    "growth": {
+      "title": "Growth Analyst Agent",
+      "description": "Analyzes multi-channel performance data, identifies high-impact growth opportunities, creates strategic recommendations with one-click implementation.e channels in real-time."
+    },
+    "dataAnalyst": {
+      "title": "Data Analyst Agent",
+      "description": "Answers business questions in natural language, creates ad-hoc reports through chat, automates routine reporting tasks across all platforms daily now."
+    },
+    "sales": {
+      "title": "Sales Agent (Soon)",
+      "description": "Recovers abandoned carts via personalized phone calls and SMS, engages customers with human-like conversations to convert lost sales revenue back 24/7."
+    },
+    "cta": "See Use Case",
     "autopilot": {
       "title": "Autopilot Mode",
       "description": "Set up automated workflows that run 24/7"
@@ -56,7 +73,7 @@
     }
   },
   "pricing": {
-    "title": "Simple, Transparent Pricing",
+    "title": "Pricing.",
     "subtitle": "Choose the plan that's right for your business",
     "monthly": "Monthly",
     "yearly": "Yearly",
@@ -73,19 +90,107 @@
       "customWorkflows": "Custom workflows"
     }
   },
+  "timeline": {
+    "title": "All-In-One Chat",
+    "subtitle": "Connect to <span class=\"font-medium text-primary\">300+ integrations</span> and understand your store universe.",
+    "cta": "Try it now",
+    "imageAlt": "Thinkr chat interface showing connected apps and a chat input field"
+  },
   "testimonials": {
-    "title": "What Our Customers Say",
-    "subtitle": "Join thousands of Shopify store owners who trust thinkr"
+    "title": "What Our Customers Say About Their Experience",
+    "subtitle": "Join thousands of Shopify store owners who trust thinkr",
+    "shopifyTitle": "Shopify App Store Reviews",
+    "verified": "Verified",
+    "shopifyAppStore": "Shopify App Store",
+    "viewAllReviews": "View All Reviews"
+  },
+  "combinedProof": {
+    "logoSection": {
+      "title": "Trusted by top Shopify stores"
+    },
+    "statsSection": {
+      "title": "Stores that use thinkr see"
+    },
+    "case1": {
+      "title": "Shopify fashion store automates Meta & Google Ads ROAS optimization daily",
+      "value": "62%",
+      "label": "time savings",
+      "highlight": "revenue growth"
+    },
+    "case2": {
+      "title": "DTC skincare brand uses AI to recover abandoned carts and boost AOV",
+      "value": "10h",
+      "label": "per week/employee saved",
+      "highlight": "customer retention boost"
+    },
+    "case3": {
+      "title": "Multi-location retailer automates Shopify-Klaviyo email campaign triggers",
+      "value": "50%",
+      "label": "time savings",
+      "highlight": "campaign optimization speed"
+    },
+    "case4": {
+      "title": "Shopify Plus store uses AI to detect pricing drops and inventory alerts.",
+      "value": "2x",
+      "label": "number of issues resolved",
+      "highlight": "operational efficiency"
+    }
+  },
+  "chatHero": {
+    "title": "Experience the thinkr chat",
+    "subtitle": "Watch how thinkr's AI agents help e-commerce businesses analyze data, automate tasks, and grow sales effortlessly.",
+    "greeting": "Good morning! How can I help your business today?",
+    "placeholder": "Create an Agent or ask anything...",
+    "clickHint": "Click to restart demo"
+  },
+  "aiFeatures": {
+    "title": "The latest AI features, for your Ecommerce store.",
+    "chat": {
+      "title": "All-in-one Chat",
+      "description": "Connect and chat with all your tools in one place",
+      "features": [
+        "Ask questions in natural language across all connected platforms",
+        "Get instant answers from Shopify, Meta Ads, Google Ads, Klaviyo, and 300+ integrations",
+        "Receive contextual insights based on your specific business goals"
+      ]
+    },
+    "autopilot": {
+      "title": "Autopilot",
+      "description": "Let AI handle your routine tasks automatically",
+      "features": [
+        "Automatically adjust ad spend based on performance metrics",
+        "Execute approved growth actions with one-click approval",
+        "Monitor and optimize campaigns 24/7 without manual intervention"
+      ]
+    },
+    "reporting": {
+      "title": "Deep Reporting",
+      "description": "Get comprehensive analytics and insights",
+      "features": [
+        "Analyze cross-channel data to identify revenue opportunities",
+        "Track key metrics like ROAS, AOV, and customer lifetime value",
+        "Discover patterns and trends across your entire ecommerce stack"
+      ]
+    },
+    "alerts": {
+      "title": "Alert Agent",
+      "description": "Never miss critical business moment with AI monitoring",
+      "features": [
+        "Continuously monitor performance across all marketing channels",
+        "Detect drops in ROAS, inventory shortages, and operational risks",
+        "Automatically trigger corrective actions before issues impact revenue"
+      ]
+    }
   },
   "footer": {
-    "description": "thinkr is an AI agent for ecommerce that puts Shopify operations on autopilot.",
+    "description": "Automate day-to-day ecommerce operations using AI agents.",
     "links": {
       "product": "Product",
       "company": "Company",
       "support": "Support",
       "legal": "Legal"
     },
-    "copyright": "© 2024 thinkr. All rights reserved."
+    "copyright": "© 2025 thinkr. All rights reserved."
   },
   "webinar": {
     "hero": {
