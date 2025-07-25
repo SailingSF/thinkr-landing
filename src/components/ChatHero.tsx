@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { ArrowUp, Sparkles } from 'lucide-react'
 import { useViewportTrigger, useReducedMotion } from '@/lib/hooks'
 import { chatScenarios, type ChatLine } from '@/data/chatScenarios'
+import { usePathname } from 'next/navigation'
+import { getLocaleFromPath, useTranslations } from '@/lib/i18n'
 
 interface MessageBubbleProps {
   message: ChatLine
@@ -100,6 +102,9 @@ function IntegrationsDisplay() {
 export default function ChatHero() {
   const { ref, inView } = useViewportTrigger(0.2)
   const prefersReducedMotion = useReducedMotion()
+  const pathname = usePathname()
+  const locale = getLocaleFromPath(pathname)
+  const t = useTranslations(locale)
   
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0)
   const [visibleMessages, setVisibleMessages] = useState<number[]>([])
@@ -232,10 +237,10 @@ export default function ChatHero() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Experience the thinkr chat
+            {t('chatHero.title') as string}
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Watch how thinkr&apos;s AI agents help e-commerce businesses analyze data, automate tasks, and grow sales effortlessly.
+            {t('chatHero.subtitle') as string}
           </p>
         </div>
         
@@ -279,7 +284,7 @@ export default function ChatHero() {
             {/* Enhanced greeting */}
             <div className="px-6 pb-4">
               <h3 className="text-white text-lg font-medium text-center bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Good morning! How can I help your business today?
+                {t('chatHero.greeting') as string}
               </h3>
             </div>
             
@@ -303,7 +308,7 @@ export default function ChatHero() {
                 <IntegrationsDisplay />
                 <div className="bg-gradient-to-r from-[#2C2C2E] to-[#343437] rounded-xl p-3 flex items-center border border-[#404040]">
                   <div className="flex-1 text-gray-400 text-sm">
-                    Create an Agent or ask anything...
+                    {t('chatHero.placeholder') as string}
                   </div>
                   <button
                     className="w-8 h-8 bg-gradient-to-r from-[#7B6EF6] to-[#9D8DF8] hover:from-[#6B5EE6] hover:to-[#8D7DE8] text-white rounded-xl flex items-center justify-center transition-all duration-200 ml-3 shadow-lg hover:shadow-purple-500/25 group-hover:scale-105"
@@ -336,7 +341,7 @@ export default function ChatHero() {
           {/* Click hint */}
           <div className="text-center mt-6">
             <p className="text-gray-400 text-sm animate-pulse">
-              Click to restart demo
+              {t('chatHero.clickHint') as string}
             </p>
           </div>
         </div>

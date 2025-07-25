@@ -1,74 +1,11 @@
+"use client"
+
 import React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MessageSquare, Bot, BarChart3, Bell } from "lucide-react"
-
-const tools = [
-  {
-    title: "All-in-one Chat",
-    description: "Connect and chat with all your tools in one place",
-    colorScheme: "blue",
-    href: "/all-in-one-chat",
-    icon: (
-      <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-        <MessageSquare className="w-5 h-5 text-blue-600" />
-      </div>
-    ),
-    features: [
-      "Ask questions in natural language across all connected platforms",
-      "Get instant answers from Shopify, Meta Ads, Google Ads, Klaviyo, and 300+ integrations",
-      "Receive contextual insights based on your specific business goals"
-    ]
-  },
-  {
-    title: "Autopilot",
-    description: "Let AI handle your routine tasks automatically",
-    colorScheme: "purple",
-    href: "/autopilot",
-    icon: (
-      <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-        <Bot className="w-5 h-5 text-purple-600" />
-      </div>
-    ),
-    features: [
-      "Automatically adjust ad spend based on performance metrics",
-      "Execute approved growth actions with one-click approval",
-      "Monitor and optimize campaigns 24/7 without manual intervention"
-    ]
-  },
-  {
-    title: "Deep Reporting",
-    description: "Get comprehensive analytics and insights",
-    colorScheme: "green",
-    href: "/deep-reporting",
-    icon: (
-      <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-        <BarChart3 className="w-5 h-5 text-green-600" />
-      </div>
-    ),
-    features: [
-      "Analyze cross-channel data to identify revenue opportunities",
-      "Track key metrics like ROAS, AOV, and customer lifetime value",
-      "Discover patterns and trends across your entire ecommerce stack"
-    ]
-  },
-  {
-    title: "Alert Agent",
-    description: "Never miss critical business moment with AI monitoring",
-    colorScheme: "red",
-    href: "/alert-agent",
-    icon: (
-      <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-        <Bell className="w-5 h-5 text-red-600" />
-      </div>
-    ),
-    features: [
-      "Continuously monitor performance across all marketing channels",
-      "Detect drops in ROAS, inventory shortages, and operational risks",
-      "Automatically trigger corrective actions before issues impact revenue"
-    ]
-  },
-]
+import { usePathname } from "next/navigation"
+import { getLocaleFromPath, useTranslations } from "@/lib/i18n"
 
 const getColorClasses = (colorScheme: string) => {
   switch (colorScheme) {
@@ -96,12 +33,67 @@ const getColorClasses = (colorScheme: string) => {
 }
 
 export default function AIFeatures() {
+  const pathname = usePathname()
+  const locale = getLocaleFromPath(pathname)
+  const t = useTranslations(locale)
+
+  const tools = [
+    {
+      title: t('aiFeatures.chat.title') as string,
+      description: t('aiFeatures.chat.description') as string,
+      colorScheme: "blue",
+      href: "/all-in-one-chat",
+      icon: (
+        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+          <MessageSquare className="w-5 h-5 text-blue-600" />
+        </div>
+      ),
+      features: t('aiFeatures.chat.features') as string[]
+    },
+    {
+      title: t('aiFeatures.autopilot.title') as string,
+      description: t('aiFeatures.autopilot.description') as string,
+      colorScheme: "purple",
+      href: "/autopilot",
+      icon: (
+        <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+          <Bot className="w-5 h-5 text-purple-600" />
+        </div>
+      ),
+      features: t('aiFeatures.autopilot.features') as string[]
+    },
+    {
+      title: t('aiFeatures.reporting.title') as string,
+      description: t('aiFeatures.reporting.description') as string,
+      colorScheme: "green",
+      href: "/deep-reporting",
+      icon: (
+        <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+          <BarChart3 className="w-5 h-5 text-green-600" />
+        </div>
+      ),
+      features: t('aiFeatures.reporting.features') as string[]
+    },
+    {
+      title: t('aiFeatures.alerts.title') as string,
+      description: t('aiFeatures.alerts.description') as string,
+      colorScheme: "red",
+      href: "/alert-agent",
+      icon: (
+        <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+          <Bell className="w-5 h-5 text-red-600" />
+        </div>
+      ),
+      features: t('aiFeatures.alerts.features') as string[]
+    },
+  ]
+
   return (
     <section className="pt-8 sm:pt-12 md:pt-16 lg:pt-32 pb-12 sm:pb-16 md:pb-24 lg:pb-48">
       <div className="w-full container mx-auto px-4 sm:px-6">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-medium mb-4 text-center leading-tight text-gray-900">
-            The latest AI features, for your Ecommerce store.
+            {t('aiFeatures.title') as string}
           </h2>
         </div>
 
@@ -137,7 +129,7 @@ export default function AIFeatures() {
                 
                 <Button asChild className={`w-full ${colors.button} shadow-sm`}>
                   <Link href={tool.href}>
-                    Learn More
+                    {t('common.learnMore') as string}
                   </Link>
                 </Button>
               </div>

@@ -1,39 +1,43 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-
-const features = [
-  {
-    title: "Inventory Manager Agent.",
-    description:
-      "Monitors inventory levels, predicts demand patterns, automates reordering processes, prevents stockouts and overstock situations across all your products 24/7.",
-    href: "/learn-more#manage-inventory",
-    image: "/usecases/ecommerce_agent_1.webp"
-  },
-  {
-    title: "Growth Analyst Agent",
-    description:
-      "Analyzes multi-channel performance data, identifies high-impact growth opportunities, creates strategic recommendations with one-click implementation.e channels in real-time.",
-    href: "/learn-more#update-orders",
-    image: "/usecases/ecommerce_agent_3.webp"
-  },
-  {
-    title: "Data Analyst Agent",
-    description:
-      "Answers business questions in natural language, creates ad-hoc reports through chat, automates routine reporting tasks across all platforms daily now.",
-    href: "/learn-more#run-promotions",
-    image: "/usecases/ecommerce_agent_2.webp"
-  },
-  {
-    title: "Sales Agent (Soon)",
-    description:
-      "Recovers abandoned carts via personalized phone calls and SMS, engages customers with human-like conversations to convert lost sales revenue back 24/7.",
-    href: "/learn-more#create-collections",
-    image: "/usecases/ecommerce_agent_4.webp"
-  },
-]
+import { usePathname } from "next/navigation"
+import { getLocaleFromPath, useTranslations } from "@/lib/i18n"
 
 export default function Features() {
+  const pathname = usePathname()
+  const locale = getLocaleFromPath(pathname)
+  const t = useTranslations(locale)
+
+  const features = [
+    {
+      title: t('features.inventory.title') as string,
+      description: t('features.inventory.description') as string,
+      href: "/learn-more#manage-inventory",
+      image: "/usecases/ecommerce_agent_1.webp"
+    },
+    {
+      title: t('features.growth.title') as string,
+      description: t('features.growth.description') as string,
+      href: "/learn-more#update-orders",
+      image: "/usecases/ecommerce_agent_3.webp"
+    },
+    {
+      title: t('features.dataAnalyst.title') as string,
+      description: t('features.dataAnalyst.description') as string,
+      href: "/learn-more#run-promotions",
+      image: "/usecases/ecommerce_agent_2.webp"
+    },
+    {
+      title: t('features.sales.title') as string,
+      description: t('features.sales.description') as string,
+      href: "/learn-more#create-collections",
+      image: "/usecases/ecommerce_agent_4.webp"
+    },
+  ]
+
   return (
     <section className="py-4 md:py-12">
       <div className="container mx-auto px-4">
@@ -56,7 +60,7 @@ export default function Features() {
               <p className="text-muted-foreground text-lg mb-6">{feature.description}</p>
               <Link href={feature.href}>
                 <Button textColor="hsl(var(--primary))" className="w-fit hover:bg-secondary/80 border-2 border-primary-600 bg-white text-primary-700 hover:bg-primary-50">
-                  See Use Case
+                  {t('features.cta') as string}
                 </Button>
               </Link>
             </div>

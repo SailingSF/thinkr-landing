@@ -7,21 +7,10 @@ import { Calendar, Users, Video, ArrowRight, Zap, CheckCircle, AlertCircle } fro
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { registerForWebinar } from "@/lib/googleSheets"
-import { useTranslations, getLocaleFromPath } from "@/lib/i18n"
-import { usePathname } from "next/navigation"
-
-interface PrivacyAgreement {
-  prefix: string
-  privacyLink: string
-  middle: string
-  termsLink: string
-  suffix: string
-}
+import { useTranslations } from "@/lib/i18n"
 
 const WebinarsPage = () => {
-  const pathname = usePathname()
-  const locale = getLocaleFromPath(pathname)
-  const t = useTranslations(locale)
+  const t = useTranslations('es')
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -407,36 +396,7 @@ const WebinarsPage = () => {
                       disabled={isSubmitting}
                     />
                     <label htmlFor="privacy" className="text-sm text-gray-700">
-                      {(() => {
-                        const privacyText = t('webinar.form.agreements.privacy')
-                        if (typeof privacyText === 'object' && privacyText !== null) {
-                          const privacy = privacyText as unknown as PrivacyAgreement
-                          return (
-                            <>
-                              {privacy.prefix}
-                              <a 
-                                href="/privacy" 
-                                className="text-primary hover:text-primary-300 underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {privacy.privacyLink}
-                              </a>
-                              {privacy.middle}
-                              <a 
-                                href="/terms" 
-                                className="text-primary hover:text-primary-300 underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {privacy.termsLink}
-                              </a>
-                              {privacy.suffix}
-                            </>
-                          )
-                        }
-                        return privacyText as string
-                      })()}
+                      {t('webinar.form.agreements.privacy') as string}
                     </label>
                   </div>
                 </div>

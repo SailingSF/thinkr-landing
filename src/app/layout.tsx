@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 
+
 // Font with preload enabled
 const inter = Inter({ 
   subsets: ['latin'],
@@ -82,7 +83,6 @@ export default function RootLayout({
         {/* Add preconnect for Google Fonts with crossOrigin */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preload" as="image" href="/hero_image_3.svg" type="image/svg+xml" fetchPriority="high" />
         <link rel="preload" as="image" href="/usecase1-operations.webp" type="image/webp" fetchPriority="high" />
         {/* SEO: sitemap link */}
         <link rel="sitemap" href="/sitemap.xml" />

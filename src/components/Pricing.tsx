@@ -71,7 +71,13 @@ const pricingTiers = [
   },
 ]
 
+import { usePathname } from "next/navigation"
+import { getLocaleFromPath, useTranslations } from "@/lib/i18n"
+
 export default function Pricing() {
+  const pathname = usePathname()
+  const locale = getLocaleFromPath(pathname)
+  const t = useTranslations(locale)
   const [isYearly, setIsYearly] = useState(false)
 
   const getDisplayPrice = (monthlyPrice: string) => {
@@ -89,11 +95,11 @@ export default function Pricing() {
     <section className="py-8 sm:py-16 px-4">
       <div className="w-full container mx-auto">
         <div className="text-center mb-6 sm:mb-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-[50px] font-medium mb-4">Pricing.</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-[50px] font-medium mb-4">{t('pricing.title') as string}</h2>
         </div>
 
         <div className="flex justify-center items-center gap-3 sm:gap-4 mb-8 sm:mb-16">
-          <span className={`text-base sm:text-lg ${!isYearly ? 'text-primary font-medium' : 'text-gray-600'}`}>Monthly</span>
+          <span className={`text-base sm:text-lg ${!isYearly ? 'text-primary font-medium' : 'text-gray-600'}`}>{t('pricing.monthly') as string}</span>
           <button
             onClick={() => setIsYearly(!isYearly)}
             className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
@@ -105,8 +111,8 @@ export default function Pricing() {
             />
           </button>
           <span className={`text-base sm:text-lg ${isYearly ? 'text-primary font-medium' : 'text-gray-600'}`}>
-            Yearly
-            <span className="ml-1 sm:ml-2 text-xs sm:text-sm text-primary">Save 40%</span>
+            {t('pricing.yearly') as string}
+            <span className="ml-1 sm:ml-2 text-xs sm:text-sm text-primary">{t('pricing.save') as string} 40%</span>
           </span>
         </div>
 
