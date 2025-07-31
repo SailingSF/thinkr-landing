@@ -195,10 +195,10 @@
   "webinar": {
     "hero": {
       "badge": "Sesiones de Aprendizaje en Vivo para el Crecimiento del Ecommerce",
-      "title": "Domina tus Informes y Alertas",
-      "titleHighlight": "con Automatización Impulsada por IA",
-      "description": "Únete a nuestros webinars dirigidos por expertos para descubrir cómo las soluciones de IA de thinkr pueden transformar las operaciones de tu tienda Shopify, aumentar las ventas y optimizar tu flujo de trabajo.",
-      "date": "Miércoles 30 de Julio",
+      "title": "Shopify + AI: Aumenta tus Ingresos con",
+      "titleHighlight": "Informes y Alertas Inteligentes",
+      "description": "Converte tus datos en decisiones que venden gracias a un agente IA que atomatiza tus informes y alertas. Aprende a crear un guardian de tu ecommerce que trabaja 24/7 ahorrando horas de trabaja y aumentando facturacion",
+      "date": "Agosto 13, 2025",
       "liveQa": "Preguntas y Respuestas en Vivo",
       "cta": "¡Regístrate Gratis!"
     },
@@ -275,8 +275,8 @@
       "submitting": "REGISTRANDO..."
     },
     "speakers": {
-      "title": "¿Quiénes Serán los Oradores?",
-      "subtitle": "Tienes a tu disposición nuestro equipo de ensueño en este webinar súper informativo.",
+      "title": "Conoce a los Ponentes",
+      "subtitle": "Nuestro equipo de expertos te acompañará en esta sesión informativa.",
       "edu": {
         "name": "Edu Samayoa",
         "title": "Co-Fundador y CEO",
