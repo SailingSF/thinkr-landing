@@ -136,13 +136,6 @@
       "highlight": "operational efficiency"
     }
   },
-  "chatHero": {
-    "title": "Experience the thinkr chat",
-    "subtitle": "Watch how thinkr's AI agents help e-commerce businesses analyze data, automate tasks, and grow sales effortlessly.",
-    "greeting": "Good morning! How can I help your business today?",
-    "placeholder": "Create an Agent or ask anything...",
-    "clickHint": "Click to restart demo"
-  },
   "aiFeatures": {
     "title": "The latest AI features, for your Ecommerce store.",
     "chat": {
