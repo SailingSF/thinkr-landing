@@ -9,6 +9,7 @@ import Footer from "@/components/Footer"
 import { registerForWebinar } from "@/lib/googleSheets"
 import { useTranslations, getLocaleFromPath } from "@/lib/i18n"
 import { usePathname } from "next/navigation"
+import PhoneNumberInput from "@/components/PhoneNumberInput"
 
 interface PrivacyAgreement {
   prefix: string
@@ -45,6 +46,10 @@ const WebinarsPage = () => {
       ...prev,
       [name]: value
     }))
+  }
+
+  const handlePhoneChange = (value: string) => {
+    setFormData(prev => ({ ...prev, phone: value }))
   }
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -368,15 +373,11 @@ const WebinarsPage = () => {
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('webinar.form.fields.phone') as string}
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder={t('webinar.form.placeholders.phone') as string}
+                  <PhoneNumberInput
                     value={formData.phone}
-                    onChange={handleInputChange}
+                    onChange={handlePhoneChange}
                     disabled={isSubmitting}
+                    placeholder={t('webinar.form.placeholders.phone') as string}
                   />
                 </div>
 

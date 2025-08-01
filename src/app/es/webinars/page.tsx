@@ -7,10 +7,22 @@ import { Calendar, Users, Video, ArrowRight, Zap, CheckCircle, AlertCircle } fro
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { registerForWebinar } from "@/lib/googleSheets"
-import { useTranslations } from "@/lib/i18n"
+import { useTranslations, getLocaleFromPath } from "@/lib/i18n"
+import { usePathname } from "next/navigation"
+import PhoneNumberInput from "@/components/PhoneNumberInput"
+
+interface PrivacyAgreement {
+  prefix: string
+  privacyLink: string
+  middle: string
+  termsLink: string
+  suffix: string
+}
 
 const WebinarsPage = () => {
-  const t = useTranslations('es')
+  const pathname = usePathname()
+  const locale = getLocaleFromPath(pathname)
+  const t = useTranslations(locale)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -34,6 +46,10 @@ const WebinarsPage = () => {
       ...prev,
       [name]: value
     }))
+  }
+
+  const handlePhoneChange = (value: string) => {
+    setFormData(prev => ({ ...prev, phone: value }))
   }
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -357,15 +373,11 @@ const WebinarsPage = () => {
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('webinar.form.fields.phone') as string}
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder={t('webinar.form.placeholders.phone') as string}
+                  <PhoneNumberInput
                     value={formData.phone}
-                    onChange={handleInputChange}
+                    onChange={handlePhoneChange}
                     disabled={isSubmitting}
+                    placeholder={t('webinar.form.placeholders.phone') as string}
                   />
                 </div>
 
@@ -396,7 +408,36 @@ const WebinarsPage = () => {
                       disabled={isSubmitting}
                     />
                     <label htmlFor="privacy" className="text-sm text-gray-700">
-                      {t('webinar.form.agreements.privacy') as string}
+                      {(() => {
+                        const privacyText = t('webinar.form.agreements.privacy')
+                        if (typeof privacyText === 'object' && privacyText !== null) {
+                          const privacy = privacyText as unknown as PrivacyAgreement
+                          return (
+                            <>
+                              {privacy.prefix}
+                              <a 
+                                href="/es/privacy" 
+                                className="text-primary hover:text-primary-300 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {privacy.privacyLink}
+                              </a>
+                              {privacy.middle}
+                              <a 
+                                href="/es/terms" 
+                                className="text-primary hover:text-primary-300 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {privacy.termsLink}
+                              </a>
+                              {privacy.suffix}
+                            </>
+                          )
+                        }
+                        return privacyText as string
+                      })()}
                     </label>
                   </div>
                 </div>
