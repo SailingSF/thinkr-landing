@@ -43,8 +43,8 @@ export function useTranslations(locale: Locale = 'en') {
     if (Array.isArray(value)) {
       return value;
     }
-    
-    return key;
+    // Allow returning objects (e.g., structured translations)
+    return value as unknown;
   };
   
   return t;
