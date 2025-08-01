@@ -26,19 +26,14 @@ const Hero = () => {
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 text-center">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <h1 
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal mb-4 sm:mb-6 md:mb-8 lg:mb-10 mx-auto leading-tight max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl
-          animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out motion-reduce:animate-none motion-reduce:opacity-100"
-        >
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal mb-4 sm:mb-6 md:mb-8 lg:mb-10 mx-auto leading-tight max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out motion-reduce:animate-none motion-reduce:opacity-100">
           The Unfair Advantage of<br />
           Autonomous Ecommerce
         </h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 mb-6 sm:mb-8 md:mb-10 lg:mb-12 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto leading-relaxed
-        animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out delay-150 motion-reduce:animate-none motion-reduce:opacity-100">
-          How can AI automate your store growth?
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 mb-6 sm:mb-8 md:mb-10 lg:mb-12 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out delay-150 motion-reduce:animate-none motion-reduce:opacity-100">
+          How will AI grow your store?
         </p>
-        <div className="w-full max-w-2xl mx-auto bg-zinc-900 rounded-xl shadow-lg px-4 py-4 flex flex-col gap-0
-        animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out delay-300 motion-reduce:animate-none motion-reduce:opacity-100">
+        <div className="w-full max-w-2xl mx-auto bg-zinc-900 rounded-xl shadow-lg px-4 py-4 flex flex-col gap-0 animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out delay-300 motion-reduce:animate-none motion-reduce:opacity-100">
           {/* First row: textarea only, full width */}
           <div className="flex items-center w-full">
             <textarea

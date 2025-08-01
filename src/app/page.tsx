@@ -3,7 +3,6 @@ import Hero from "@/components/Hero"
 import Footer from "@/components/Footer"
 import Features from "@/components/Features"
 import Pricing from "@/components/Pricing"
-import Timeline from "@/components/Timeline"
 import SimpleContactForm from "@/components/SimpleContactForm"
 import Script from "next/script"
 import CombinedProof from "@/components/CombinedProof"
@@ -43,7 +42,6 @@ export default function Home() {
       <Header />
       <Hero />
       <CombinedProof />
-      <Timeline />
       <Features />
       <AIFeatures />
       <Testimonials />
