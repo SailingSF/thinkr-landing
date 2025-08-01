@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { usePathname } from "next/navigation"
 import { getLocaleFromPath, useTranslations } from "@/lib/i18n"
+import { useState } from "react"
 
 const PLACEHOLDER_TEXT = "Create an Agent or ask anything...";
 
@@ -11,6 +12,16 @@ const Hero = () => {
   const pathname = usePathname()
   const locale = getLocaleFromPath(pathname)
   const t = useTranslations(locale)
+  const [showIntegrations, setShowIntegrations] = useState(false)
+  const [activeTab, setActiveTab] = useState<string | null>('ask')
+
+  const integrations = [
+    { name: "Shopify", logo: "/integration-logos/shopify_glyph_white.svg" },
+    { name: "Klaviyo", logo: "/integration-logos/klaviyo-white-icon.png" },
+    { name: "Facebook Ads", logo: "/integration-logos/meta-icon-2.png" },
+    { name: "Mailchimp", logo: "/integration-logos/mailchimp-icon-2.png" },
+    { name: "Google Ads", logo: "/integration-logos/google-ads-icon-2.png" },
+  ]
 
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 text-center">
@@ -44,17 +55,45 @@ const Hero = () => {
             {/* Left group */}
             <div className="flex items-center gap-x-2">
               <button
-                className="bg-primary-500 hover:bg-primary-600 text-white font-semibold px-4 h-10 rounded-md text-sm transition-colors flex items-center"
+                className={`font-semibold px-4 h-10 rounded-md text-sm transition-colors flex items-center ${
+                  activeTab === 'ask' 
+                    ? 'bg-primary-500 text-white' 
+                    : 'bg-zinc-800 hover:bg-zinc-700 text-white'
+                }`}
                 style={{ minWidth: 80 }}
+                onClick={() => setActiveTab(activeTab === 'ask' ? null : 'ask')}
               >
                 + Ask
               </button>
-              <span className="text-white font-medium text-sm px-2 cursor-pointer hover:text-primary-400 transition-colors">Research</span>
-              <span className="text-white font-medium text-sm px-2 cursor-pointer hover:text-primary-400 transition-colors">Agents</span>
+              <button 
+                className={`font-semibold px-4 h-10 rounded-md text-sm transition-colors flex items-center ${
+                  activeTab === 'research' 
+                    ? 'bg-primary-500 text-white' 
+                    : 'bg-zinc-800 hover:bg-zinc-700 text-white'
+                }`}
+                style={{ minWidth: 80 }}
+                onClick={() => setActiveTab(activeTab === 'research' ? null : 'research')}
+              >
+                Research
+              </button>
+              <button 
+                className={`font-semibold px-4 h-10 rounded-md text-sm transition-colors flex items-center ${
+                  activeTab === 'agents' 
+                    ? 'bg-primary-500 text-white' 
+                    : 'bg-zinc-800 hover:bg-zinc-700 text-white'
+                }`}
+                style={{ minWidth: 80 }}
+                onClick={() => setActiveTab(activeTab === 'agents' ? null : 'agents')}
+              >
+                Agents
+              </button>
             </div>
             {/* Right group */}
-            <div className="flex items-center gap-x-2">
-              <button className="flex items-center bg-zinc-800 text-white px-3 h-10 rounded-md gap-1 border border-zinc-700 flex-shrink-0">
+            <div className="flex items-center gap-x-2 relative">
+              <button 
+                className="flex items-center bg-zinc-800 text-white px-3 h-10 rounded-md gap-1 border border-zinc-700 flex-shrink-0 hover:bg-zinc-700 transition-colors"
+                onClick={() => setShowIntegrations(!showIntegrations)}
+              >
                 Integrations
                 <img src="/integration-logos/shopify_glyph_white.svg" alt="Shopify" className="ml-1 w-4 h-4" />
                 <img src="/integration-logos/klaviyo-white-icon.png" alt="Klaviyo" className="ml-1 w-4 h-4" />
@@ -63,6 +102,22 @@ const Hero = () => {
                 <img src="/integration-logos/google-ads-icon-2.png" alt="Google Ads" className="ml-1 w-4 h-4" />
                 <span className="ml-1 text-base">^</span>
               </button>
+              
+              {/* Integrations Popup */}
+              {showIntegrations && (
+                <div className="absolute top-full right-0 mt-2 bg-zinc-800 border border-zinc-700 rounded-lg shadow-lg p-4 z-50 min-w-[200px]">
+                  <div className="text-white text-sm font-medium mb-3">Available Integrations</div>
+                  <div className="space-y-2">
+                    {integrations.map((integration, index) => (
+                      <div key={index} className="flex items-center gap-3 p-2 rounded hover:bg-zinc-700 transition-colors">
+                        <img src={integration.logo} alt={integration.name} className="w-5 h-5" />
+                        <span className="text-white text-sm">{integration.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
               <button className="bg-primary-500 hover:bg-primary-600 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors flex-shrink-0">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
