@@ -6,7 +6,7 @@ import { ChevronDown, Menu, X, MessageSquare, Bot, BarChart3, Linkedin, Shopping
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import LanguageSwitcher from "./LanguageSwitcher"
-import { useTranslations, getLocaleFromPath } from "@/lib/i18n"
+import { useTranslations, getLocaleFromPath, getLocalizedPath } from "@/lib/i18n"
 import { usePathname } from "next/navigation"
 
 const Header = () => {
@@ -16,6 +16,7 @@ const Header = () => {
   const pathname = usePathname()
   const locale = getLocaleFromPath(pathname)
   const t = useTranslations(locale)
+  const lp = (p: string) => getLocalizedPath(p, locale)
   const isSpanishPage = pathname.startsWith('/es')
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const Header = () => {
     <div className="w-full px-4 pt-6 sm:pt-8 pb-4">
       <header className="max-w-[1200px] mx-auto bg-gray-100 rounded-lg relative">
         <nav className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-          <Link href="/" className="flex items-center">
+          <Link href={lp('/')} className="flex items-center">
             <Image
               src="/thinkr_black_leftlogo.png"
               alt="Thinkr Logo"
@@ -87,7 +88,7 @@ const Header = () => {
                     </div>
                   </a>
                   <Link 
-                    href="/learn-more"
+                    href={lp('/learn-more')}
                     className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group/item"
                   >
                     <div className="flex-shrink-0 mt-1">
@@ -111,7 +112,7 @@ const Header = () => {
               <div className="absolute top-full mt-2 w-[800px] bg-white rounded-md shadow-lg py-6 left-1/2 -translate-x-1/2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out z-50">
                 <div className="grid grid-cols-2 gap-x-8 gap-y-6 px-6">
                   <Link 
-                    href="/all-in-one-chat"
+                    href={lp('/all-in-one-chat')}
                     className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
                   >
                     <div className="flex-shrink-0 mt-1">
@@ -125,7 +126,7 @@ const Header = () => {
                     </div>
                   </Link>
                   <Link 
-                    href="/autopilot"
+                    href={lp('/autopilot')}
                     className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
                   >
                     <div className="flex-shrink-0 mt-1">
@@ -139,7 +140,7 @@ const Header = () => {
                     </div>
                   </Link>
                   <Link 
-                    href="/deep-reporting"
+                    href={lp('/deep-reporting')}
                     className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
                   >
                     <div className="flex-shrink-0 mt-1">
@@ -153,7 +154,7 @@ const Header = () => {
                     </div>
                   </Link>
                   <Link 
-                    href="/alert-agent"
+                    href={lp('/alert-agent')}
                     className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
                   >
                     <div className="flex-shrink-0 mt-1">
@@ -169,13 +170,13 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <Link href="/company" className="hover:text-gray-600 transition-colors">
+            <Link href={lp('/company')} className="hover:text-gray-600 transition-colors">
               {getNavText('header.nav.company')}
             </Link>
-            <Link href="/webinars" className="hover:text-gray-600 transition-colors">
+            <Link href={lp('/webinars')} className="hover:text-gray-600 transition-colors">
               Webinars
             </Link>
-            <Link href="/contact" className="hover:text-gray-600 transition-colors">
+            <Link href={lp('/contact')} className="hover:text-gray-600 transition-colors">
               {getNavText('header.nav.contact')}
             </Link>
           </div>
@@ -260,7 +261,7 @@ const Header = () => {
                       </div>
                     </a>
                     <Link 
-                      href="/learn-more"
+                      href={lp('/learn-more')}
                       className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
                       <div className="flex-shrink-0 mt-1">
@@ -289,7 +290,7 @@ const Header = () => {
                 {isChatOpen && (
                   <div className="pl-4 py-2 space-y-3">
                     <Link 
-                      href="/all-in-one-chat"
+                      href={lp('/all-in-one-chat')}
                       className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
                       <div className="flex-shrink-0 mt-1">
@@ -303,7 +304,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link 
-                      href="/autopilot"
+                      href={lp('/autopilot')}
                       className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
                       <div className="flex-shrink-0 mt-1">
@@ -317,7 +318,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link 
-                      href="/deep-reporting"
+                      href={lp('/deep-reporting')}
                       className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
                       <div className="flex-shrink-0 mt-1">
@@ -331,7 +332,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link 
-                      href="/alert-agent"
+                      href={lp('/alert-agent')}
                       className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
                     >
                       <div className="flex-shrink-0 mt-1">
@@ -347,13 +348,13 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <Link href="/company" className="block py-3 hover:text-gray-600 transition-colors text-base">
+              <Link href={lp('/company')} className="block py-3 hover:text-gray-600 transition-colors text-base">
                 {getNavText('header.nav.company')}
               </Link>
-              <Link href="/webinars" className="block py-3 hover:text-gray-600 transition-colors text-base">
+              <Link href={lp('/webinars')} className="block py-3 hover:text-gray-600 transition-colors text-base">
                 Webinars
               </Link>
-              <Link href="/contact" className="block py-3 hover:text-gray-600 transition-colors text-base">
+              <Link href={lp('/contact')} className="block py-3 hover:text-gray-600 transition-colors text-base">
                 {getNavText('header.nav.contact')}
               </Link>
             </div>

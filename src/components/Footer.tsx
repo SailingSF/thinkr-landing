@@ -3,19 +3,20 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { getLocaleFromPath, useTranslations } from "@/lib/i18n"
+import { getLocaleFromPath, useTranslations, getLocalizedPath } from "@/lib/i18n"
 
 const Footer = () => {
   const pathname = usePathname()
   const locale = getLocaleFromPath(pathname)
   const t = useTranslations(locale)
+  const lp = (p: string) => getLocalizedPath(p, locale)
   return (
     <div className="container mx-auto px-4 pb-8 sm:pb-16">
       <footer className="bg-black text-white py-8 sm:py-12 md:py-16 rounded-2xl">
         <div className="container mx-auto px-4 sm:px-8 md:px-12">
           <div className="flex flex-col md:flex-row justify-between mb-8 md:mb-12 gap-6">
             <div className="mb-6 md:mb-0">
-              <Link href="/" className="inline-block mb-4">
+              <Link href={lp('/')} className="inline-block mb-4">
                 <Image
                   src="/thinkr_white_leftlogo.png"
                   alt="Thinkr Logo"
@@ -43,13 +44,13 @@ const Footer = () => {
                 Shopify App Store
               </Link>
                               <nav className="hidden md:flex flex-col items-end space-y-2">
-                  <Link href="/company" className="hover:text-gray-400 transition-colors">
+                  <Link href={lp('/company')} className="hover:text-gray-400 transition-colors">
                     {t('header.nav.company') as string}
                   </Link>
-                  <Link href="/blog" className="hover:text-gray-400 transition-colors">
+                  <Link href={lp('/blog')} className="hover:text-gray-400 transition-colors">
                     {t('header.nav.blog') as string}
                   </Link>
-                  <Link href="/contact" className="hover:text-gray-400 transition-colors">
+                  <Link href={lp('/contact')} className="hover:text-gray-400 transition-colors">
                     {t('header.nav.contact') as string}
                   </Link>
                 </nav>
@@ -58,13 +59,13 @@ const Footer = () => {
 
           {/* Mobile Nav Links */}
           <nav className="md:hidden flex flex-wrap gap-x-6 gap-y-3 mb-8">
-            <Link href="/company" className="hover:text-gray-400 transition-colors text-sm">
+            <Link href={lp('/company')} className="hover:text-gray-400 transition-colors text-sm">
               {t('header.nav.company') as string}
             </Link>
-            <Link href="/blog" className="hover:text-gray-400 transition-colors text-sm">
+            <Link href={lp('/blog')} className="hover:text-gray-400 transition-colors text-sm">
               {t('header.nav.blog') as string}
             </Link>
-            <Link href="/contact" className="hover:text-gray-400 transition-colors text-sm">
+            <Link href={lp('/contact')} className="hover:text-gray-400 transition-colors text-sm">
               {t('header.nav.contact') as string}
             </Link>
           </nav>
@@ -107,7 +108,7 @@ const Footer = () => {
 
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-6 sm:pt-8 border-t border-gray-800">
             <p className="text-gray-400 text-xs sm:text-sm">{t('footer.copyright') as string}</p>
-            <Link href="/privacy" className="hover:text-gray-400 transition-colors mt-3 sm:mt-0 text-xs sm:text-sm">
+            <Link href={lp('/privacy')} className="hover:text-gray-400 transition-colors mt-3 sm:mt-0 text-xs sm:text-sm">
               {t('common.privacyPolicy') as string}
             </Link>
           </div>

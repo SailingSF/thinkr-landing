@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Calendar, Users, Video, ArrowRight, Zap, CheckCircle, AlertCircle } from "lucide-react"
@@ -48,9 +48,9 @@ const WebinarsPage = () => {
     }))
   }
 
-  const handlePhoneChange = (value: string) => {
+  const handlePhoneChange = useCallback((value: string) => {
     setFormData(prev => ({ ...prev, phone: value }))
-  }
+  }, [])
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target
