@@ -79,6 +79,11 @@ const WebinarsPage = () => {
         })
       }
 
+      // Track Facebook Pixel Lead event
+      if (typeof window !== 'undefined' && (window as Window & typeof globalThis & { fbq?: (...args: unknown[]) => void }).fbq) {
+        (window as Window & typeof globalThis & { fbq: (...args: unknown[]) => void }).fbq('track', 'Lead')
+      }
+
       setSubmitStatus('success')
       
       // Reset form after successful submission
