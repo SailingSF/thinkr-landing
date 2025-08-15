@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronDown, Menu, X, MessageSquare, Bot, BarChart3, Linkedin, ShoppingBag, BookOpen, Bell } from "lucide-react"
+import { ChevronDown, Menu, X, MessageSquare, Bot, BarChart3, Linkedin, ShoppingBag, BookOpen, Bell, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import LanguageSwitcher from "./LanguageSwitcher"
@@ -123,6 +123,20 @@ const Header = () => {
                     <div>
                       <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">All-in-one Chat</h3>
                       <p className="text-sm text-gray-600">Connect and chat with all your tools in one place</p>
+                    </div>
+                  </Link>
+                  <Link 
+                    href={lp('/custom-reports')}
+                    className="flex items-start space-x-3 p-4 hover:bg-gray-50 transition-colors rounded-lg group"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-gray-100 transition-colors">
+                        <FileText className="w-5 h-5 text-gray-700" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900 group-hover:text-gray-700 transition-colors">Custom Reports</h3>
+                      <p className="text-sm text-gray-600">Automated, agency‑quality weekly reports</p>
                     </div>
                   </Link>
                   <Link 
@@ -343,6 +357,20 @@ const Header = () => {
                       <div>
                         <h3 className="font-medium text-gray-900 group-hover:text-red-600 transition-colors">Alert Agent</h3>
                         <p className="text-sm text-gray-600">Never miss critical business moments with AI monitoring</p>
+                      </div>
+                    </Link>
+                    <Link 
+                      href={lp('/custom-reports')}
+                      className="flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors rounded-lg group"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-gray-100 transition-colors">
+                          <FileText className="w-5 h-5 text-gray-700" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900 group-hover:text-gray-700 transition-colors">Custom Reports</h3>
+                        <p className="text-sm text-gray-600">Automated, agency‑quality weekly reports</p>
                       </div>
                     </Link>
                   </div>
