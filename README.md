@@ -2,7 +2,7 @@
 
 [![thinkr Logo](https://www.thinkr.pro/thinkr_black_leftlogo.png)](https://www.thinkr.pro)
 
-A landing page built to showcase and advertise thinkr—a solution designed to automate e-commerce and Shopify operations using advanced AI agents. This page highlights key features of thinkr, advertising how itempowers shopify store owners to streamline daily processes and boost productivity.
+A landing page built to showcase and advertise thinkr—a solution designed to automate e-commerce and Shopify operations using advanced AI agents. This page highlights key features of thinkr, advertising how it empowers Shopify store owners to streamline daily processes and boost productivity.
 
 ## About thinkr
 
@@ -25,38 +25,53 @@ thinkr is dedicated to transforming the way you manage your online store. By lev
 
 ## Built With
 
-- **Next.js** 
-- **Tailwind CSS** 
+- **Next.js** (App Router)
+- **Tailwind CSS**
 
 ## Getting Started
 
-To run the thinkr landing page locally, follow these steps:
+To run the thinkr landing page locally from scratch, follow these steps.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org) (v14 or later)
-- [npm](https://www.npmjs.com) or [Yarn](https://yarnpkg.com)
+- [Node.js](https://nodejs.org) v18.17 or newer (matches `engines` in `package.json`)
+- [npm](https://www.npmjs.com) v10 or newer (or Yarn, pnpm, or Bun if preferred)
+- [Git](https://git-scm.com)
+- Optional: [nvm](https://github.com/nvm-sh/nvm) to manage Node versions
 
 ### Installation
 
-1. **Clone the repository:**
+1. Clone the repository
 
    ```bash
-   git clone https://github.com/your-username/thinkr-landing.git
+   git clone <your-repo-url>
+   # or with GitHub CLI
+   # gh repo clone <owner>/<repo>
    ```
 
-2. **Navigate to the project directory:**
+2. Enter the project directory
 
    ```bash
    cd thinkr-landing
    ```
 
-3. **Install dependencies:**
+3. Ensure the correct Node/npm versions (recommended if you use nvm)
+
+   ```bash
+   nvm install 18
+   nvm use 18
+   ```
+
+4. Install dependencies
 
    ```bash
    npm install
    # or
    yarn install
+   # or
+   pnpm install
+   # or
+   bun install
    ```
 
 ### Running the Application
@@ -73,7 +88,37 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the landing page.
+Open http://localhost:3000 in your browser to view the landing page.
+
+### Environment Variables (optional)
+
+This site runs without environment variables. If you want to enable analytics or webinar form submissions, create a `.env.local` file in the project root and add any of the following:
+
+```bash
+# Google Tag Manager (used in `src/app/layout.tsx`)
+NEXT_PUBLIC_GTM_ID=G-XXXXXXXXXX
+
+# Meta/Facebook Pixel (used in `src/app/layout.tsx`)
+NEXT_PUBLIC_FB_PIXEL_ID=1234567890
+
+# Google Sheets webhook for webinar registrations (used in `src/lib/googleSheets.ts`)
+# Only required if you plan to submit the webinar form locally
+NEXT_PUBLIC_GS_WEBHOOK=https://script.google.com/macros/s/XXXXXXXX/exec
+```
+
+Tip: After changing env vars, restart the dev server.
+
+### Available Scripts
+
+- `npm run dev`: Start the local dev server
+- `npm run build`: Create an optimized production build
+- `npm run start`: Start the production server (after `build`)
+- `npm run lint`: Run ESLint
+
+### Troubleshooting
+
+- Node version mismatch: ensure `node -v` is >= 18.17. If using nvm, run `nvm use 18`.
+- Port already in use (3000): stop the other process or start on another port with `PORT=3001 npm run dev`.
 
 ## Deployment
 
