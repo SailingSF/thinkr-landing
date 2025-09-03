@@ -1,117 +1,62 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Calendar, Users, Video, ArrowRight, Zap, CheckCircle, AlertCircle } from "lucide-react"
+import { Calendar, Users, Video, ArrowRight, Zap } from "lucide-react"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-import { registerForWebinar } from "@/lib/googleSheets"
 import { useTranslations, getLocaleFromPath } from "@/lib/i18n"
 import { usePathname } from "next/navigation"
-import PhoneNumberInput from "@/components/PhoneNumberInput"
 
-interface PrivacyAgreement {
-  prefix: string
-  privacyLink: string
-  middle: string
-  termsLink: string
-  suffix: string
-}
+// removed unused PrivacyAgreement interface
 
 const WebinarsPage = () => {
   const pathname = usePathname()
   const locale = getLocaleFromPath(pathname)
   const t = useTranslations(locale)
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    role: "",
-    webinarInterest: "",
-    phone: ""
-  })
-
-  const [agreements, setAgreements] = useState({
-    notifications: false,
-    privacy: false
-  })
-
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handlePhoneChange = useCallback((value: string) => {
-    setFormData(prev => ({ ...prev, phone: value }))
-  }, [])
-
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target
-    setAgreements(prev => ({
-      ...prev,
-      [name]: checked
-    }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-
-    try {
-      await registerForWebinar({
-        ...formData,
-        notifications: agreements.notifications
-      })
-
-      // Track Google Analytics conversion event
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'webinar_registration', {
-          page_location: window.location.href,
-          page_title: document.title
-        })
-      }
-
-      // Track Facebook Pixel Lead event
-      if (typeof window !== 'undefined' && (window as Window & typeof globalThis & { fbq?: (...args: unknown[]) => void }).fbq) {
-        (window as Window & typeof globalThis & { fbq: (...args: unknown[]) => void }).fbq('track', 'Lead')
-      }
-
-      setSubmitStatus('success')
-      
-      // Reset form after successful submission
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        role: "",
-        webinarInterest: "",
-        phone: ""
-      })
-      setAgreements({
-        notifications: false,
-        privacy: false
-      })
-    } catch (error) {
-      console.error('Failed to submit form:', error)
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   const [isMounted, setIsMounted] = useState(false)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
     setIsMounted(true)
   }, [])
+
+  const handleIframeLoad = () => {
+    const iframe = iframeRef.current
+    if (!iframe) return
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow?.document
+      if (!doc) return
+      const adjust = () => {
+        const docEl = doc.documentElement
+        const height = Math.max(
+          doc.body?.scrollHeight || 0,
+          docEl?.scrollHeight || 0,
+          doc.body?.offsetHeight || 0,
+          docEl?.offsetHeight || 0,
+          docEl?.clientHeight || 0
+        )
+        iframe.style.height = `${height}px`
+      }
+
+      // initial adjustments (in case assets load after onLoad)
+      adjust()
+      setTimeout(adjust, 250)
+      setTimeout(adjust, 750)
+      setTimeout(adjust, 1500)
+
+      // observe dynamic changes
+      if (typeof ResizeObserver !== 'undefined') {
+        try {
+          const ro = new ResizeObserver(() => adjust())
+          if (doc.body) ro.observe(doc.body)
+        } catch {}
+      }
+    } catch {
+      // ignore if cross-origin
+    }
+  }
 
   const scrollToForm = () => {
     if (!isMounted) return
@@ -247,214 +192,16 @@ const WebinarsPage = () => {
               </p>
             </div>
 
-            {/* Right Column - Registration Form */}
-            <div id="webinar-form" className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('webinar.form.title') as string}</h3>
-              
-              {/* Success Message */}
-              {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-medium text-green-900">{t('webinar.form.success.title') as string}</h4>
-                    <p className="text-sm text-green-700 mt-1">
-                      {t('webinar.form.success.message') as string}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* Error Message */}
-              {submitStatus === 'error' && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start space-x-3">
-                  <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-medium text-red-900">{t('webinar.form.error.title') as string}</h4>
-                    <p className="text-sm text-red-700 mt-1">
-                      {t('webinar.form.error.message') as string}
-                    </p>
-                  </div>
-                </div>
-              )}
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('webinar.form.fields.firstName') as string}
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder={t('webinar.form.placeholders.firstName') as string}
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      disabled={isSubmitting}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('webinar.form.fields.lastName') as string}
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                      placeholder={t('webinar.form.placeholders.lastName') as string}
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      disabled={isSubmitting}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('webinar.form.fields.email') as string}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder={t('webinar.form.placeholders.email') as string}
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    disabled={isSubmitting}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('webinar.form.fields.role') as string}
-                  </label>
-                  <select
-                    id="role"
-                    name="role"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    value={formData.role}
-                    onChange={handleInputChange}
-                    disabled={isSubmitting}
-                  >
-                    <option value="">{t('webinar.form.roleOptions.select') as string}</option>
-                    <option value="owner">{t('webinar.form.roleOptions.owner') as string}</option>
-                    <option value="manager">{t('webinar.form.roleOptions.manager') as string}</option>
-                    <option value="marketing">{t('webinar.form.roleOptions.marketing') as string}</option>
-                    <option value="operations">{t('webinar.form.roleOptions.operations') as string}</option>
-                    <option value="developer">{t('webinar.form.roleOptions.developer') as string}</option>
-                    <option value="other">{t('webinar.form.roleOptions.other') as string}</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="webinarInterest" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('webinar.form.fields.webinarInterest') as string}
-                  </label>
-                  <select
-                    id="webinarInterest"
-                    name="webinarInterest"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    value={formData.webinarInterest}
-                    onChange={handleInputChange}
-                    disabled={isSubmitting}
-                  >
-                    <option value="">{t('webinar.form.interestOptions.select') as string}</option>
-                    <option value="ai-automation">{t('webinar.form.interestOptions.aiAutomation') as string}</option>
-                    <option value="inventory-management">{t('webinar.form.interestOptions.inventoryManagement') as string}</option>
-                    <option value="customer-service">{t('webinar.form.interestOptions.customerService') as string}</option>
-                    <option value="marketing-automation">{t('webinar.form.interestOptions.marketingAutomation') as string}</option>
-                    <option value="analytics-reporting">{t('webinar.form.interestOptions.analyticsReporting') as string}</option>
-                    <option value="all">{t('webinar.form.interestOptions.all') as string}</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('webinar.form.fields.phone') as string}
-                  </label>
-                  <PhoneNumberInput
-                    value={formData.phone}
-                    onChange={handlePhoneChange}
-                    disabled={isSubmitting}
-                    placeholder={t('webinar.form.placeholders.phone') as string}
-                  />
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      id="notifications"
-                      name="notifications"
-                      className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
-                      checked={agreements.notifications}
-                      onChange={handleCheckboxChange}
-                      disabled={isSubmitting}
-                    />
-                    <label htmlFor="notifications" className="text-sm text-gray-700">
-                      {t('webinar.form.agreements.notifications') as string}
-                    </label>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      id="privacy"
-                      name="privacy"
-                      required
-                      className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
-                      checked={agreements.privacy}
-                      onChange={handleCheckboxChange}
-                      disabled={isSubmitting}
-                    />
-                    <label htmlFor="privacy" className="text-sm text-gray-700">
-                      {(() => {
-                        const privacyText = t('webinar.form.agreements.privacy')
-                        if (typeof privacyText === 'object' && privacyText !== null) {
-                          const privacy = privacyText as unknown as PrivacyAgreement
-                          return (
-                            <>
-                              {privacy.prefix}
-                              <a 
-                                href="/es/privacy" 
-                                className="text-primary hover:text-primary-300 underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {privacy.privacyLink}
-                              </a>
-                              {privacy.middle}
-                              <a 
-                                href="/es/terms" 
-                                className="text-primary hover:text-primary-300 underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {privacy.termsLink}
-                              </a>
-                              {privacy.suffix}
-                            </>
-                          )
-                        }
-                        return privacyText as string
-                      })()}
-                    </label>
-                  </div>
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="w-full bg-primary hover:bg-primary-300 text-white py-4 text-lg font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? t('webinar.form.submitting') as string : t('webinar.form.submit') as string}
-                </Button>
-              </form>
+            {/* Right Column - Registration Form (ActiveCampaign Embed) */}
+            <div id="webinar-form" className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+              <iframe
+                ref={iframeRef}
+                src="/embeds/webinar-ac-form.html?v=2"
+                title="Webinar Registration"
+                className="w-full"
+                style={{ border: '0', height: 10 }}
+                onLoad={handleIframeLoad}
+              />
             </div>
           </div>
         </div>
