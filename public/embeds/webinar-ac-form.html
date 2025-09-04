@@ -18,7 +18,7 @@
       <input type="hidden" name="m" value="0" />
       <input type="hidden" name="act" value="sub" />
       <input type="hidden" name="v" value="2" />
-      <input type="hidden" name="or" value="57c7c938c7f095769070364f599f2c69" />
+      <input type="hidden" name="or" value="c7bcdd96827dddc890b1dd1035d60f59" />
       <div class="_form-content">
         <div class="_form_element _x13815591 _full_width _clear" >
           <title class="_form-title">
@@ -45,6 +45,14 @@
         <input type="text" id="lastname" name="lastname" placeholder="Jobs" required/>
       </div>
     </div>
+    <div class="_form_element _x45607241 _full_width " >
+      <label for="field[4]" class="_form-label">
+        Pagina de Shopify
+      </label>
+      <div class="_field-wrapper">
+        <input type="text" id="field[4]" name="field[4]" value="" placeholder="www.tienda-ejemplo.com" />
+      </div>
+    </div>
     <div class="_form_element _x92752236 _full_width " >
       <label for="email" class="_form-label">
         Dirección de Email <span class="field-required">
@@ -55,32 +63,12 @@
       <input type="text" id="email" name="email" placeholder="inteligencia@thinkr.pro" required/>
     </div>
     </div>
-    <div class="_form_element _x16324824 _full_width " >
-    <input type="hidden" id="ca[account_url][t]" name="ca[account_url][t]" value="text"  />
-    <label for="account_url" class="_form-label">
-      Pagina de Shopify
-    </label>
-    <div class="_field-wrapper">
-      <input type="text" id="account_url" name="account_url" value=""
-      placeholder="www.tienda-ejemplo.com" />
-    </div>
-    </div>
-    <div class="_form_element _x64103928 _full_width " >
-    <label for="customer_account" class="_form-label">
-      Rol<span class="field-required">
-      *
-    </span>
-    </label>
-    <div class="_field-wrapper">
-    <input type="text" id="customer_account" name="customer_account" placeholder="Proprietario de Tienda" required/>
-    </div>
-    </div>
     <div class="_form_element _x89385815 _full_width " >
     <label for="phone" class="_form-label">
     Número de Teléfono (Opcional)
     </label>
     <div class="_field-wrapper">
-    <input type="text" id="phone" name="phone" placeholder="Ingresa tu número de teléfono"/>
+    <input type="text" id="phone" name="phone" placeholder="Type your phone number"/>
     </div>
     </div>
     <label for="sms_consent" class="sms_consent_checkbox">
@@ -100,7 +88,7 @@
     <div class="_form-thank-you" style="display:none;">
     </div>
     </form><script>
-window.cfields = [];
+window.cfields = {"4":"shopify_page"};
 window._show_thank_you = function(id, message, trackcmp_url, email) {
     var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
     form.querySelector('._form-content').style.display = 'none';
