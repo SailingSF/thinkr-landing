@@ -196,9 +196,9 @@ const WebinarsPage = () => {
             <div id="webinar-form" className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               <iframe
                 ref={iframeRef}
-                src="/embeds/webinar-ac-form.html?v=2"
+                src="/embeds/webinar-ac-form.html?v=3"
                 title="Webinar Registration"
-                className="w-full"
+                className="w-full min-h-[820px]"
                 style={{ border: '0', height: 10 }}
                 onLoad={handleIframeLoad}
               />
