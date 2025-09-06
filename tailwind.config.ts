@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        handwriting: ["var(--font-kalam)", "Kalam", "cursive"],
       },
       colors: {
         primary: {

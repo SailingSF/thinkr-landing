@@ -1,6 +1,6 @@
 import type React from "react"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Inter, Kalam } from "next/font/google"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -13,6 +13,15 @@ const inter = Inter({
   display: 'swap',
   variable: '--font-inter',
   fallback: ['system-ui', 'sans-serif'],
+  preload: true,
+})
+
+const kalam = Kalam({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  display: 'swap',
+  variable: '--font-kalam',
+  fallback: ['cursive'],
   preload: true,
 })
 
@@ -70,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${kalam.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <meta name="theme-color" content="#8C74FF" />
